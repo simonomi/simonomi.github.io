@@ -1,0 +1,501 @@
+<html>
+	<head>
+		<title>Simon Pelleirn</title>
+		<link rel="icon" href="logo circle.png">
+		<style>
+			body {
+				background-color: #353535;
+				color: white;
+			}
+			a {
+				color: deepskyblue;
+			}
+			ul {
+				display: inline-block;
+				text-align: left;
+				margin-top: 0;
+			}
+			.parent {
+				display: grid;
+				gap: 10px;
+				margin: 3% 7% 3%;
+			}
+			.block {
+				background-color: #202020;
+				text-align: center;
+				border-radius: 25px;
+				padding: 3%;
+				position: relative;
+			}
+			@media screen and (min-width: 1000px) {
+				.main {
+					grid-row: 1;
+					grid-column: 1 / 3;
+				}
+				.certifications {
+					grid-row: 1 / 3;
+					grid-column: 3;
+				}
+				.awards {
+					grid-row: 3;
+					grid-column: 3;
+				}
+				.portfolio {
+					grid-row: 2 / 4;
+					grid-column: 1 / 3;
+				}
+				.technical-skills {
+					grid-row: 4 / 6;
+					grid-column: 1;
+				}
+				.about-me {
+					grid-row: 4;
+					grid-column: 2 / 4;
+				}
+				.education {
+					grid-row: 5;
+					grid-column: 2 / 4;
+				}
+			}
+			@media screen and (max-width: 1000px) {
+				.main {
+					grid-row: 1;
+					grid-column: 1 / 3;
+				}
+				.certifications {
+					grid-row: 2;
+					grid-column: 1;
+				}
+				.awards {
+					grid-row: 2;
+					grid-column: 2;
+				}
+				.portfolio {
+					grid-row: 3;
+					grid-column: 1 / 3;
+				}
+				.technical-skills {
+					grid-row: 4 / 6;
+					grid-column: 1;
+				}
+				.about-me {
+					grid-row: 4;
+					grid-column: 2;
+				}
+				.education {
+					grid-row: 5;
+					grid-column: 2;
+				}
+			}
+			@media screen and (max-width: 600px) {
+				.main {
+					grid-row: 1;
+					grid-column: 1;
+				}
+				.certifications {
+					grid-row: 2;
+					grid-column: 1;
+				}
+				.awards {
+					grid-row: 3;
+					grid-column: 1;
+				}
+				.portfolio {
+					grid-row: 4;
+					grid-column: 1;
+				}
+				.technical-skills {
+					grid-row: 5;
+					grid-column: 1;
+				}
+				.about-me {
+					grid-row: 6;
+					grid-column: 1;
+				}
+				.education {
+					grid-row: 7;
+					grid-column: 1;
+				}
+			}
+			.inline {
+				display: inline;
+			}
+			#github-link {
+				width: 32px;
+				height: 32px;
+				transition: 0.2s;
+				position: absolute;
+				left: 2%;
+			}
+			#github-link:hover {
+				filter: brightness(85%);
+			}
+			.things-i- {
+				display: grid;
+				gap: 10px;
+				grid-template-columns: repeat(2, minmax(125px, 1fr));
+			}
+			.secret-link {
+				color: currentColor;
+				text-decoration: none;
+				cursor: text;
+			}
+			#security-plus-image {
+				width: 160px;
+				height: 146px;
+				border-radius: 15px;
+			}
+			#ap-scholar-with-distinction-image {
+				width: 220px;
+				height: 170px;
+				border-radius: 7px;
+			}
+			#national-cyber-scholar-2022 {
+				display: table;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			#national-cyber-scholar-2022-image {
+				float: left;
+				width: 70px;
+			}
+			#national-cyber-scholar-2022-text {
+				padding-left: 10px;
+				line-height: 70px;
+			}
+			.repos {
+				display: grid;
+				gap: 10px;
+				grid-template-columns: repeat(2, minmax(125px, 1fr));
+				margin-bottom: 5px;
+			}
+			@media screen and (max-width: 525px) {
+				.repos {
+					grid-template-columns: minmax(265px, 1fr);
+				}
+			}
+			.repo {
+				border: solid 1px grey;
+				border-radius: 7px;
+				text-align: left;
+				padding: 10px;
+			}
+			.repo-link {
+				text-decoration: none;
+			}
+			.repo-title {
+				display: inline;
+				vertical-align: middle;
+			}
+			.github-logo {
+				width: 16;
+				height: 16;
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			.swift {color: #F05138;}
+			.swiftui {color: #00DAFF;}
+			.python {color: #FFDE57;}
+			.java {color: #ED8B00;}
+			.rust {color: #F46623;}
+			.javascript {color: #F7DF1E;}
+			.typescript {color: #358EF1;}
+			.obsidian {color: #7F6DF2;}
+			.discord {color: #5865F2;}
+			.heroku {color: #7673C0;}
+			.latex {color: #008281}
+			.autohotkey {color: #3F7725;}
+			.html {color: #F06529;}
+			.css {color: #0067FA;}
+			.visual-basic {color: #00619C;}
+			.selenium {color: #7BC769;}
+			.spotify {color: #1DB954;}
+			.genius {color: #FFFF64;}
+			.tkinter {color: #127AB3;}
+			.duckyscript {color: #ffED00;}
+			.word {color: rgb(91, 174, 251);}
+			.powerpoint {color: rgb(244, 102, 65);}
+			.excel {color: rgb(122, 255, 182);}
+			.docs {color: #4285F4;}
+			.slides {color: #F4B400;}
+			.sheets {color: #0F9D58;}
+			.youtube-dl {color: #FF0000;}
+			.wireshark {color: #0064a7;}
+			.audacity {color: #FF6E00;}
+			.gimp {color: #605B51;}
+			.paint-net {color: #8fb6f6;}
+			.numbers {color: #00F12D;}
+			.bbedit {color: #7970C0;}
+			.notepad-plus-plus {color: #A6D66C;}
+			.xcode {color: #00B9F5;}
+			.git {color: #FF3F1E;}
+			.shortcuts {color: #FF57D3;}
+			.vlc {color: #F48B00;}
+			.bash {color: #3C474A;}
+			.cmd {color: #FFFFFF;}
+			.windows {color: #00B1F4;}
+			.macos {color: #00D2FF;}
+			.linux {color: #FEBC00;}
+			.minecraft {color: #3B8526;}
+			.regex {color: #7EC1F2;}
+			.rainmeter {color: #007BFF;}
+			.blender {color: #FB6D00;}
+			.nmap {color: #7E6496;}
+			.hashcat {color: #FFFFFF;}
+			.john-the-ripper {color: #D70000;}
+			.aircrack-ng {color: #009900;}
+			.curl {color: #00564C;}
+			.wget {color: #00FF00;}
+			.ffmpeg {color: #1CA245;}
+			.trakt {color: #DA3B32}
+			
+			.language-label {
+				display: inline-block;
+				padding: 5px 10px 5px;
+				border: solid 1px;
+				border-radius: 10px;
+				text-decoration: none;
+				margin: 2px;
+			}
+		</style>
+		<meta charset="UTF-16">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div class="parent">
+			<div class="main block">
+				<a href="https://www.github.com/simonomi">
+					<img id="github-link" src="github.png">
+				</a>
+				<a href="resume.pdf">
+					<p>résumé</p>
+				</a>
+				
+				<h2 class="inline">Simon Pellerin </h2>
+				<p class="inline">she/they</p>
+				
+				<div class="things-i-">
+					<div>
+						<h3>Things I am</h3>
+						<ul>
+							<li>Student at <a href="https://wit.edu">Wentworth</a></li>
+							<li>Programmer</li>
+							<li>Proud 🏳️‍🌈🏳️‍⚧️</li>
+						</ul>
+					</div>
+					
+					<div>
+						<h3>Things I like</h3>
+						<ul>
+							<li>Programming</li>
+							<li>Podcasts</li>
+							<li>Books</li>
+							<li>Language learning</li>
+							<li>Linguistics</li>
+							<a class="secret-link" href="https://steamcommunity.com/id/simonomi">
+								<li>Video games</li>
+							</a>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="certifications block">
+				<h2>Certifications</h2>
+				<div>
+					<a href="https://www.credly.com/badges/52e9c2c6-2f4f-48be-9c0e-8f2059beb61c/public_url">
+						<img id="security-plus-image" src="security+.png">
+					</a>
+					<p>Knowledge and hands-on practical experience regarding:</p>
+					<ul>
+						<li>Implementing PKI, IAM, and authentication controls</li>
+						<li>Network, mobile, cloud, application, data, forensic, and physical security</li>
+						<li>Threats and vulnerabilities</li>
+						<li>Architecture and design</li>
+						<li>Secure implementation</li>
+						<li>Risk and compliance</li>
+						<li>Incident response</li>
+					</ul>
+				</div>
+			</div>
+			<div class="awards block">
+				<h2>Awards</h2>
+				<p>
+				<a href="https://apstudents.collegeboard.org/awards-recognitions/ap-scholar-award#:~:text=AP%20Scholar%20with%20Distinction">
+					<img id="ap-scholar-with-distinction-image" src="ap scholar with distinction.png"><br>
+						AP Scholar with Distinction
+				</a>
+				</p>
+				<p id="national-cyber-scholar-2022">
+				<a href="https://api.badgr.io/public/assertions/66EA6l6mTMCXc88GpP2gMA">
+					<img id="national-cyber-scholar-2022-image" src="national cyber scholar 2022.png">
+					<span id="national-cyber-scholar-2022-text">National Cyber Scholar 2022</span>
+				</a>
+				</p>
+				<p>
+				<a href="https://m3challenge.siam.org/archives/2022">
+					MathWorks Math Modeling Challenge 2022
+				</a><br>
+				2nd round - top 18.5%
+				</p>
+				<p>
+				<a href="https://skillsusatx.org/wp-content/uploads/2022/04/Contest_Winners2022.pdf#page=45">
+					SkillsUSA Texas State Finalist
+				</a>
+				</p>
+			</div>
+			<div class="portfolio block">
+				<h2>Portfolio</h2>
+				<div class="repos">
+					<div class="repo">
+						<a class="repo-link">
+							<p class="repo-title">mage (unreleased)</p>
+						</a><br>
+						<p>A trakt client I've been working on in various forms for years.</p>
+						<a href="https://www.swift.org" class="swift language-label">Swift</a>
+						<a href="https://developer.apple.com/xcode/swiftui" class="swiftui language-label">SwiftUI</a>
+						<a href="https://trakt.docs.apiary.io/" class="trakt language-label">Trakt</a>
+					</div>
+					<div class="repo">
+						<a class="repo-link" href="https://github.com/simonomi/obsidian-separated-recurrence">
+							<img class="github-logo" src="github.png">
+							<p class="repo-title">obsidian-separated-recurrence</p>
+						</a><br>
+						<p>My custom implementation of spaced repetition in obsidian.</p>
+						<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
+						<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
+						<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
+					</div>
+					<div class="repo">
+						<a class="repo-link" href="https://github.com/simonomi/obsidian-markdown-pitch-accent">
+							<img class="github-logo" src="github.png">
+							<p class="repo-title">obsidian-markdown-pitch-accent</p>
+						</a><br>
+						<p>An obsidian plugin to render pitch accent in markdown.</p>
+						<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
+						<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
+						<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
+					</div>
+					<div class="repo">
+						<a class="repo-link" href="https://github.com/simonomi/R00tz27-Badge">
+							<img class="github-logo" src="github.png">
+							<p class="repo-title">R00tz27-Badge</p>
+						</a><br>
+						<p>My hacked code for the r00tz defcon 27 badge.</p>
+						<a href="https://www.python.org" class="python language-label">Python</a>
+					</div>
+					<div class="repo">
+						<a class="repo-link" href="https://github.com/simonomi/Coding-Royale">
+							<img class="github-logo" src="github.png">
+							<p class="repo-title">Coding-Royale</p>
+						</a><br>
+						<p>A battle royale style coding game for java.</p>
+						<a href="https://www.python.org" class="python language-label">Python</a>
+						<a href="https://www.j ava.com" class="java language-label">Java</a>
+					</div>
+					<div class="repo">
+						<a class="repo-link">
+							<p class="repo-title">AE-Movie-Nights (private)</p>
+						</a><br>
+						<p>A discord bot made for a private server.</p>
+						<a href="https://www.python.org" class="python language-label">Python</a>
+						<a href="https://discordpy.readthedocs.io" class="discord language-label">discord.py</a>
+						<a href="https://www.heroku.com" class="heroku language-label">Heroku</a>
+					</div>
+				</div>
+			</div>
+			<div class="technical-skills block">
+				<h2>Technical skills</h2>
+				<h3>Languages</h3>
+				<a href="https://www.swift.org" class="swift language-label">Swift</a> - 1 year (~20,000 lines)<br>
+				<a href="https://www.python.org" class="python language-label">Python</a> - 6 years (~15,000 lines)<br>
+				<a href="https://www.java.com" class="java language-label">Java</a> - 4 years (~10,000 lines)<br>
+				<a href="https://www.rust-lang.org" class="rust language-label">Rust</a> - &lt;1 year (~1,000 lines)<br>
+				<a href="https://www.autohotkey.com" class="autohotkey language-label">AutoHotkey</a>
+				<a href="https://wikipedia.org/wiki/CSS" class="css language-label">CSS</a>
+				<a href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript" class="duckyscript language-label">Ducky Script</a>
+				<a href="https://wikipedia.org/wiki/HTML" class="html language-label">HTML</a>
+				<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
+				<a href="https://www.latex-project.org" class="latex language-label">LaTeX</a>
+				<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
+				<a href="https://docs.microsoft.com/dotnet/visual-basic/" class="visual-basic language-label">Visual Basic</a>
+				
+				<h3>APIs/Frameworks</h3>
+				<a href="https://discordpy.readthedocs.io" class="discord language-label">discord.py</a>
+				<a href="https://docs.genius.com" class="genius language-label">Genius</a>
+				<a href="https://www.heroku.com" class="heroku language-label">Heroku</a>
+				<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
+				<a href="https://www.selenium.dev" class="selenium language-label">Selenium</a>
+				<a href="https://docs.rs/serenity/" class="rust language-label">serenity</a>
+				<a href="https://developer.spotify.com/" class="spotify language-label">Spotify</a>
+				<a href="https://developer.apple.com/xcode/swiftui" class="swiftui language-label">SwiftUI</a>
+				<a href="https://docs.python.org/3/library/tkinter.html" class="tkinter language-label">tkinter</a>
+				<a href="https://trakt.docs.apiary.io/" class="trakt language-label">Trakt</a>
+				
+				<h3>Commands/Tools</h3>
+				<a href="https://www.aircrack-ng.org" class="aircrack-ng language-label">Aircrack-ng</a>
+				<a href="https://curl.se" class="curl language-label">curl</a>
+				<a href="https://ffmpeg.org" class="ffmpeg language-label">FFmpeg</a>
+				<a href="https://git-scm.com" class="git language-label">git</a>
+				<a href="https://hashcat.net" class="hashcat language-label">hashcat</a>
+				<a href="https://www.openwall.com/john" class="john-the-ripper language-label">John the Ripper</a>
+				<a href="https://nmap.org" class="nmap language-label">Nmap</a>
+				<a href="https://en.wikipedia.org/wiki/Regular_expression" class="regex language-label">Regex</a>
+				<a href="https://www.gnu.org/software/wget" class="wget language-label">Wget</a>
+				<a href="https://www.wireshark.org" class="wireshark language-label">Wireshark</a>
+				<a href="https://youtube-dl.org" class="youtube-dl language-label">youtube-dl</a>
+				
+				<h3>Programs</h3>
+				<a href="https://www.microsoft.com/microsoft-365/word" class="word language-label">Word</a>
+				<a href="https://www.microsoft.com/microsoft-365/powerpoint" class="powerpoint language-label">Powerpoint</a>
+				<a href="https://www.microsoft.com/microsoft-365/excel" class="excel language-label">Excel</a>
+				<br>
+				<a href="https://www.google.com/docs/about" class="docs language-label">Google Docs</a>
+				<a href="https://www.google.com/slides/about" class="slides language-label">Google Slides</a>
+				<a href="https://www.google.com/sheets/about" class="sheets language-label">Google Sheets</a>
+				<br>
+				<a href="https://www.apple.com/numbers" class="numbers language-label">Numbers</a>
+				<br>
+				<a href="https://www.audacityteam.org" class="audacity language-label">Audacity</a>
+				<a href="https://www.gnu.org/software/bash" class="bash language-label">Bash</a>
+				<a href="https://www.barebones.com/products/bbedit" class="bbedit language-label">BBEdit</a>
+				<a href="https://www.blender.org" class="blender language-label">Blender</a>
+				<a href="https://docs.microsoft.com/windows-server/administration/windows-commands/windows-commands" class="cmd language-label">cmd</a>
+				<a href="https://www.gimp.org" class="gimp language-label">GIMP</a>
+				<a href="https://www.kernel.org" class="linux language-label">Linux</a>
+				<a href="https://www.apple.com/macos" class="macos language-label">macOS</a>
+				<a href="https://www.minecraft.net" class="minecraft language-label">Minecraft</a>
+				<a href="https://notepad-plus-plus.org" class="notepad-plus-plus language-label">Notepad++</a>
+				<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
+				<a href="https://www.getpaint.net" class="paint-net language-label">paint.net</a>
+				<a href="https://www.rainmeter.net" class="rainmeter language-label">Rainmeter</a>
+				<a href="https://support.apple.com/guide/shortcuts/welcome" class="shortcuts language-label">Shortcuts</a>
+				<a href="https://www.videolan.org/vlc" class="vlc language-label">VLC</a>
+				<a href="https://www.microsoft.com/windows" class="windows language-label">Windows</a>
+				<a href="https://developer.apple.com/xcode" class="xcode language-label">Xcode</a>
+			</div>
+			<div class="about-me block">
+				<h2>About Me</h2>
+				<p>
+				Hey! I'm Simon, a student at Wentworth Institute of Technology in Boston. I enjoy anime, horror movies, and skiing. I've been an avid programmer for as long as I can remember, constantly working on various projects.
+				</p>
+				<p>
+				I'm willing to try my hand at almost any programming field, but I'm most experienced in application and server-side development. Over the years I've created uncountable utility scripts and the like, but more recently I've been using
+				<a href="https://www.swift.org" class="swift">Swift</a>
+				and
+				<a href="https://developer.apple.com/xcode/swiftui/" class="swiftui">SwiftUI</a>
+				to create iOS apps.
+				</p>
+				<p>
+				I'm familiar with macOS, Linux, and Windows, and use all three regularly.
+				</p>
+			</div>
+			<div class="education block">
+				<h2>Education</h2>
+				<h3>Wentworth Institute of Technology</h3>
+				<p>Currently earning a Bachelor's in Computer Science with GPA of <mark>???</mark>.</p>
+				<h3>Katy High School</h3>
+				<p>Graduated in 2022 with a 4.3 GPA (top 8.2%).</p>
+			</div>
+		</div>
+	</body>
+</html>
