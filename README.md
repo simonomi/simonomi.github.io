@@ -1,1 +1,0 @@
-# simonomi.github.io
