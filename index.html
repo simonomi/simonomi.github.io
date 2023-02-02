@@ -4,7 +4,7 @@
 		<link rel="icon" href="logo circle.png">
 		<style>
 			body {
-				background-image: linear-gradient(#202020, #202020, #353535, #353535);
+				background-color: #353535;
 				color: white;
 				font-family: sans-serif;
 				margin: 0;
@@ -18,10 +18,9 @@
 				margin-top: 0;
 			}
 			.parent {
-				background-color: #353535;
 				display: grid;
 				gap: 10px;
-				padding: 3% 7% 3%;
+				margin: 3% 7% 3%;
 			}
 			.block {
 				background-color: #202020;
@@ -272,6 +271,10 @@
 				margin: 2px;
 			}
 			
+			.hidden {
+				display: none;
+			}
+			
 			footer {
 				background-color: #202020;
 				text-align: center;
@@ -284,6 +287,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
+		<a rel="me" href="https://mstdn.social/@simonomi" class="hidden">Mastodon</a>
+		
 		<div class="parent">
 			<div class="main block">
 				<a href="https://www.github.com/simonomi" title="github">
