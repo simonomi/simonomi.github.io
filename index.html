@@ -4,8 +4,10 @@
 		<link rel="icon" href="logo circle.png">
 		<style>
 			body {
-				background-color: #353535;
+				background-image: linear-gradient(#202020, #202020, #353535, #353535);
 				color: white;
+				font-family: sans-serif;
+				margin: 0;
 			}
 			a {
 				color: deepskyblue;
@@ -16,9 +18,10 @@
 				margin-top: 0;
 			}
 			.parent {
+				background-color: #353535;
 				display: grid;
 				gap: 10px;
-				margin: 3% 7% 3%;
+				padding: 3% 7% 3%;
 			}
 			.block {
 				background-color: #202020;
@@ -121,13 +124,23 @@
 				display: inline;
 			}
 			#github-link {
-				width: 32px;
 				height: 32px;
 				transition: 0.2s;
 				position: absolute;
+				top: 1em;
 				left: 2%;
 			}
 			#github-link:hover {
+				filter: brightness(85%);
+			}
+			#resume-link {
+				height: 32px;
+				transition: 0.2s;
+				position: absolute;
+				top: 1em;
+				right: 2%;
+			}
+			#resume-link:hover {
 				filter: brightness(85%);
 			}
 			.things-i- {
@@ -193,6 +206,7 @@
 				vertical-align: middle;
 				margin-right: 5px;
 			}
+			
 			.swift {color: #F05138;}
 			.swiftui {color: #00DAFF;}
 			.python {color: #FFDE57;}
@@ -257,6 +271,14 @@
 				text-decoration: none;
 				margin: 2px;
 			}
+			
+			footer {
+				background-color: #202020;
+				text-align: center;
+				padding: 5px;
+				margin: 0;
+				width: 100%;
+			}
 		</style>
 		<meta charset="UTF-16">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -264,11 +286,11 @@
 	<body>
 		<div class="parent">
 			<div class="main block">
-				<a href="https://www.github.com/simonomi">
+				<a href="https://www.github.com/simonomi" title="github">
 					<img id="github-link" src="github.png">
 				</a>
-				<a href="resume.pdf">
-					<p>résumé</p>
+				<a href="resume.pdf" title="resume">
+					<img id="resume-link" src="resume.png">
 				</a>
 				
 				<h2 class="inline">Simon Pellerin </h2>
@@ -492,10 +514,14 @@
 			<div class="education block">
 				<h2>Education</h2>
 				<h3>Wentworth Institute of Technology</h3>
-				<p>Currently earning a Bachelor's in Computer Science with GPA of <mark>???</mark>.</p>
+				<p>Currently earning a Bachelor's in Computer Science with GPA of 3.3.</p>
 				<h3>Katy High School</h3>
 				<p>Graduated in 2022 with a 4.3 GPA (top 8.2%).</p>
 			</div>
 		</div>
+		<footer>
+			<p>© 2023 Simon Pellerin</p>
+			<p><a href="https://www.flaticon.com/free-icon/document_151896" title="resume icon">Resume icon created by Chanut - Flaticon</a></p>
+		</footer>
 	</body>
 </html>
