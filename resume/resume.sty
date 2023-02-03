@@ -30,72 +30,109 @@
 	\raisebox{-0.15em}{\includegraphics[height=1em]{globe}}
 }
 
+\newcommand{\categoryheader}[1]{
+	{\huge #1}\\
+	\rule{\linewidth}{2pt}\\~
+}
+
+\newcommand{\itemheader}[1]{
+	{\Large\textbf{#1}}
+}
+
+\newcommand{\dashedline}{
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+}
+
 \begin{document}
 	\noindent\begin{minipage}[t]{0.57\linewidth}
 		\raggedright
 		
-		
 		\begin{center}
-			{\Huge\textbf{Simon Pellerin}} (she/they)\\~
+			{\Huge\textbf{Simon Pellerin}} she/they\\~
 			
 			\href{mailto:thesimonpellerin@gmail.com}{{\large\textbf{@}} thesimonpellerin@gmail.com}\\
 			\href{https://www.github.com/simonomi}{\githublogo simonomi}\hspace{2em}
-			\href{https://www.simonomi.dev}{\globe simonomi.dev} % \\~
+			\href{https://www.simonomi.dev}{\globe simonomi.dev}
 		\end{center}
 		
 		\hspace{1em}I'm a student at Wentworth Institute of Technology in Boston. I'm willing to try my hand at almost any programming field, but I'm most experienced in application and server-side development. I've created apps in Swift using SwiftUI, Python using tkinter, and plugins for Obsidian using TypeScript.\\~
 		
-		{\huge Projects}\\
-		\rule{\linewidth}{2pt}\\~
+		\categoryheader{Projects}
 		
-		{\Large\textbf{mage}}\\
+		\itemheader{mage}\\
 		An iOS Trakt client I've been working on in various forms for years.\\
-		\languagetag{Swift} \languagetag{SwiftUI} \languagetag{Trakt} \languagetag{Xcode}\\~
+		\languagetag{Swift} \languagetag{SwiftUI} \languagetag{REST} \languagetag{JSON} \languagetag{Trakt} \languagetag{Xcode}\\~
 		
-		% TODO: dashed line
+		\dashedline\\~
 		
-		{\Large\textbf{Separated Recurrence}}\\
+		\itemheader{Separated Recurrence}\\
 		\href{https://www.github.com/simonomi/obsidian-separated-recurrence}{\githublogo simonomi/obsidian-separated-recurrence}\\
-		My custom implementation of spaced repetition in obsidian.
+		My custom implementation of spaced repetition in obsidian.\\
 		\languagetag{Typescript} \languagetag{JavaScript} \languagetag{Obsidian} \languagetag{CSS}\\~
 		
-		% TODO: dashed line
+		\dashedline\\~
 		
-		{\Large\textbf{Markdown Pitch Accent}}\\
+		\itemheader{Markdown Pitch Accent}\\
 		\href{https://www.github.com/simonomi/obsidian-markdown-pitch-accent}{\githublogo simonomi/obsidian-markdown-pitch-accent}\\
-		An obsidian plugin to render japanese pitch accent in markdown.
-		\languagetag{Typescript} \languagetag{JavaScript} \languagetag{Obsidian} \languagetag{CSS}
+		An obsidian plugin to render japanese pitch accent in markdown.\\
+		\languagetag{Typescript} \languagetag{JavaScript} \languagetag{Obsidian} \languagetag{CSS}\\~
+		
+		\dashedline\\~
+		
+		\itemheader{Personal Website}\\
+		\href{https://www.github.com/simonomi/simonomi.github.io}{\githublogo simonomi/simonomi.github.io}\\
+		My mobile-friendly personal website, hosted at \href{https://www.simonomi.dev}{simonomi.dev}.\\
+		\languagetag{HTML} \languagetag{CSS} \languagetag{DNS} \languagetag{git}\\~\\~
+		
+		\categoryheader{Certifications/Awards}
+		
+		\itemheader{\href{https://www.credly.com/badges/52e9c2c6-2f4f-48be-9c0e-8f2059beb61c/public_url}{CompTIA Security+}}\\
+		Knowledge and hands-on experience with core cybersecurity topics.\\~
+		
+		\itemheader{Awards}
+		
+		\begin{itemize}
+			\item \href{https://apstudents.collegeboard.org/awards-recognitions/ap-scholar-award#:~:text=AP\%20Scholar\%20with\%20Distinction}{AP Scholar with Distinction}
+			
+			\item \href{https://api.badgr.io/public/assertions/66EA6l6mTMCXc88GpP2gMA}{National Cyber Scholar 2022}
+			
+			\item \href{https://m3challenge.siam.org/archives/2022}{MathWorks Math Modeling Challenge 2022}
+			\begin{itemize}
+				\item 2nd round - top 18.5\%
+			\end{itemize}
+			
+			\item \href{https://skillsusatx.org/wp-content/uploads/2022/04/Contest_Winners2022.pdf#page=45}{SkillsUSA Texas State Finalist}
+		\end{itemize}
 	\end{minipage}
 	\hspace{0.05\linewidth}
 	\begin{minipage}[t]{0.38\linewidth}
 		\raggedright
-
-		{\huge Skills}\\
-		\rule{\linewidth}{2pt}\\~
 		
-		{\large Languages}\\~
+		\categoryheader{Education}
 		
-		\languagetag{Swift} 1 year (~20,000 lines)\\
-		\languagetag{Python} 6 years (~15,000 lines)\\
-		\languagetag{Java} 4 years (~10,000 lines)\\
-		\languagetag{Rust} \textless1 year (~1,000 lines)\\~
+		\itemheader{Wentworth Institute of Technology}\\
+		\textbf{Computer Science, B.S.}\\
+		\textbf{2022 - 2024\hspace{2em}Boston, MA}\\
+		GPA: 3.3/4.0\\
+		\languagetag{Java} \languagetag{Linux} \languagetag{Python} \languagetag{Assembly} \languagetag{git} \colorbox{yellow}{more}\\~\\~
+		
+		\categoryheader{Skills}
+		
+		{\Large Languages}\\~
+		
+		\languagetag{Swift} 1 year (20,000 lines)\\
+		\languagetag{Python} 6 years (15,000 lines)\\
+		\languagetag{Java} 4 years (10,000 lines)\\
+		\languagetag{Rust} \textless1 year (1,000 lines)\\~
 		
 		\languagetag{AutoHotkey} \languagetag{Bash} \languagetag{CSS} \languagetag{HTML} \languagetag{JavaScript} \languagetag{Lua} \languagetag{\LaTeX{}} \languagetag{TypeScript}\\~
 		
-		{\large APIs/Frameworks}\\~
+		{\Large APIs/Frameworks}\\~
 		
-		\languagetag{Heroku} \languagetag{Obsidian} \languagetag{Spotify} \languagetag{SwiftUI} \languagetag{tkinter} \languagetag{Trakt} \languagetag{VLC}\\~
+		\languagetag{Discord} \languagetag{Heroku} \languagetag{Obsidian} \languagetag{REST} \languagetag{Spotify} \languagetag{SwiftUI} \languagetag{tkinter} \languagetag{Trakt} \languagetag{VLC}\\~
 		
-		{\large Tools/Environment}\\~
+		{\Large Tools/Environment}\\~
 		
-		\languagetag{Bash} \languagetag{git} \languagetag{Linux} \languagetag{macOS} \languagetag{Vim} \languagetag{Windows} \languagetag{Xcode}\\~
-
-		{\huge Education}\\
-		\rule{\linewidth}{2pt}\\~
-		
-		{\Large\textbf{Wentworth Institute of Technology}}\\
-		\textbf{2022 - 2024\hspace{2em}Computer Science, B.S.}\\
-		GPA: 3.3/4.0\\
-		\languagetag{Java} \languagetag{Assembly} \languagetag{git} % \colorbox{yellow}{more}
+		\languagetag{Bash} \languagetag{git} \languagetag{JSON} \languagetag{Linux} \languagetag{macOS} \languagetag{Vim} \languagetag{Windows} \languagetag{Xcode}\\~
 	\end{minipage}
 \end{document}
