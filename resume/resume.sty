@@ -30,6 +30,10 @@
 	\raisebox{-0.15em}{\includegraphics[height=1em]{globe}}
 }
 
+\newcommand{\phoneicon}{
+	\raisebox{-0.15em}{\includegraphics[height=1em]{phone}}
+}
+
 \newcommand{\categoryheader}[1]{
 	{\huge #1}\\
 	\rule{\linewidth}{2pt}\\~
@@ -52,22 +56,24 @@
 			
 			\href{mailto:thesimonpellerin@gmail.com}{{\large\textbf{@}} thesimonpellerin@gmail.com}\\
 			\href{https://www.github.com/simonomi}{\githublogo simonomi}\hspace{2em}
-			\href{https://www.simonomi.dev}{\globe simonomi.dev}
+			\href{https://www.simonomi.dev}{\globe simonomi.dev}\\
+			% \phoneicon(***) ***-**** (text preferred)
 		\end{center}
 		
-		\hspace{1em}I'm a student at Wentworth Institute of Technology in Boston. I'm willing to try my hand at almost any programming field, but I'm most experienced in application and server-side development. I've created apps in Swift using SwiftUI, Python using tkinter, and plugins for Obsidian using TypeScript.\\~
+		\hspace{1em}Student at Wentworth Institute of Technology in Boston. Willing to try almost any programming field, but most experienced in application and server-side development. Experienced in the development of apps in Swift using SwiftUI, Python using tkinter, and plugins for Obsidian using TypeScript.\\~
 		
 		\categoryheader{Projects}
 		
 		\itemheader{mage}\\
-		An iOS Trakt client I've been working on in various forms for years.\\
+		Designed, developed, and iterated upon a Trakt client for iOS.\\
+		% An iOS Trakt client I've been working on in various forms for years.\\
 		\languagetag{Swift} \languagetag{SwiftUI} \languagetag{REST} \languagetag{JSON} \languagetag{Trakt} \languagetag{Xcode}\\~
 		
 		\dashedline\\~
 		
 		\itemheader{Separated Recurrence}\\
 		\href{https://www.github.com/simonomi/obsidian-separated-recurrence}{\githublogo simonomi/obsidian-separated-recurrence}\\
-		My custom implementation of spaced repetition in obsidian.\\
+		Implemented a spaced repetition algorithm in an obsidian plugin.
 		\languagetag{Typescript} \languagetag{JavaScript} \languagetag{Obsidian} \languagetag{CSS}\\~
 		
 		\dashedline\\~
@@ -80,8 +86,8 @@
 		\dashedline\\~
 		
 		\itemheader{Personal Website}\\
-		\href{https://www.github.com/simonomi/simonomi.github.io}{\githublogo simonomi/simonomi.github.io}\\
-		My mobile-friendly personal website, hosted at \href{https://www.simonomi.dev}{simonomi.dev}.\\
+		\href{https://www.github.com/simonomi/simonomi.github.io}{\githublogo simonomi/simonomi.github.io}\hspace{1em}\href{https://www.simonomi.dev}{\globe simonomi.dev}\\
+		Designed and built a mobile-friendly personal website.\\
 		\languagetag{HTML} \languagetag{CSS} \languagetag{DNS} \languagetag{git}\\~\\~
 		
 		\categoryheader{Certifications/Awards}
@@ -110,9 +116,9 @@
 		
 		\categoryheader{Education}
 		
-		\itemheader{Wentworth Institute of Technology}\\
+		\itemheader{Wentworth Institute of Technology}| Boston, MA\\
 		\textbf{Computer Science, B.S.}\\
-		\textbf{2022 - 2024\hspace{2em}Boston, MA}\\
+		Expected graduation: December 2024\\
 		GPA: 3.3/4.0\\
 		\languagetag{Java} \languagetag{Linux} \languagetag{Python} \languagetag{git}\\~\\~
 		% \languagetag{Assembly}
@@ -121,10 +127,11 @@
 		
 		{\Large Languages}\\~
 		
-		\languagetag{Swift} 1 year (20,000 lines)\\
-		\languagetag{Python} 6 years (15,000 lines)\\
-		\languagetag{Java} 4 years (10,000 lines)\\
-		\languagetag{Rust} \textless1 year (1,000 lines)\\~
+		% no tildes because \textasciitilde has too much horizontal whitespace
+		\languagetag{Swift} 1 year (20,000 lines)\\ % may 2021
+		\languagetag{Python} 6 years (15,000 lines)\\ % august 2016
+		\languagetag{Java} 4 years (10,000 lines)\\ % august 2018
+		\languagetag{Rust} \textless1 year (1,000 lines)\\~ % september 2022
 		
 		\languagetag{AutoHotkey} \languagetag{Bash} \languagetag{CSS} \languagetag{HTML} \languagetag{JavaScript} \languagetag{Lua} \languagetag{\LaTeX{}} \languagetag{TypeScript}\\~
 		
@@ -134,6 +141,22 @@
 		
 		{\Large Tools/Environment}\\~
 		
-		\languagetag{Bash} \languagetag{git} \languagetag{JSON} \languagetag{Linux} \languagetag{macOS} \languagetag{Vim} \languagetag{Windows} \languagetag{Xcode}\\~
+		\languagetag{Bash} \languagetag{git} \languagetag{JSON} \languagetag{Linux} \languagetag{macOS} \languagetag{Vim} \languagetag{Windows} \languagetag{Xcode}\\~\\~
+		
+		\categoryheader{Work Experience}
+		
+		\itemheader{Whataburger \#392}\\
+		Sept. 2020 | Nov. 2020\hspace{2em}Katy, Texas
+		\begin{itemize}
+			\item Worked in a team to prepare and deliver food to customers
+			\item Interacted with customers through taking orders
+		\end{itemize}
+		
+		\itemheader{Stokan Jaggers \& Associates}\\
+		Nov. 2020 | July 2021\hspace{2em}Katy, Texas
+		\begin{itemize}
+			\item Worked with others in a HIPAA-compliant office environment
+			\item Organized and prepared documents in a standard format
+		\end{itemize}
 	\end{minipage}
 \end{document}
