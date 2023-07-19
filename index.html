@@ -20,7 +20,7 @@
 				text-align: left;
 				margin-top: 0;
 			}
-			.parent {
+			#parent {
 				background-color: #353535;
 				display: grid;
 				gap: 10px;
@@ -32,6 +32,7 @@
 				border-radius: 25px;
 				padding: 3%;
 				position: relative;
+				box-shadow: 0 0 15px #202020;
 			}
 			@media screen and (min-width: 1000px) {
 				.main {
@@ -224,6 +225,7 @@
 			.duckyscript {color: #ffED00;}
 			.excel {color: rgb(122, 255, 182);}
 			.ffmpeg {color: #1CA245;}
+			.foundation {color: #6495ED;}
 			.genius {color: #FFFF64;}
 			.gimp {color: #605B51;}
 			.git {color: #FF3F1E;}
@@ -288,6 +290,7 @@
 				text-align: center;
 				padding: 5px;
 				margin: 0;
+				box-shadow: 0 0 15px #202020;
 			}
 			
 			html::before {
@@ -304,7 +307,7 @@
 	<body>
 		<a rel="me" href="https://mstdn.social/@simonomi" class="hidden">Mastodon</a>
 		
-		<div class="parent">
+		<div id="parent">
 			<div class="main block">
 				<a href="https://www.github.com/simonomi" title="github">
 					<img id="github-link" src="github.png">
@@ -332,11 +335,9 @@
 							<li>Programming</li>
 							<li>Podcasts</li>
 							<li>Books</li>
-							<li>Language learning</li>
+							<li><a href="/languages">Language learning</a></li>
 							<li>Linguistics</li>
-							<a class="secret-link" href="https://steamcommunity.com/id/simonomi">
-								<li>Video games</li>
-							</a>
+							<li><a class="secret-link" href="https://steamcommunity.com/id/simonomi">Video games</a></li>
 						</ul>
 					</div>
 				</div>
@@ -407,6 +408,24 @@
 						<a href="https://developer.apple.com/metal" class="metal language-label">Metal</a>
 					</div>
 					<div class="repo">
+						<a class="repo-link" href="https://github.com/simonomi/carbonizer">
+							<img class="github-logo" src="github.png">
+							<p class="repo-title">carbonizer</p>
+						</a><br>
+						<p>A pure swift, easy-to-use Fossil Fighters ROM-hacking tool.</p>
+						<a href="https://www.swift.org" class="swift language-label">Swift</a>
+						<a href="https://developer.apple.com/documentation/foundation" class="foundation language-label">Foundation</a>
+					</div>
+					<div class="repo">
+						<a class="repo-link" href="https://github.com/simonomi/Coding-Royale">
+							<img class="github-logo" src="github.png">
+							<p class="repo-title">Coding-Royale</p>
+						</a><br>
+						<p>A battle royale style coding game for java.</p>
+						<a href="https://www.python.org" class="python language-label">Python</a>
+						<a href="https://www.j ava.com" class="java language-label">Java</a>
+					</div>
+					<div class="repo">
 						<a class="repo-link" href="https://github.com/simonomi/obsidian-separated-recurrence">
 							<img class="github-logo" src="github.png">
 							<p class="repo-title">obsidian-separated-recurrence</p>
@@ -425,23 +444,6 @@
 						<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
 						<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
 						<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
-					</div>
-					<div class="repo">
-						<a class="repo-link" href="https://github.com/simonomi/R00tz27-Badge">
-							<img class="github-logo" src="github.png">
-							<p class="repo-title">R00tz27-Badge</p>
-						</a><br>
-						<p>My hacked code for the r00tz defcon 27 badge.</p>
-						<a href="https://www.python.org" class="python language-label">Python</a>
-					</div>
-					<div class="repo">
-						<a class="repo-link" href="https://github.com/simonomi/Coding-Royale">
-							<img class="github-logo" src="github.png">
-							<p class="repo-title">Coding-Royale</p>
-						</a><br>
-						<p>A battle royale style coding game for java.</p>
-						<a href="https://www.python.org" class="python language-label">Python</a>
-						<a href="https://www.j ava.com" class="java language-label">Java</a>
 					</div>
 				</div>
 			</div>
