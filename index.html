@@ -9,8 +9,15 @@
 			body {
 				background-color: #353535;
 				color: white;
-				font-family: sans-serif;
+				font-family: system-ui, sans-serif;
 				margin: 0;
+			}
+			h2 {
+				font-weight: normal;
+				margin-top: 0;
+			}
+			h3 {
+				font-weight: normal;
 			}
 			a {
 				color: deepskyblue;
@@ -30,7 +37,7 @@
 				background-color: #202020;
 				text-align: center;
 				border-radius: 25px;
-				padding: 3%;
+				padding: 1em;
 				position: relative;
 				box-shadow: 0 0 15px #202020;
 			}
@@ -184,7 +191,6 @@
 				display: grid;
 				gap: 10px;
 				grid-template-columns: repeat(2, minmax(125px, 1fr));
-				margin-bottom: 5px;
 			}
 			@media screen and (max-width: 525px) {
 				.repos {
@@ -196,6 +202,10 @@
 				border-radius: 7px;
 				text-align: left;
 				padding: 10px;
+				position: relative;
+			}
+			.repo>p {
+				margin-bottom: 2.75em;
 			}
 			.repo-link {
 				text-decoration: none;
@@ -203,6 +213,10 @@
 			.repo-title {
 				display: inline;
 				vertical-align: middle;
+			}
+			.repo-languages {
+				position: absolute;
+				bottom: 10px;
 			}
 			.github-logo {
 				width: 16;
@@ -394,9 +408,11 @@
 							<p class="repo-title">mage (unreleased)</p>
 						</a><br>
 						<p>A trakt client I've been working on in various forms for years.</p>
-						<a href="https://www.swift.org" class="swift language-label">Swift</a>
-						<a href="https://developer.apple.com/xcode/swiftui" class="swiftui language-label">SwiftUI</a>
-						<a href="https://trakt.docs.apiary.io/" class="trakt language-label">Trakt</a>
+						<div class="repo-languages">
+							<a href="https://www.swift.org" class="swift language-label">Swift</a>
+							<a href="https://developer.apple.com/xcode/swiftui" class="swiftui language-label">SwiftUI</a>
+							<a href="https://trakt.docs.apiary.io/" class="trakt language-label">Trakt</a>
+						</div>
 					</div>
 					<div class="repo">
 						<a class="repo-link" href="https://github.com/simonomi/MetalRayTracing">
@@ -404,8 +420,10 @@
 							<p class="repo-title">MetalRayTracing</p>
 						</a><br>
 						<p>A custom ray tracing engine written from scratch using Metal.</p>
-						<a href="https://www.swift.org" class="swift language-label">Swift</a>
-						<a href="https://developer.apple.com/metal" class="metal language-label">Metal</a>
+						<div class="repo-languages">
+							<a href="https://www.swift.org" class="swift language-label">Swift</a>
+							<a href="https://developer.apple.com/metal" class="metal language-label">Metal</a>
+						</div>
 					</div>
 					<div class="repo">
 						<a class="repo-link" href="https://github.com/simonomi/carbonizer">
@@ -413,8 +431,10 @@
 							<p class="repo-title">carbonizer</p>
 						</a><br>
 						<p>A pure swift, easy-to-use Fossil Fighters ROM-hacking tool.</p>
-						<a href="https://www.swift.org" class="swift language-label">Swift</a>
-						<a href="https://developer.apple.com/documentation/foundation" class="foundation language-label">Foundation</a>
+						<div class="repo-languages">
+							<a href="https://www.swift.org" class="swift language-label">Swift</a>
+							<a href="https://developer.apple.com/documentation/foundation" class="foundation language-label">Foundation</a>
+						</div>
 					</div>
 					<div class="repo">
 						<a class="repo-link" href="https://github.com/simonomi/Coding-Royale">
@@ -422,8 +442,10 @@
 							<p class="repo-title">Coding-Royale</p>
 						</a><br>
 						<p>A battle royale style coding game for java.</p>
-						<a href="https://www.python.org" class="python language-label">Python</a>
-						<a href="https://www.j ava.com" class="java language-label">Java</a>
+						<div class="repo-languages">
+							<a href="https://www.python.org" class="python language-label">Python</a>
+							<a href="https://www.j ava.com" class="java language-label">Java</a>
+						</div>
 					</div>
 					<div class="repo">
 						<a class="repo-link" href="https://github.com/simonomi/obsidian-separated-recurrence">
@@ -431,9 +453,11 @@
 							<p class="repo-title">obsidian-separated-recurrence</p>
 						</a><br>
 						<p>My custom implementation of spaced repetition in obsidian.</p>
-						<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
-						<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
-						<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
+						<div class="repo-languages">
+							<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
+							<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
+							<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
+						</div>
 					</div>
 					<div class="repo">
 						<a class="repo-link" href="https://github.com/simonomi/obsidian-markdown-pitch-accent">
@@ -441,9 +465,11 @@
 							<p class="repo-title">obsidian-markdown-pitch-accent</p>
 						</a><br>
 						<p>An obsidian plugin to render pitch accent in markdown.</p>
-						<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
-						<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
-						<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
+						<div class="repo-languages">
+							<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
+							<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
+							<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
+						</div>
 					</div>
 				</div>
 			</div>
