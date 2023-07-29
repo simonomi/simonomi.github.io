@@ -22,9 +22,6 @@
 				font-weight: normal;
 				margin-top: 0;
 			}
-			h3 {
-				font-weight: normal;
-			}
 			a {
 				color: deepskyblue;
 			}
@@ -156,11 +153,6 @@
 					languageDescription.append(language.description)
 					languageBlock.appendChild(languageDescription)
 					
-					const wordsHeader = document.createElement("h3")
-					const wordCount = language.words.length + language.new.length
-					wordsHeader.append(`words i know (${wordCount})`)
-					languageBlock.appendChild(wordsHeader)
-					
 					if (language.name == "日本語") {
 						const showFuriganaButton = document.createElement("button")
 						showFuriganaButton.innerText = "show furigana"
@@ -175,21 +167,33 @@
 						languageBlock.appendChild(hideFuriganaButton)
 					}
 					
-					const languageWords = document.createElement("p")
-					languageWords.append(language.words.join(", "))
-					languageBlock.appendChild(languageWords)
-					
-					parseFurigana(languageWords.firstChild)
-					
-					for (newWord of language.new) {
-						languageWords.append(", ")
+					for (note of language.notes) {
+						const noteHeader = document.createElement("h3")
+						noteHeader.className = "note-header"
+						noteHeader.append(note.name)
+						languageBlock.appendChild(noteHeader)
 						
-						const wordNode = document.createElement("span")
-						wordNode.className = "new"
-						wordNode.append(newWord)
-						languageWords.append(wordNode)
+						const noteWords = document.createElement("p")
+						noteWords.append(note.terms.join(", "))
+						languageBlock.appendChild(noteWords)
 						
-						parseFurigana(wordNode.firstChild)
+						parseFurigana(noteWords.firstChild)
+						
+						for (newWord of note.new) {
+							noteWords.append(", ")
+							
+							const wordNode = document.createElement("span")
+							wordNode.className = "new"
+							wordNode.append(newWord)
+							noteWords.append(wordNode)
+							
+							parseFurigana(wordNode.firstChild)
+						}
+						
+						if (note.terms.length == 0) {
+							noteWords.removeChild(noteWords.firstChild) // ""
+							noteWords.removeChild(noteWords.firstChild) // ", "
+						}
 					}
 					
 					parent.appendChild(languageBlock)
@@ -256,10 +260,10 @@
 			<div class="main block">
 				<h2>simon's languages</h2>
 				<p>
-				this is where i record my progress in learning various (non-programming) languages. the intention is to give other people an estimated level of my proficiency, as well as concrete information regarding what words i know. however, just because a word is listed doesn't necessarily mean that i <em>do</em> know it, just that i <em>should</em> know it.
+				this is where i record my progress in learning various (non-programming) languages. the intention is to give other people an estimated level of my proficiency, as well as concrete information regarding what words i know. however, just because a term is listed doesn't necessarily mean that i <em>do</em> know it, just that i <em>should</em> know it.
 				</p>
 				<p>
-				the lists of words are created using <a href="https://github.com/simonomi/languages/blob/main/database_generator.py">a script</a> that indexes the <a href="https://obsidian.md">obsidian</a> vaults i use (along with the <a href="https://github.com/st3v3nmw/obsidian-spaced-repetition">spaced repetition plugin</a>) to study languages. i only run this script occasionally, so words are typically added in large groups at a time. the latest group is highlighted in <span class="new">green</span>.
+				the lists of terms are created using <a href="https://github.com/simonomi/languages/blob/main/database_generator.py">a script</a> that indexes the <a href="https://obsidian.md">obsidian</a> vaults i use (along with the <a href="https://github.com/st3v3nmw/obsidian-spaced-repetition">spaced repetition plugin</a>) to study languages. i only run this script occasionally, so terms are typically added in large groups at a time. the newest terms are highlighted in <span class="new">green</span>.
 				</p>
 			</div>
 		</div>
