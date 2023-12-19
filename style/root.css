@@ -1,0 +1,223 @@
+.profile-link {
+	transition: 0.2s;
+	position: absolute;
+}
+.profile-link:hover { filter: brightness(85%); }
+
+#github-link {
+	top: 1em;
+	left: 2%;
+}
+#mastodon-link {
+	top: calc(2em + 32px);
+	left: 2%;
+}
+#linkedin-link {
+	top: calc(3em + 2 * 32px);
+	left: 2%;
+}
+#resume-link {
+	top: 1em;
+	right: 2%;
+}
+
+.things-i- {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(2, minmax(125px, 1fr));
+}
+
+#security-plus-image {
+	border-radius: 15px;
+}
+#ap-scholar-with-distinction-image {
+	border-radius: 7px;
+}
+#national-cyber-scholar-2022 {
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+#national-cyber-scholar-2022-image {
+	float: left;
+}
+#national-cyber-scholar-2022-text {
+	padding-left: 10px;
+	line-height: 70px;
+}
+
+.repos {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(2, minmax(125px, 1fr));
+}
+@media screen and (max-width: 525px) {
+	.repos { grid-template-columns: minmax(265px, 1fr); }
+}
+.repo {
+	border: solid 1px grey;
+	border-radius: 7px;
+	text-align: left;
+	padding: 10px;
+}
+.repo-link { text-decoration: none; }
+.repo-title {
+	display: inline;
+	vertical-align: middle;
+}
+.github-logo {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+@media screen and (min-width: 1000px) {
+	.main {
+		grid-row: 1;
+		grid-column: 1 / 3;
+	}
+	.about-me {
+		grid-row: 1 / 3;
+		grid-column: 3;
+	}
+	.awards {
+		grid-row: 3;
+		grid-column: 3;
+	}
+	.projects {
+		grid-row: 2 / 4;
+		grid-column: 1 / 3;
+	}
+	.technical-skills {
+		grid-row: 4 / 6;
+		grid-column: 1;
+	}
+	.certifications {
+		grid-row: 4;
+		grid-column: 2 / 4;
+	}
+	.education {
+		grid-row: 5;
+		grid-column: 2 / 4;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.main {
+		grid-row: 1;
+		grid-column: 1 / 3;
+	}
+	.about-me {
+		grid-row: 2;
+		grid-column: 1;
+	}
+	.awards {
+		grid-row: 2;
+		grid-column: 2;
+	}
+	.projects {
+		grid-row: 3;
+		grid-column: 1 / 3;
+	}
+	.technical-skills {
+		grid-row: 4 / 6;
+		grid-column: 1;
+	}
+	.certifications {
+		grid-row: 4;
+		grid-column: 2;
+	}
+	.education {
+		grid-row: 5;
+		grid-column: 2;
+	}
+}
+@media screen and (max-width: 600px) {
+	.main {
+		grid-row: 1;
+		grid-column: 1;
+	}
+	.about-me {
+		grid-row: 2;
+		grid-column: 1;
+	}
+	.awards {
+		grid-row: 3;
+		grid-column: 1;
+	}
+	.projects {
+		grid-row: 4;
+		grid-column: 1;
+	}
+	.technical-skills {
+		grid-row: 5;
+		grid-column: 1;
+	}
+	.certifications {
+		grid-row: 6;
+		grid-column: 1;
+	}
+	.education {
+		grid-row: 7;
+		grid-column: 1;
+	}
+}
+
+.ARM-assembly { color: #0091BD; }
+.audacity { color: #FF6E00; }
+.autohotkey { color: #3F7725; }
+.bash { color: #3C474A; }
+.bbedit { color: #7970C0; }
+.blender { color: #FB6D00; }
+.cpp { color: rgb(0, 68, 136); }
+.cmd { color: #FFFFFF; }
+.css { color: #0067FA; }
+.discord { color: #5865F2; }
+.docs { color: #4285F4; }
+.duckyscript { color: #ffED00; }
+.excel { color: rgb(122, 255, 182); }
+.ffmpeg { color: #1CA245; }
+.foundation { color: #6495ED; }
+.gdscript { color: #478CBF; }
+.genius { color: #FFFF64; }
+.gimp { color: #605B51; }
+.git { color: #FF3F1E; }
+.glsl { color: #478CBF; }
+.godot { color: #478CBF; }
+.haskell { color: #9E358F; }
+.heroku { color: #7673C0; }
+.html { color: #F06529; }
+.java { color: #ED8B00; }
+.javascript { color: #F7DF1E; }
+.latex { color: #008281}
+.linux { color: #FEBC00; }
+.lua { color: #0000FF; }
+.macos { color: #00D2FF; }
+.metal { color: #D74E57; }
+.numbeRS { color: #00F12D; }
+.obsidian { color: #7F6DF2; }
+.paint-net { color: #8FB6F6; }
+.pages { color: #F1AB47; }
+.postgres { color: rgb(105, 158, 202); }
+.powerpoint { color: rgb(244, 102, 65); }
+.python { color: #FFDE57; }
+.rainmeter { color: #007BFF; }
+.regex { color: #7EC1F2; }
+.rest { color: #7180AF; }
+.rust { color: #F46623; }
+.selenium { color: #7BC769; }
+.sheets { color: #0F9D58; }
+.shortcuts { color: #FF57D3; }
+.slides { color: #F4B400; }
+.spotify { color: #1DB954; }
+.swift { color: #F05138; }
+.swiftui { color: #00DAFF; }
+.tkinter { color: #127AB3; }
+.trakt { color: #DA3B32}
+.typescript { color: #358EF1; }
+.vapor { color: #E040FB; }
+.visual-basic { color: #00619C; }
+.vlc { color: #F48B00; }
+.wget { color: #00FF00; }
+.windows { color: #00B1F4; }
+.wireshark { color: #0064a7; }
+.word { color: rgb(91, 174, 251); }
+.xcode { color: #00B9F5; }
