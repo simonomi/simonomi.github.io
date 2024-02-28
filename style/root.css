@@ -1,9 +1,3 @@
-.profile-link {
-	transition: 0.2s;
-	position: absolute;
-}
-.profile-link:hover { filter: brightness(85%); }
-
 #github-link {
 	top: 1em;
 	left: 2%;

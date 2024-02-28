@@ -3,6 +3,7 @@
 	--foreground-color: #eee;
 	--background-color-primary: #161a1c;
 	--background-color-secondary: #242e33;
+	--background-color-code: #303030;
 	--button-color: #555;
 	--button-glow-color: #597180;
 	--new-color: #50C878;
@@ -21,14 +22,17 @@ html::before {
 body {
 	background-color: var(--background-color-secondary);
 	color: var(--foreground-color);
-	font-family: system-ui, sans-serif;
+	font-family: ui-rounded, system-ui, sans-serif;
 	font-size: large;
 	margin: 0;
 }
 
 h2 { margin-top: 0; }
 
-.title { font-size: xx-large; }
+.title {
+	font-size: xx-large;
+	margin-bottom: 0;
+}
 
 a { color: deepskyblue; }
 
@@ -48,6 +52,46 @@ button {
 button:hover { box-shadow: 0 0 10px var(--button-glow-color); }
 button:active { background-color: var(--background-color-secondary); }
 
+pre {
+	background-color: var(--background-color-code);
+	padding: .5em;
+	border-radius: .5em;
+	tab-size: 4;
+}
+
+.inline-code {
+	display: inline-block;
+	background-color: var(--background-color-code);
+	padding: 0 .25em;
+	border-radius: .25em;
+}
+
+.highlighted {
+	border: solid deepskyblue 1.5px;
+	border-radius: .25em;
+	background-color: #202020;
+	padding: 0 .1em;
+	display: inline-block;
+}
+
+blockquote {
+	background-color: black;
+	padding: 1em;
+	border-left: solid deepskyblue .25em;
+	margin: 0;
+}
+
+sup {
+	vertical-align: baseline;
+	position: relative;
+	top: -.4em;
+	font-size: 75%;
+}
+
+sup > a {
+	text-decoration: none;
+}
+
 .inline { display: inline; }
 
 .hidden { display: none; }
@@ -55,14 +99,13 @@ button:active { background-color: var(--background-color-secondary); }
 .secret-link {
 	color: currentColor;
 	text-decoration: none;
-	cursor: text;
 }
 
 #parent {
 	background-color: var(--background-color-secondary);
 	display: grid;
 	gap: 10px;
-	padding: 3% 7% 3%;
+	padding: 3% 7%;
 }
 
 .block {
@@ -74,9 +117,15 @@ button:active { background-color: var(--background-color-secondary); }
 	box-shadow: 0 0 15px var(--background-color-primary);
 }
 
+.link-icon {
+	transition: 0.2s;
+	position: absolute;
+}
+.link-icon:hover { filter: brightness(85%); }
+
 .language-label {
 	display: inline-block;
-	padding: 5px 10px 5px;
+	padding: 5px 10px;
 	border: solid 1px;
 	border-radius: 10px;
 	text-decoration: none;
@@ -84,6 +133,8 @@ button:active { background-color: var(--background-color-secondary); }
 }
 
 footer {
+	position: sticky;
+	top: 50%;
 	background-color: var(--background-color-primary);
 	text-align: center;
 	padding: 5px;
