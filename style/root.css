@@ -38,6 +38,10 @@
 	margin-left: auto;
 	margin-right: auto;
 }
+#national-cyber-scholar-2022-link {
+	display: flex;
+	align-items: center;
+}
 #national-cyber-scholar-2022-image {
 	float: left;
 }
