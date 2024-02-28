@@ -92,6 +92,10 @@ sup > a {
 	text-decoration: none;
 }
 
+.footnote-return-link {
+	text-decoration: none;
+}
+
 .inline { display: inline; }
 
 .hidden { display: none; }
