@@ -107,15 +107,33 @@ function parseFurigana(element) {
 }
 
 function hideFurigana() {
-	const root = document.styleSheets[0].cssRules[0].style;
-	root.setProperty("--furigana-display", "none");
-	root.setProperty("--furigana-show-button", "initial");
-	root.setProperty("--furigana-hide-button", "none");
+	for (const sheet of document.styleSheets) {
+		for (const rule of sheet.cssRules) {
+			if (rule.selectorText === ":root") {
+				const root = rule.style;
+				
+				if (root.getPropertyValue("--furigana-display") !== "") {
+					root.setProperty("--furigana-display", "none");
+					root.setProperty("--furigana-show-button", "initial");
+					root.setProperty("--furigana-hide-button", "none");
+				}
+			}
+		}
+	}
 }
 
 function showFurigana() {
-	const root = document.styleSheets[0].cssRules[0].style;
-	root.setProperty("--furigana-display", "block");
-	root.setProperty("--furigana-show-button", "none");
-	root.setProperty("--furigana-hide-button", "initial");
+	for (const sheet of document.styleSheets) {
+		for (const rule of sheet.cssRules) {
+			if (rule.selectorText === ":root") {
+				const root = rule.style;
+				
+				if (root.getPropertyValue("--furigana-display") !== "") {
+					root.setProperty("--furigana-display", "revert");
+					root.setProperty("--furigana-show-button", "none");
+					root.setProperty("--furigana-hide-button", "initial");
+				}
+			}
+		}
+	}
 }
