@@ -1,9 +1,8 @@
 :root {
-/* 	color-scheme: light dark; */
-	color-scheme: only dark;
+	color-scheme: light dark;
 	--foreground-color: light-dark(black, #eee);
 	--background-color-primary: light-dark(white, #161a1c);
-	--background-color-secondary: light-dark(grey, #242e33);
+	--background-color-secondary: light-dark(lightgrey, #242e33);
 	--background-color-code: light-dark(grey, #303030);
 	
 	--button-color: light-dark(#aaa, #555);
@@ -19,6 +18,8 @@
 	--icon-link-spacing: 1em;
 	
 	--block-shadow-radius: light-dark(0, 15px);
+	--language-label-shadow-radius: light-dark(0, 5px);
+	--language-label-shadow-color: grey;
 }
 
 /* some dummy code so noir can tell there's a dark mode */
@@ -158,6 +159,14 @@ sup > a {
 	margin-top: 0;
 }
 
+.block > h1:first-of-type {
+	margin-top: 0;
+}
+
+.block > h2:first-of-type {
+	margin-top: 0;
+}
+
 .block > *:last-child {
 	margin-bottom: 0;
 }
@@ -180,10 +189,10 @@ sup > a {
 }
 .icon-link img:hover { filter: opacity(85%); }
 
-/* @media (prefers-color-scheme: light) { */
-/* 	.icon-link img { filter: invert(); } */
-/* 	.icon-link img:hover { filter: opacity(75%) invert(); } */
-/* } */
+@media (prefers-color-scheme: light) {
+	.icon-link img { filter: invert(); }
+	.icon-link img:hover { filter: opacity(75%) invert(); }
+}
 
 .icon-link.left {
 	float: left;
@@ -204,6 +213,7 @@ sup > a {
 	border-radius: 10px;
 	text-decoration: none;
 	margin: 2px;
+	box-shadow: 0 0 var(--language-label-shadow-radius) var(--language-label-shadow-color);
 }
 
 footer {

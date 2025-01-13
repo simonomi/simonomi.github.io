@@ -82,9 +82,9 @@
 	margin-right: 0.5rem;
 }
 
-/* @media (prefers-color-scheme: light) { */
-/* 	.github-logo { filter: invert(); } */
-/* } */
+@media (prefers-color-scheme: light) {
+	.github-logo { filter: invert(); }
+}
 
 /* MARK: technical skills */
 
