@@ -3,7 +3,7 @@
 	--foreground-color: light-dark(black, #eee);
 	--secondary-color: light-dark(grey, #bbb);
 	
-	--background-color-primary: light-dark(white, #161a1c);
+	--background-color: light-dark(white, #161a1c);
 	--background-color-code: light-dark(grey, #303030);
 	--background-color-terminal: #282a36;
 	
@@ -36,7 +36,7 @@ html {
 }
 
 body {
-	background-color: var(--background-color-primary);
+	background-color: var(--background-color);
 	color: var(--foreground-color);
 	font-family: ui-rounded, system-ui, sans-serif;
 	margin: auto;
