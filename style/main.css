@@ -1,15 +1,20 @@
 :root {
 	color-scheme: light dark;
 	--foreground-color: light-dark(black, #eee);
+	--secondary-color: light-dark(grey, #bbb);
+	
 	--background-color-primary: light-dark(white, #161a1c);
-	--background-color-secondary: light-dark(lightgrey, #242e33);
 	--background-color-code: light-dark(grey, #303030);
+	--background-color-terminal: #282a36;
 	
 	--button-color: light-dark(#aaa, #555);
-	--button-glow-color: light-dark(none, #597180);
-	--link-color: light-dark(deepskyblue, deepskyblue);
+	--button-pressed-color: light-dark(lightgrey, #242e33);
+	
+	--link-color: light-dark(dodgerblue, deepskyblue);
+	
 	--highlight-border-color: light-dark(deepskyblue, deepskyblue);
 	--highlight-background-color: light-dark(grey, #202020);
+	
 	--quote-border-color: light-dark(deepskyblue, deepskyblue);
 	--quote-background-color: light-dark(grey, black);
 	
@@ -17,9 +22,8 @@
 	--icon-link-height: var(--icon-link-width);
 	--icon-link-spacing: 1em;
 	
-	--block-shadow-radius: light-dark(0, 15px);
-	--language-label-shadow-radius: light-dark(0, 5px);
-	--language-label-shadow-color: grey;
+	--language-label-shadow-radius: 3px;
+	--language-label-shadow-color: lightgrey;
 }
 
 /* some dummy code so noir can tell there's a dark mode */
@@ -27,26 +31,30 @@
 	:root { --never-used: 0; }
 }
 
-html::before {
-	content: "";
-	background-color: var(--background-color-primary);
-	width: 100%;
-	height: 100%;
-	top: 50%;
-	position: fixed;
-	z-index: -1;
-}
-
 html {
 	scroll-behavior: smooth;
 }
 
 body {
-	background-color: var(--background-color-secondary);
+	background-color: var(--background-color-primary);
 	color: var(--foreground-color);
 	font-family: ui-rounded, system-ui, sans-serif;
-	font-size: large;
-	margin: 0;
+	margin: auto;
+	max-width: min(100vw - 2em, 70ch);
+}
+
+hgroup {
+	margin-top: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+hgroup > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.secondary {
+	color: var(--secondary-color);
 }
 
 a { color: var(--link-color); }
@@ -71,8 +79,10 @@ button {
 	border-style: none;
 	transition: box-shadow 0.2s;
 }
-button:hover { box-shadow: 0 0 10px var(--button-glow-color); }
-button:active { background-color: var(--background-color-secondary); }
+
+button:active {
+	background-color: var(--button-pressed-color);
+}
 
 pre {
 	background-color: var(--background-color-code);
@@ -82,7 +92,11 @@ pre {
 	overflow-x: scroll;
 }
 
-code {
+pre:has(samp) {
+	background-color: var(--background-color-terminal);
+}
+
+samp, code {
 	font-family: ui-monospace, monospace;
 }
 
@@ -144,71 +158,34 @@ sup > a {
 	text-decoration: none;
 }
 
-#parent {
-	background-color: var(--background-color-secondary);
-	display: grid;
-	gap: 10px;
-	padding: 3% 7%;
-}
-
-.block {
-	background-color: var(--background-color-primary);
-	text-align: center;
-	border-radius: 25px;
-	padding: 1em;
-	position: relative;
-	box-shadow: 0 0 var(--block-shadow-radius) var(--background-color-primary);
-}
-
-.block > *:first-child {
-	margin-top: 0;
-}
-
-.block > h1:first-of-type {
-	margin-top: 0;
-}
-
-.block > h2:first-of-type {
-	margin-top: 0;
-}
-
-.block > *:last-child {
-	margin-bottom: 0;
-}
-
-.icon-link {
+.icon-links {
 	display: flex;
-	flex-direction: column;
 	gap: var(--icon-link-spacing);
+	float: right;
+	margin-left: var(--icon-link-spacing);
 }
 
-.icon-link a {
+.icon-links a {
 	text-decoration: none;
 }
 
-.icon-link img {
+.icon-links img {
 	width: var(--icon-link-width);
 	height: var(--icon-link-height);
+	margin-top: 0.25em;
 	object-fit: contain;
-	transition: 0.2s;
+	transition-property: opacity;
+	transition-duration: 0.2s;
 }
-.icon-link img:hover { filter: opacity(85%); }
 
+.icon-links img:hover {
+	filter: opacity(85%);
+}
+
+/* TODO: use multiple sources instead? */
 @media (prefers-color-scheme: light) {
-	.icon-link img { filter: invert(); }
-	.icon-link img:hover { filter: opacity(75%) invert(); }
-}
-
-.icon-link.left {
-	float: left;
-	clear: left;
-	margin-right: var(--icon-link-spacing);
-}
-
-.icon-link.right {
-	float: right;
-	clear: right;
-	margin-left: var(--icon-link-spacing);
+	.icon-links img { filter: invert(); }
+	.icon-links img:hover { filter: opacity(75%) invert(); }
 }
 
 .language-label {
@@ -218,15 +195,16 @@ sup > a {
 	border-radius: 10px;
 	text-decoration: none;
 	margin: 2px;
-	box-shadow: 0 0 var(--language-label-shadow-radius) var(--language-label-shadow-color);
+}
+
+@media (prefers-color-scheme: light) {
+	.language-label {
+		box-shadow: 0 0 var(--language-label-shadow-radius) var(--language-label-shadow-color);
+	}
 }
 
 footer {
-	position: sticky;
-	top: 50%;
-	background-color: var(--background-color-primary);
 	text-align: center;
-	padding: 5px;
-	margin: 0;
-	box-shadow: 0 0 var(--block-shadow-radius) var(--background-color-primary);
+	margin: 2rem;
 }
+

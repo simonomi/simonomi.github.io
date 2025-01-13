@@ -6,7 +6,6 @@
 
 #spinner-box {
 	background-color: var(--background-color-secondary);
-	padding-bottom: 3%;
 }
 #spinner {
 	border: 7px solid var(--button-color);

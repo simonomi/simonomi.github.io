@@ -3,197 +3,190 @@
 		<title>alice pelleirn</title>
 		<link rel="icon" href="logo circle.png">
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Hey! I'm alice, a person who occasionally does things online.">
 		
 		<link rel="stylesheet" href="./style/main.css">
 		<link rel="stylesheet" href="./style/root.css">
 	</head>
 	<body>
-		<div id="parent">
-			<div class="main block">
-				<div class="icon-link left">
-					<a href="https://github.com/simonomi" title="github">
-						<img src="github.svg">
-					</a>
-					<a rel="me" href="https://mstdn.social/@simonomi" title="mastodon">
-						<img src="mastodon.svg">
-					</a>
-					<a href="https://www.linkedin.com/in/simonomi" title="linkedIn">
-						<img src="linkedin.svg">
-					</a>
-				</div>
-				
-				<div class="icon-link right">
-					<a href="/resume" title="resume">
-						<img src="resume.svg">
-					</a>
-				</div>
-				
-				<div>
-					<h1 class="inline">alice pellerin </h1>
-					<p class="inline">she/they</p>
-				</div>
-				
-<!-- 				<li><a href="/languages">Language learning</a></li> -->
-<!-- 				<li><a class="secret-link" href="https://steamcommunity.com/id/simonomi">Video games</a></li> -->
-				
-				<p>hey! i'm alice, a person who occasionally does things online. i enjoy anime, horror movies, skiing, <a href="/languages">language learning</a>, and <a class="secret-link" href="https://steamcommunity.com/id/simonomi">video games</a>. i've been an avid programmer for as long as i can remember, constantly working on various projects.</p>
-				<p>i'm interested in application development, programming languages, compilers, system frameworks, embedded systems, GPU acceleration, and high‐performance environments.</p>
-				<p>currently, i've been using <a href="https://www.swift.org" class="swift">Swift</a> and <a href="https://developer.apple.com/xcode/swiftui/" class="swiftui">SwiftUI</a> to create iOS apps, and i was recently an intern on the SwiftUI team at <a href="https://apple.com">Apple</a>.</p>
+		<div>
+			<div class="icon-links">
+				<!-- TODO: add person to resume icon -->
+				<a href="/resume" title="resume">
+					<img src="resume.svg">
+				</a>
+				<a href="https://github.com/simonomi" title="github">
+					<img src="github.svg">
+				</a>
+				<a rel="me" href="https://mstdn.social/@simonomi" title="mastodon">
+					<img src="mastodon.svg">
+				</a>
+				<a href="https://www.linkedin.com/in/simonomi" title="linkedIn">
+					<img src="linkedin.svg">
+				</a>
 			</div>
-			<div class="projects block">
-				<h2>Projects</h2>
-				<div class="repos">
-					<div class="repo">
-						<a class="repo-link">
-							<img class="mage-logo" src="mage.svg">
-							<p>mage (unreleased)</p>
-						</a>
-						<p>a trakt client I've been working on in various forms for years</p>
-						<div class="repo-languages">
-							<a href="https://www.swift.org" class="swift language-label">Swift</a>
-							<a href="https://developer.apple.com/xcode/swiftui" class="swiftui language-label">SwiftUI</a>
-							<a href="https://trakt.docs.apiary.io/" class="trakt language-label">Trakt</a>
-						</div>
-					</div>
-					<div class="repo">
-						<a class="repo-link" href="https://github.com/simonomi/MetalRayTracing">
-							<img class="github-logo" src="github.svg">
-							<p>Metal&ZeroWidthSpace;Ray&ZeroWidthSpace;Tracing</p>
-						</a>
-						<p>a custom ray tracing engine written from scratch using Metal</p>
-						<div class="repo-languages">
-							<a href="https://www.swift.org" class="swift language-label">Swift</a>
-							<a href="https://developer.apple.com/metal" class="metal language-label">Metal</a>
-						</div>
-					</div>
-					<div class="repo">
-						<a class="repo-link" href="https://github.com/simonomi/carbonizer">
-							<img class="github-logo" src="github.svg">
-							<p>carbonizer</p>
-						</a>
-						<p>a pure swift, easy-to-use Fossil Fighters ROM-hacking tool</p>
-						<div class="repo-languages">
-							<a href="https://www.swift.org" class="swift language-label">Swift</a>
-							<a href="https://developer.apple.com/documentation/foundation" class="foundation language-label">Foundation</a>
-						</div>
-					</div>
-					<div class="repo">
-						<a class="repo-link" href="https://github.com/simonomi/ff1-binary-formats">
-							<img class="github-logo" src="github.svg">
-							<p>ff1-binary-formats</p>
-						</a>
-						<p>a catalog of format definitions for the binary files used in Fossil Fighters</p>
-						<div class="repo-languages">
-							<a href="https://www.python.org" class="python language-label">Python</a>
-							<a href="https://www.markdownguide.org" class="markdown language-label">Markdown</a>
-						</div>
-					</div>
-					<div class="repo">
-						<a class="repo-link" href="https://github.com/simonomi/obsidian-separated-recurrence">
-							<img class="github-logo" src="github.svg">
-							<p>obsidian-separated-recurrence</p>
-						</a>
-						<p>my custom implementation of spaced repetition in obsidian</p>
-						<div class="repo-languages">
-							<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
-							<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
-							<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
-						</div>
-					</div>
-					<div class="repo">
-						<a class="repo-link" href="https://github.com/simonomi/Coding-Royale">
-							<img class="github-logo" src="github.svg">
-							<p>Coding-Royale</p>
-						</a>
-						<p>a battle royale style coding game for java. it's not very fun</p>
-						<div class="repo-languages">
-							<a href="https://www.python.org" class="python language-label">Python</a>
-							<a href="https://www.j ava.com" class="java language-label">Java</a>
-						</div>
+			
+			<hgroup>
+				<h1>alice pellerin </h1>
+				<p class="secondary">she/they</p>
+			</hgroup>
+			
+			<p>hey! i'm alice, a person who occasionally does things online. i enjoy anime, horror movies, skiing, <a href="/languages">language learning</a>, and <a class="secret-link" href="https://steamcommunity.com/id/simonomi">video games</a>. i've been an avid programmer for as long as i can remember, constantly working on various projects.</p>
+			<p>i'm interested in application development, programming languages, compilers, system frameworks, embedded systems, GPU acceleration, and high‐performance environments.</p>
+			<p>currently, i've been using <a href="https://www.swift.org" class="swift">Swift</a> and <a href="https://developer.apple.com/xcode/swiftui/" class="swiftui">SwiftUI</a> to create iOS apps, and i was recently an intern on the SwiftUI team at <a href="https://apple.com">Apple</a>.</p>
+		</div>
+		<div>
+			<h2>projects</h2>
+			<div class="repos">
+				<div class="repo">
+					<a class="repo-link" href="https://github.com/simonomi/carbonizer">
+						<img class="github-logo" src="github.svg">
+						<p>carbonizer</p>
+					</a>
+					<p>a pure swift, easy-to-use Fossil Fighters ROM-hacking tool</p>
+					<div class="repo-languages">
+						<a href="https://www.swift.org" class="swift language-label">Swift</a>
+						<a href="https://developer.apple.com/documentation/foundation" class="foundation language-label">Foundation</a>
 					</div>
 				</div>
-			</div>
-			<div class="technical-skills block">
-				<h2>technical skills</h2>
-				<h3>languages</h3>
-				<a href="https://www.swift.org" class="swift language-label">Swift</a> - 3 years (~50,000 lines)<br> <!-- since may 2021 -->
-				<a href="https://www.python.org" class="python language-label">Python</a> - 8 years (~15,000 lines)<br> <!-- since august 2016 -->
-				<a href="https://www.java.com" class="java language-label">Java</a> - 6 years (~10,000 lines)<br> <!-- since august 2018 -->
-				<a href="https://www.rust-lang.org" class="rust language-label">Rust</a> - 2 year (~1,500 lines)<br> <!-- since september 2022 -->
-				<a href="https://developer.arm.com/documentation/107829/0200/Overview" class="ARM-assembly language-label">ARM assembly</a>
-				<a href="https://www.autohotkey.com" class="autohotkey language-label">AutoHotkey</a>
-				<a href="https://www.gnu.org/software/bash" class="bash language-label">Bash</a>
-				<a href="https://www.open-std.org/jtc1/sc22/wg14" class="c language-label">C</a>
-				<a href="https://cplusplus.com" class="cpp language-label">C++</a>
-				<a href="https://wikipedia.org/wiki/CSS" class="css language-label">CSS</a>
-				<a href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript" class="duckyscript language-label">Ducky Script</a>
-				<a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html" class="gdscript language-label">GDScript</a>
-				<a href="https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/shading_language.html" class="glsl language-label">GLSL</a>
-				<a href="https://www.haskell.org" class="haskell language-label">Haskell</a>
-				<a href="https://wikipedia.org/wiki/HTML" class="html language-label">HTML</a>
-				<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
-				<a href="https://www.lua.org" class="lua language-label">Lua</a>
-				<a href="https://www.latex-project.org" class="latex language-label">LaTeX</a>
-				<a href="https://en.wikipedia.org/wiki/SQL" class="sql language-label">SQL</a>
-				<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
-				<a href="https://docs.microsoft.com/dotnet/visual-basic/" class="visual-basic language-label">Visual Basic</a>
-				
-				<h3>APIs/&ZeroWidthSpace;frameworks/&ZeroWidthSpace;databases</h3>
-				<a href="https://discordpy.readthedocs.io" class="discord language-label">discord.py</a>
-				<a href="https://docs.genius.com" class="genius language-label">Genius</a>
-				<a href="https://www.heroku.com" class="heroku language-label">Heroku</a>
-				<a href="https://developer.apple.com/metal" class="metal language-label">Metal</a>
-				<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
-				<a href="https://www.postgresql.org" class="postgres language-label">Postgres</a>
-				<a href="https://restfulapi.net" class="rest language-label">REST</a>
-				<a href="https://www.selenium.dev" class="selenium language-label">Selenium</a>
-				<a href="https://docs.rs/serenity/" class="rust language-label">serenity</a>
-				<a href="https://developer.spotify.com/" class="spotify language-label">Spotify</a>
-				<a href="https://developer.apple.com/xcode/swiftui" class="swiftui language-label">SwiftUI</a>
-				<a href="https://github.com/apple/swift-syntax" class="swiftsyntax language-label">SwiftSyntax</a>
-				<a href="https://docs.python.org/3/library/tkinter.html" class="tkinter language-label">tkinter</a>
-				<a href="https://trakt.docs.apiary.io" class="trakt language-label">Trakt</a>
-				<a href="https://vapor.codes" class="vapor language-label">Vapor</a>
-				<a href="https://www.videolan.org/vlc" class="vlc language-label">VLC</a>
-				
-				<h3>tools/&ZeroWidthSpace;environments</h3>
-				<a href="https://www.microsoft.com/microsoft-365/word" class="word language-label">Word</a>
-				<a href="https://www.microsoft.com/microsoft-365/powerpoint" class="powerpoint language-label">Powerpoint</a>
-				<a href="https://www.microsoft.com/microsoft-365/excel" class="excel language-label">Excel</a>
-				<br>
-				<a href="https://www.google.com/docs/about" class="docs language-label">Google Docs</a>
-				<a href="https://www.google.com/slides/about" class="slides language-label">Google Slides</a>
-				<a href="https://www.google.com/sheets/about" class="sheets language-label">Google Sheets</a>
-				<br>
-				<a href="https://www.apple.com/pages" class="pages language-label">Pages</a>
-				<!-- TODO: Keynote -->
-				<a href="https://www.apple.com/keynote" class="keynote language-label">Keynote</a>
-				<a href="https://www.apple.com/numbers" class="numbers language-label">Numbers</a>
-				<br>
-				<br>
-				<a href="https://www.audacityteam.org" class="audacity language-label">Audacity</a>
-				<a href="https://www.blender.org" class="blender language-label">Blender</a>
-				<a href="https://ffmpeg.org" class="ffmpeg language-label">FFmpeg</a>
-				<a href="https://www.gimp.org" class="gimp language-label">GIMP</a>
-				<a href="https://godotengine.org" class="godot language-label">Godot</a>
-				<a href="https://git-scm.com" class="git language-label">git</a>
-				<a href="https://www.kernel.org" class="linux language-label">Linux</a>
-				<a href="https://www.apple.com/macos" class="macos language-label">macOS</a>
-				<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
-				<a href="https://www.getpaint.net" class="paint-net language-label">paint.net</a>
-				<a href="https://en.wikipedia.org/wiki/Regular_expression" class="regex language-label">Regex</a>
-				<a href="https://support.apple.com/guide/shortcuts/welcome" class="shortcuts language-label">Shortcuts</a>
-				<a href="https://www.videolan.org/vlc" class="vlc language-label">VLC</a>
-				<a href="https://www.gnu.org/software/wget" class="wget language-label">Wget</a>
-				<a href="https://www.wireshark.org" class="wireshark language-label">Wireshark</a>
-				<a href="https://www.microsoft.com/windows" class="windows language-label">Windows</a>
-				<a href="https://developer.apple.com/xcode" class="xcode language-label">Xcode</a>
+				<div class="repo">
+					<a class="repo-link" href="https://github.com/simonomi/MetalRayTracing">
+						<img class="github-logo" src="github.svg">
+						<p>Metal&ZeroWidthSpace;Ray&ZeroWidthSpace;Tracing</p>
+					</a>
+					<p>a custom ray tracing engine written from scratch using Metal</p>
+					<div class="repo-languages">
+						<a href="https://www.swift.org" class="swift language-label">Swift</a>
+						<a href="https://developer.apple.com/metal" class="metal language-label">Metal</a>
+					</div>
+				</div>
+				<div class="repo">
+					<a class="repo-link">
+						<img class="mage-logo" src="mage.svg">
+						<p>mage (unreleased)</p>
+					</a>
+					<p>a trakt client I've been working on in various forms for years</p>
+					<div class="repo-languages">
+						<a href="https://www.swift.org" class="swift language-label">Swift</a>
+						<a href="https://developer.apple.com/xcode/swiftui" class="swiftui language-label">SwiftUI</a>
+						<a href="https://trakt.docs.apiary.io/" class="trakt language-label">Trakt</a>
+					</div>
+				</div>
+				<div class="repo">
+					<a class="repo-link" href="https://github.com/simonomi/ff1-binary-formats">
+						<img class="github-logo" src="github.svg">
+						<p>ff1-binary-formats</p>
+					</a>
+					<p>a catalog of format definitions for the binary files used in Fossil Fighters</p>
+					<div class="repo-languages">
+						<a href="https://www.python.org" class="python language-label">Python</a>
+						<a href="https://www.markdownguide.org" class="markdown language-label">Markdown</a>
+					</div>
+				</div>
+				<div class="repo">
+					<a class="repo-link" href="https://github.com/simonomi/obsidian-separated-recurrence">
+						<img class="github-logo" src="github.svg">
+						<p>obsidian-separated-recurrence</p>
+					</a>
+					<p>my custom implementation of spaced repetition in obsidian</p>
+					<div class="repo-languages">
+						<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
+						<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
+						<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
+					</div>
+				</div>
+				<div class="repo">
+					<a class="repo-link" href="https://github.com/simonomi/Coding-Royale">
+						<img class="github-logo" src="github.svg">
+						<p>Coding-Royale</p>
+					</a>
+					<p>a battle royale style coding game for java. it's not very fun</p>
+					<div class="repo-languages">
+						<a href="https://www.python.org" class="python language-label">Python</a>
+						<a href="https://www.j ava.com" class="java language-label">Java</a>
+					</div>
+				</div>
 			</div>
 		</div>
+		<div>
+			<h2>technical skills</h2>
+			<h3>languages</h3>
+			<a href="https://www.swift.org" class="swift language-label">Swift</a> - 4 years (~50,000 lines)<br> <!-- since may 2021 -->
+			<a href="https://www.python.org" class="python language-label">Python</a> - 8 years (~15,000 lines)<br> <!-- since august 2016 -->
+			<a href="https://www.java.com" class="java language-label">Java</a> - 6 years (~10,000 lines)<br> <!-- since august 2018 -->
+			<a href="https://www.rust-lang.org" class="rust language-label">Rust</a> - 2 year (~1,500 lines)<br> <!-- since september 2022 -->
+			<a href="https://developer.arm.com/documentation/107829/0200/Overview" class="ARM-assembly language-label">ARM assembly</a>
+			<a href="https://www.autohotkey.com" class="autohotkey language-label">AutoHotkey</a>
+			<a href="https://www.gnu.org/software/bash" class="bash language-label">Bash</a>
+			<a href="https://www.open-std.org/jtc1/sc22/wg14" class="c language-label">C</a>
+			<a href="https://cplusplus.com" class="cpp language-label">C++</a>
+			<a href="https://wikipedia.org/wiki/CSS" class="css language-label">CSS</a>
+			<a href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript" class="duckyscript language-label">Ducky Script</a>
+			<a href="https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_basics.html" class="gdscript language-label">GDScript</a>
+			<a href="https://docs.godotengine.org/en/stable/tutorials/shaders/shader_reference/shading_language.html" class="glsl language-label">GLSL</a>
+			<a href="https://www.haskell.org" class="haskell language-label">Haskell</a>
+			<a href="https://wikipedia.org/wiki/HTML" class="html language-label">HTML</a>
+			<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
+			<a href="https://www.lua.org" class="lua language-label">Lua</a>
+			<a href="https://www.latex-project.org" class="latex language-label">LaTeX</a>
+			<a href="https://en.wikipedia.org/wiki/SQL" class="sql language-label">SQL</a>
+			<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
+			<a href="https://docs.microsoft.com/dotnet/visual-basic/" class="visual-basic language-label">Visual Basic</a>
+
+			<h3>APIs/&ZeroWidthSpace;frameworks/&ZeroWidthSpace;databases</h3>
+			<a href="https://discordpy.readthedocs.io" class="discord language-label">discord.py</a>
+			<a href="https://docs.genius.com" class="genius language-label">Genius</a>
+			<a href="https://www.heroku.com" class="heroku language-label">Heroku</a>
+			<a href="https://developer.apple.com/metal" class="metal language-label">Metal</a>
+			<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
+			<a href="https://www.postgresql.org" class="postgres language-label">Postgres</a>
+			<a href="https://restfulapi.net" class="rest language-label">REST</a>
+			<a href="https://www.selenium.dev" class="selenium language-label">Selenium</a>
+			<a href="https://docs.rs/serenity/" class="rust language-label">serenity</a>
+			<a href="https://developer.spotify.com/" class="spotify language-label">Spotify</a>
+			<a href="https://developer.apple.com/xcode/swiftui" class="swiftui language-label">SwiftUI</a>
+			<a href="https://github.com/apple/swift-syntax" class="swiftsyntax language-label">SwiftSyntax</a>
+			<a href="https://docs.python.org/3/library/tkinter.html" class="tkinter language-label">tkinter</a>
+			<a href="https://trakt.docs.apiary.io" class="trakt language-label">Trakt</a>
+			<a href="https://vapor.codes" class="vapor language-label">Vapor</a>
+			<a href="https://www.videolan.org/vlc" class="vlc language-label">VLC</a>
+
+			<h3>tools/&ZeroWidthSpace;environments</h3>
+			<a href="https://www.microsoft.com/microsoft-365/word" class="word language-label">Word</a>
+			<a href="https://www.microsoft.com/microsoft-365/powerpoint" class="powerpoint language-label">Powerpoint</a>
+			<a href="https://www.microsoft.com/microsoft-365/excel" class="excel language-label">Excel</a>
+			<br>
+			<a href="https://www.google.com/docs/about" class="docs language-label">Google Docs</a>
+			<a href="https://www.google.com/slides/about" class="slides language-label">Google Slides</a>
+			<a href="https://www.google.com/sheets/about" class="sheets language-label">Google Sheets</a>
+			<br>
+			<a href="https://www.apple.com/pages" class="pages language-label">Pages</a>
+			<!-- TODO: Keynote -->
+			<a href="https://www.apple.com/keynote" class="keynote language-label">Keynote</a>
+			<a href="https://www.apple.com/numbers" class="numbers language-label">Numbers</a>
+			<br>
+			<br>
+			<a href="https://www.audacityteam.org" class="audacity language-label">Audacity</a>
+			<a href="https://www.blender.org" class="blender language-label">Blender</a>
+			<a href="https://ffmpeg.org" class="ffmpeg language-label">FFmpeg</a>
+			<a href="https://www.gimp.org" class="gimp language-label">GIMP</a>
+			<a href="https://godotengine.org" class="godot language-label">Godot</a>
+			<a href="https://git-scm.com" class="git language-label">git</a>
+			<a href="https://www.kernel.org" class="linux language-label">Linux</a>
+			<a href="https://www.apple.com/macos" class="macos language-label">macOS</a>
+			<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
+			<a href="https://www.getpaint.net" class="paint-net language-label">paint.net</a>
+			<a href="https://en.wikipedia.org/wiki/Regular_expression" class="regex language-label">Regex</a>
+			<a href="https://support.apple.com/guide/shortcuts/welcome" class="shortcuts language-label">Shortcuts</a>
+			<a href="https://www.videolan.org/vlc" class="vlc language-label">VLC</a>
+			<a href="https://www.gnu.org/software/wget" class="wget language-label">Wget</a>
+			<a href="https://www.wireshark.org" class="wireshark language-label">Wireshark</a>
+			<a href="https://www.microsoft.com/windows" class="windows language-label">Windows</a>
+			<a href="https://developer.apple.com/xcode" class="xcode language-label">Xcode</a>
+		</div>
 		<footer>
-			<p>© 2024 alice pellerin</p>
+			<small>© <time>2025</time> alice pellerin</small>
 		</footer>
 	</body>
 </html>
