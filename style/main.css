@@ -93,14 +93,15 @@ code {
 	border-radius: .25em;
 }
 
-.highlighted {
+mark {
+	color: var(--foreground-color);
 	border: solid var(--highlight-border-color) 1.5px;
 	border-radius: .25em;
 	background-color: var(--highlight-background-color);
 	padding: 0 .1em;
 }
 
-pre > code > .highlighted {
+pre > code > mark {
 	display: inline-block;
 }
 
