@@ -40,7 +40,7 @@ body {
 	color: var(--foreground-color);
 	font-family: ui-rounded, system-ui, sans-serif;
 	margin: auto;
-	max-width: min(100vw - 2em, 70ch);
+	max-width: min(100vw - 2em, 90rch);
 }
 
 hgroup {
