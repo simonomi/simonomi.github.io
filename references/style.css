@@ -1,0 +1,78 @@
+:root {
+	--link-height: 1ex;
+	--link-width: calc(1.75 * var(--link-height));
+	
+	--selected-reference-color: light-dark(
+		deepskyblue,
+		color-mix(in oklab, var(--foreground-color), deepskyblue 50%)
+	);
+}
+
+.link {
+	width: var(--link-width);
+	height: var(--link-height);
+	margin-bottom: calc((1cap - var(--link-height)) / 2);
+	margin-left: 0.25ch;
+	display: none;
+}
+
+hgroup .link {
+	font-size: 32px; /* the size of h1 */
+}
+
+hgroup h1 {
+	display: inline;
+}
+
+details {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+details > summary {
+	font-size: 24px; /* the size of h2 */
+	/* height: 1lh; */
+}
+
+details:target > summary {
+	color: var(--selected-reference-color);
+}
+
+details > summary > strong {
+	margin-left: 0.5rch;
+}
+
+@media (prefers-color-scheme: light) {
+	.link {
+		filter: invert();
+	}
+}
+
+details > summary:hover .link, hgroup:hover .link {
+	display: inline;
+}
+
+details[open] > summary {
+	margin-bottom: 1rem;
+}
+
+.twitter-tweet {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+img {
+	width: 100%;
+	border-radius: 0.5rem;
+}
+
+img.thin {
+	max-width: 440px; /* the size of an iPhone Pro Max */
+}
+
+iframe {
+	width: 100%;
+	aspect-ratio: calc(var(--width) / var(--height));
+	height: auto;
+}
+

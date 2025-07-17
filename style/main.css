@@ -3,11 +3,11 @@
 	--foreground-color: light-dark(black, #eee);
 	--secondary-color: light-dark(grey, #bbb);
 	
-	--background-color: light-dark(white, #161a1c);
+	--background-color: light-dark(#fefefe, #161a1c);
 	--background-color-code: light-dark(grey, #303030);
 	--background-color-terminal: #282a36;
 	
-	--button-color: light-dark(#aaa, #555);
+	--button-color: light-dark(silver, #555);
 	--button-pressed-color: light-dark(lightgrey, #242e33);
 	
 	--link-color: light-dark(dodgerblue, deepskyblue);
@@ -16,7 +16,7 @@
 	--highlight-background-color: light-dark(grey, #202020);
 	
 	--quote-border-color: light-dark(deepskyblue, deepskyblue);
-	--quote-background-color: light-dark(grey, black);
+	--quote-background-color: light-dark(#eee, black);
 	
 	--icon-link-width: 32px;
 	--icon-link-height: var(--icon-link-width);
@@ -205,6 +205,7 @@ sup > a {
 
 footer {
 	text-align: center;
-	margin: 2rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 }
 
