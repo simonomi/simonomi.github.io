@@ -1,4 +1,4 @@
-window.addEventListener("load", function() {
+window.addEventListener("DOMContentLoaded", function() {
 	document.getElementById(location.hash.slice(1)).open = true;
 });
 
