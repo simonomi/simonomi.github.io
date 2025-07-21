@@ -20,7 +20,7 @@
 	
 	--icon-link-width: 32px;
 	--icon-link-height: var(--icon-link-width);
-	--icon-link-spacing: 1em;
+	--icon-link-spacing: 1rem;
 	
 	--language-label-shadow-radius: 3px;
 	--language-label-shadow-color: lightgrey;
@@ -49,7 +49,7 @@ body {
 	color: var(--foreground-color);
 	font-family: ui-rounded, system-ui, sans-serif;
 	margin: auto;
-	max-width: min(100vw - 2em, 90rch);
+	max-width: min(100vw - 2rem, 90rch);
 }
 
 hgroup {
