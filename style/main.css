@@ -78,6 +78,10 @@ ul {
 	overflow-wrap: anywhere;
 }
 
+ul > li:not(:last-child) {
+	margin-bottom: 0.25em;
+}
+
 li { list-style-type: initial; }
 
 li > p { margin: auto; }
