@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>{{ page.title }}</title>
+		<link rel="icon" href="/images/logo circle.png">
+		
+		{%- if page.description -%}
+			<meta name="description" content="{{ page.description }}">
+		{%- endif -%}
+		
+		<style>
+			{%- capture maincss -%}
+				{%- include main.css -%}
+			{%- endcapture -%}
+			{{- maincss | normalize_whitespace -}}
+			
+			{%- if page.style -%}
+				{%- capture pagecss -%}
+					{%- include {{ page.style }}.css -%}
+				{%- endcapture -%}
+				{{- pagecss | normalize_whitespace -}}
+			{%- endif -%}
+		</style>
+		
+		{%- if page.script -%}
+			<script>
+				{%- include {{ page.script }}.js -%}
+			</script>
+		{%- endif -%}
+	</head>
+	<body>
+		{{- content -}}
+		{%- unless page.nofooter -%}
+		<footer>
+			<small>© <time>{{ "now" | date: "%Y" }}</time> alice pellerin</small>
+		</footer>
+		{%- endunless -%}
+	</body>
+</html>

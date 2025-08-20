@@ -1,47 +1,21 @@
-<!doctype html>
-<html>
-	<head>
-		<title>alice's languages</title>
-		<link rel="icon" href="/images/logo circle.png">
-		
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="this is where i record my progress in learning various (non-programming) languages">
-		
-		<style>
-			:root {
-				--furigana-display: none;
-				--furigana-show-button: initial;
-				--furigana-hide-button: none;
-			}
-		</style>
-		<link rel="stylesheet" href="/style/main.css">
-		<link rel="stylesheet" href="/languages/style.css">
-		
-		<script src="script.js"></script>
-	</head>
-	<body>
-		<div id="parent">
-			<div class="icon-links">
-				<a href="/" title="home">
-					<img src="/images/home.svg" alt="an icon of a home">
-				</a>
-			</div>
-			
-			<hgroup>
-				<h1>alice's languages</h1>
-			</hgroup>
-			
-			<p>this is where i record my progress in learning various (non-programming) languages. the intention is to give other people an estimated level of my proficiency, as well as concrete information regarding what words i know. however, just because a term is listed doesn't necessarily mean that i <em>do</em> know it, just that i <em>should</em> know it.</p>
-			<p>the lists of terms are created using <a href="https://github.com/simonomi/languages/blob/main/database_generator.py">a script</a> that indexes the <a href="https://obsidian.md">obsidian</a> vaults i use (along with the <a href="https://github.com/st3v3nmw/obsidian-spaced-repetition">spaced repetition plugin</a>) to study languages. i only run this script occasionally, so terms are typically added in large groups at a time. the newest terms are highlighted in <span class="new">green</span>.</p>
-		</div>
-		
-		<div id="spinner-box">
-			<div id="spinner"></div>
-		</div>
-		
-		<footer>
-			<p>© 2025 alice pellerin</p>
-		</footer>
-	</body>
-</html>
+---
+title: alice's languages
+description: this is where i record my progress in learning various (non-programming) languages
+style: languages
+script: languages
+layout: default
+---
+<div id="parent">
+	<div class="icon-links">
+		<a href="/" title="home">
+			<img src="/images/home.svg" alt="an icon of a home">
+		</a>
+	</div>
+	
+	<h1>alice's languages</h1>
+	
+	<p>this is where i record my progress in learning various (non-programming) languages. the intention is to give other people an estimated level of my proficiency, as well as concrete information regarding what words i know. however, just because a term is listed doesn't necessarily mean that i <em>do</em> know it, just that i <em>should</em> know it.</p>
+	<p>the lists of terms are created using <a href="https://github.com/simonomi/languages/blob/main/database_generator.py">a script</a> that indexes the <a href="https://obsidian.md">obsidian</a> vaults i use (along with the <a href="https://github.com/st3v3nmw/obsidian-spaced-repetition">spaced repetition plugin</a>) to study languages. i only run this script occasionally, so terms are typically added in large groups at a time. the newest terms are highlighted in <span class="new">green</span>.</p>
+</div>
+
+<div id="spinner"></div>

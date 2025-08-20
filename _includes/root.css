@@ -1,0 +1,58 @@
+:root {
+	--repo-border-color: light-dark(black, grey);
+}
+
+.repos {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	gap: 0.5rem;
+}
+.repo {
+	border: solid 1px var(--repo-border-color);
+	border-radius: 15px;
+	padding: 0.75em;
+}
+
+@media screen and (width <= 500px) {
+	.repos {
+		grid-template-columns: auto;
+	}
+}
+
+.repo-link {
+	text-decoration: none;
+	display: inline;
+}
+.repo-link p {
+	margin: 0;
+}
+.mage-logo {
+	float:left;
+	width: 1lh;
+	height: 1lh;
+	object-fit: contain;
+	border-radius: 25%;
+	margin-right: 0.5rem;
+}
+.github-logo {
+	float:left;
+	width: 1lh;
+	height: 1lh;
+	object-fit: contain;
+	margin-right: 0.5rem;
+}
+
+@media (prefers-color-scheme: light) {
+	.github-logo { filter: invert(); }
+}
+
+.foundation { color: #6495ed; }
+.java { color: #ed8b00; }
+.javascript { color: #f7df1e; }
+.metal { color: #d74e57; }
+.obsidian { color: #7f6df2; }
+.python { color: #ffde57; }
+.swift { color: #f05138; }
+.swiftui { color: #00daff; }
+.trakt { color: #da3b32; }
+.typescript { color: #358ef1; }

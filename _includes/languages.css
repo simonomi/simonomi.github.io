@@ -1,12 +1,12 @@
 :root {
 	--new-color: light-dark(#50c878, #50c878);
+	--furigana-display: none;
+	--furigana-show-button: initial;
+	--furigana-hide-button: none;
 }
 
 .new { color: var(--new-color); }
 
-#spinner-box {
-	background-color: var(--background-color-secondary);
-}
 #spinner {
 	border: 7px solid var(--button-color);
 	border-top: 7px solid var(--foreground-color);

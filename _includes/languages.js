@@ -65,7 +65,7 @@ const FURIGANA = /{((?:[\u2E80-\uA4CF\uFF00-\uFFEF])+)((?:\\?\|[^ -\/{-~:-@\[-`]
 		parent.appendChild(languageBlock)
 	}
 	
-	const spinner = document.getElementById("spinner-box")
+	const spinner = document.getElementById("spinner")
 	document.body.removeChild(spinner)
 	
 	const anchor = window.location.hash.substring(1)
