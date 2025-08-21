@@ -1,3 +1,5 @@
+/* any time this is edited, also edit fftechwiki's main.css */
+
 :root {
 	color-scheme: light dark;
 	--foreground-color: light-dark(black, #eee);
@@ -57,7 +59,7 @@ body {
 
 hgroup {
 	margin-top: 1rem;
-	margin-bottom: 1.5rem;
+	margin-bottom: 1rem;
 }
 
 hgroup > * {
