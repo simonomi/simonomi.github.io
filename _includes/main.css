@@ -309,6 +309,7 @@ table {
 	border-radius: 0.5rem;
 	border-spacing: 0;
 	overflow: hidden;
+	margin-block-end: 1rem;
 }
 
 th, td {
