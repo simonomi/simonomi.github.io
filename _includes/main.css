@@ -1,10 +1,11 @@
+/* TODO: split this into separate files */
 :root {
 	color-scheme: light dark;
 	--foreground-color: light-dark(black, #eee);
 	--secondary-color: light-dark(grey, #bbb);
 	
 	--background-color: light-dark(#fefefe, #161a1c);
-	--background-color-code: light-dark(grey, #303030);
+	--background-color-code: light-dark(#e0e0e0, #303030);
 	--background-color-terminal: #282a36;
 	
 	--button-color: light-dark(silver, #555);
@@ -25,17 +26,33 @@
 	--language-label-shadow-radius: 3px;
 	--language-label-shadow-color: lightgrey;
 	
-	--table-border-color: #a0a0a0;
+	--table-border-color: light-dark(#a0a0a0, #a0a0a0);
 	--table-header-background-color: light-dark(#e0e0e0, #303030);
 	
-	--terminal-grey: #bfbfbf;
-	--terminal-blue: #bd93f9;
-	--terminal-red: #ff6e67;
-	--terminal-green: #5af78e;
-	--terminal-yellow: #f1fa8c;
-	--terminal-purple: #caa9fa;
-	--terminal-pink: #ff92d0;
-	--terminal-cyan: #9aedfe;
+	--foreign-value-color: light-dark(#6c36a9, #a167e6);
+	--local-value-color: light-dark(#326d74, #67b7a4);
+	--value-declaration-color: light-dark(#0f68a0, #41a1c0);
+	
+	--foreign-type-color: light-dark(#3900a0, #d0a8ff);
+	--local-type-color: light-dark(#1c464a, #9ef1dd);
+	--type-declaration-color: light-dark(#0b4f79, #5dd8ff);
+	
+	--preprocessor-directive: light-dark(#643820, #fd8f3f);
+	--comment: light-dark(#5d6c79, #6c7986);
+	--keyword: light-dark(#9b2393, #fc5fa3);
+	--mark: light-dark(#4a5560, #92a1b1);
+	
+	--number: light-dark(#1c00cf, #d0bf69);
+	--string: light-dark(#c41a16, #fc6a5d);
+	
+	--terminal-grey: light-dark(#a0a0a0, #bfbfbf);
+	--terminal-blue: light-dark(#074cb2, #bd93f9);
+	--terminal-red: light-dark(#ac422e, #ff6e67);
+	--terminal-green: light-dark(#1f7d08, #5af78e);
+	--terminal-yellow: light-dark(#a95906, #f1fa8c);
+	--terminal-purple: light-dark(#6350cc, #caa9fa);
+	--terminal-pink: light-dark(#ab3172, #ff92d0);
+	--terminal-cyan: light-dark(#0773b2, #9aedfe);
 }
 
 /* some dummy code so noir can tell there's a dark mode */
@@ -142,6 +159,7 @@ pre:has(samp) {
 
 samp, code {
 	font-family: ui-monospace, monospace;
+	-webkit-text-size-adjust: 100%; /* some weird bugs were happening with iOS safari resizing some code larger than others */
 }
 
 code:not(pre code) {
@@ -253,39 +271,47 @@ footer {
 	margin-bottom: 2rem;
 }
 
-.foreign-value { color: #a167e6; }
-.local-value { color: #67b7a4; }
-.value-declaration { color: #41a1c0; }
+.foreign-value { color: var(--foreign-value-color) }
+.local-value { color: var(--local-value-color); }
+.value-declaration { color: var(--value-declaration-color); }
 
-.foreign-type { color: #d0a8ff; }
-.local-type { color: #9ef1dd; }
-.type-declaration { color: #5dd8ff; }
+.foreign-type { color: var(--foreign-type-color); }
+.local-type { color: var(--local-type-color); }
+.type-declaration { color: var(--type-declaration-color); }
 
-.preprocessor-directive { color: #fd8f3f; }
+.preprocessor-directive {
+	color: var(--preprocessor-directive);
+}
 
-.comment { color: #6c7986; }
+.comment {
+	color: var(--comment);
+}
 
 .documentation {
-	color: #6c7986;
+	color: var(--comment);
 	font-family: ui-rounded, system-ui, sans-serif;
 }
 
 .keyword {
-	color: #fc5fa3;
+	color: var(--keyword);
 	font-weight: bold;
 }
 
 .mark {
-	color: #92a1b1;
+	color: var(--mark);
 	font-weight: bold;
 }
 
-.number { color: #d0bf69; }
+.number { color: var(--number); }
+.string { color: var(--string); }
 
-.string { color: #fc6a5d; }
+.bold {
+	font-weight: bold;
+}
 
-.bold { font-weight: bold; }
-.not-bold { font-weight: normal; }
+.not-bold {
+	font-weight: normal;
+}
 
 .terminal-grey   { color: var(--terminal-grey); }
 .terminal-blue   { color: var(--terminal-blue); }
@@ -305,7 +331,7 @@ table {
 }
 
 table.scrollable {
-	display: block;
+	display: block; /* right now this makes it always max-width, can that be fixed? */
 	overflow-x: scroll;
 	text-wrap: nowrap;
 }
@@ -327,10 +353,6 @@ table td.larger-cell {
 	}
 }
 
-table.first-column-centered td:first-child {
-	text-align: center;
-}
-
 .text-align-start {
 	text-align: start;
 }
@@ -344,8 +366,27 @@ th:not(:last-child), td:not(:last-child) {
 }
 
 th {
-	border-bottom: 1px solid var(--table-border-color);
 	background-color: var(--table-header-background-color);
+}
+
+tr:not(:last-child) th {
+	border-bottom: 1px solid var(--table-border-color);
+}
+
+*:first-child > tr:first-child > th:first-child {
+	border-top-left-radius: 0.5rem;
+}
+
+*:first-child > tr:first-child > th:last-child {
+	border-top-right-radius: 0.5rem;
+}
+
+*:last-child > tr:last-child > th:first-child {
+	border-bottom-left-radius: 0.5rem;
+}
+
+*:last-child > tr:last-child > th:last-child {
+	border-bottom-right-radius: 0.5rem;
 }
 
 tbody tr:not(:last-child) td {
@@ -356,3 +397,11 @@ summary {
 	cursor: pointer;
 }
 
+img {
+	width: 100%;
+}
+
+.ds-screenshot {
+	max-width: 384px; /* 1.5x the size of the DS screen (256x192) */
+	aspect-ratio: 4 / 3;
+}
