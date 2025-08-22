@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>Redirecting to {{ page.redirecturl }}...</title>
+		<link rel="icon" href="/images/logo-circle.png">
+		
+		<meta http-equiv="refresh" content="0; URL={{ page.redirecturl }}">
+		
+		<style>
+			{%- capture maincss -%}
+				{%- include main.css -%}
+			{%- endcapture -%}
+			{{- maincss | normalize_whitespace -}}
+		</style>
+	</head>
+</html>
