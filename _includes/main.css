@@ -145,17 +145,15 @@ summary {
 }
 
 ul {
-	display: inline-block;
-	text-align: left;
-	margin: 0;
-	overflow-wrap: anywhere;
+	margin-top: 0.25rem;
+	margin-bottom: 0.25rem;
 	list-style-type: initial; /* every level of indentation should be the same */
 	
 	ul {
 		padding-inline-start: 1.25em;
 	}
 	
-	& > li:not(:last-child) {
+	*:not(:last-child) {
 		margin-bottom: 0.25em;
 	}
 }
