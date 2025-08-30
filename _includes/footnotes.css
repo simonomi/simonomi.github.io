@@ -1,0 +1,11 @@
+.footnote-link {
+	scroll-margin-top: 30vh;
+}
+
+.footnote-return-link {
+	text-decoration: none;
+}
+
+#footnotes > li {
+	scroll-margin-top: 5vh;
+}

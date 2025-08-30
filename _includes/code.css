@@ -1,0 +1,71 @@
+pre {
+	background-color: var(--background-color-code);
+	padding: .5em;
+	border-radius: .5em;
+	tab-size: 4;
+	overflow-x: scroll;
+	
+	&:has(samp) {
+		background-color: var(--background-color-terminal);
+	}
+	
+	& > code > mark {
+		display: inline-block;
+	}
+}
+
+samp, code {
+	font-family: ui-monospace, monospace;
+	-webkit-text-size-adjust: 100%; /* some weird bugs were happening with iOS safari resizing some code larger than others */
+}
+
+code:not(pre code) {
+	display: inline-block;
+	background-color: var(--background-color-code);
+	padding: 0 .25em;
+	border-radius: .25em;
+}
+
+foreign-value { color: var(--foreign-value-color) }
+local-value { color: var(--local-value-color); }
+value-declaration { color: var(--value-declaration-color); }
+
+foreign-type { color: var(--foreign-type-color); }
+local-type { color: var(--local-type-color); }
+type-declaration { color: var(--type-declaration-color); }
+
+preprocessor-directive { color: var(--preprocessor-directive); }
+
+code-comment { color: var(--comment); }
+
+code-documentation {
+	color: var(--comment);
+	font-family: ui-rounded, system-ui, sans-serif;
+}
+
+code-keyword {
+	color: var(--keyword);
+	font-weight: bold;
+}
+
+code-mark {
+	color: var(--mark);
+	font-weight: bold;
+}
+
+code-number { color: var(--number); }
+code-string { color: var(--string); }
+
+terminal-grey   { color: var(--terminal-grey); }
+terminal-blue   { color: var(--terminal-blue); }
+terminal-red    { color: var(--terminal-red); }
+terminal-green  { color: var(--terminal-green); }
+terminal-yellow { color: var(--terminal-yellow); }
+terminal-purple { color: var(--terminal-purple); }
+terminal-pink   { color: var(--terminal-pink); }
+terminal-cyan   { color: var(--terminal-cyan); }
+
+/* to allow easy nesting */
+foreign-value, local-value, value-declaration, foreign-type, local-type, type-declaration, preprocessor-directive, code-comment, code-documentation, code-number, code-string, terminal-grey, terminal-blue, terminal-red, terminal-green, terminal-yellow, terminal-purple, terminal-pink, terminal-cyan {
+	font-weight: normal;
+}

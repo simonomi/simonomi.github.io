@@ -14,46 +14,55 @@
 	margin-bottom: calc((1cap - var(--link-height)) / 2);
 	margin-left: 0.25ch;
 	display: none;
+	
+	@media (prefers-color-scheme: light) {
+		filter: invert();
+	}
 }
 
-hgroup .link {
-	font-size: 32px; /* the size of h1 */
-}
-
-hgroup h1 {
+details > summary:hover .link,
+hgroup:hover .link {
 	display: inline;
+}
+
+hgroup {
+	h1 {
+		display: inline;
+	}
+	
+	.link {
+		font-size: 32px; /* the size of h1 */
+	}
 }
 
 details {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-}
-
-details > summary {
-	font-size: 24px; /* the size of h2 */
-	/* height: 1lh; */
-}
-
-details:target > summary {
-	color: var(--selected-reference-color);
-}
-
-details > summary > strong {
-	margin-left: 0.5rch;
-}
-
-@media (prefers-color-scheme: light) {
-	.link {
-		filter: invert();
+	
+	& > summary {
+		font-size: 24px; /* the size of h2 */
+		/* height: 1lh; */
+		
+		& > strong {
+			margin-left: 0.5rch;
+		}
+	}
+	
+	&[open] > summary {
+		margin-bottom: 1rem;
+	}
+	
+	&:target > summary {
+		color: var(--selected-reference-color);
 	}
 }
 
-details > summary:hover .link, hgroup:hover .link {
-	display: inline;
-}
-
-details[open] > summary {
-	margin-bottom: 1rem;
+img {
+	border-radius: 0.5rem;
+	
+	&.thin {
+		max-width: 440px; /* the size of an iPhone Pro Max */
+	}
 }
 
 .twitter-tweet {
@@ -61,17 +70,8 @@ details[open] > summary {
 	margin-bottom: 0 !important;
 }
 
-img {
-	border-radius: 0.5rem;
-}
-
-img.thin {
-	max-width: 440px; /* the size of an iPhone Pro Max */
-}
-
 iframe {
 	width: 100%;
 	aspect-ratio: calc(var(--width) / var(--height));
 	height: auto;
 }
-

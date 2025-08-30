@@ -1,4 +1,3 @@
-/* TODO: split this into separate files */
 :root {
 	color-scheme: light dark;
 	--foreground-color: light-dark(black, #eee);
@@ -75,326 +74,11 @@ body {
 hgroup {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
-}
-
-hgroup > * {
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-.secondary {
-	color: var(--secondary-color);
-}
-
-a {
-	color: var(--link-color);
-	text-decoration: underline; /* for links without hrefs */
-}
-
-.footnote-link {
-	scroll-margin-top: 30vh;
-}
-
-#footnotes > li {
-	scroll-margin-top: 5vh;
-}
-
-a:not(:any-link) {
-	cursor: not-allowed;
-	opacity: 0.6;
-}
-
-a:not(:any-link):active {
-	pointer-events: none;
-}
-
-ul {
-	display: inline-block;
-	text-align: left;
-	margin: 0;
-	overflow-wrap: anywhere;
-	list-style-type: initial; /* every level of indentation should be the same */
-}
-
-ul ul {
-	padding-inline-start: 1.25em;
-}
-
-ul > li:not(:last-child) {
-	margin-bottom: 0.25em;
-}
-
-/* TODO: why are paragraphs in lists??? this should be removed right? */
-li > p {
-	margin: auto;
-}
-
-#footnotes > li > p {
-	margin: revert;
-}
-
-button {
-	background-color: var(--button-color);
-	color: var(--foreground-color);
-	border-radius: 5px;
-	border-style: none;
-	transition: box-shadow 0.2s;
-}
-
-button:active {
-	background-color: var(--button-pressed-color);
-}
-
-pre {
-	background-color: var(--background-color-code);
-	padding: .5em;
-	border-radius: .5em;
-	tab-size: 4;
-	overflow-x: scroll;
-}
-
-pre:has(samp) {
-	background-color: var(--background-color-terminal);
-}
-
-samp, code {
-	font-family: ui-monospace, monospace;
-	-webkit-text-size-adjust: 100%; /* some weird bugs were happening with iOS safari resizing some code larger than others */
-}
-
-code:not(pre code) {
-	display: inline-block;
-	background-color: var(--background-color-code);
-	padding: 0 .25em;
-	border-radius: .25em;
-}
-
-mark {
-	color: var(--foreground-color);
-	border: solid var(--highlight-border-color) 1.5px;
-	border-radius: .25em;
-	background-color: var(--highlight-background-color);
-	padding: 0 .1em;
-}
-
-pre > code > mark {
-	display: inline-block;
-}
-
-blockquote {
-	background-color: var(--quote-background-color);
-	padding: 1em;
-	border-left: solid var(--quote-border-color) .25em;
-	margin: 0;
-}
-
-blockquote > *:first-child {
-	margin-top: 0;
-}
-
-blockquote > *:last-child {
-	margin-bottom: 0;
-}
-
-sup {
-	vertical-align: baseline;
-	position: relative;
-	top: -.4em;
-	font-size: 75%;
-}
-
-sup > a {
-	text-decoration: none;
-}
-
-.footnote-return-link {
-	text-decoration: none;
-}
-
-.inline { display: inline; }
-
-.hidden { display: none; }
-
-.secret-link {
-	color: currentColor;
-	text-decoration: none;
-}
-
-.icon-links {
-	display: flex;
-	gap: var(--icon-link-spacing);
-	float: right;
-	margin-left: var(--icon-link-spacing);
-}
-
-.icon-links a {
-	text-decoration: none;
-}
-
-.icon-links img {
-	width: var(--icon-link-width);
-	height: var(--icon-link-height);
-	margin-top: 0.25em;
-	object-fit: contain;
-	transition-property: opacity;
-	transition-duration: 0.2s;
-}
-
-.icon-links img:hover {
-	filter: opacity(85%);
-}
-
-/* TODO: use multiple sources instead? */
-@media (prefers-color-scheme: light) {
-	.icon-links img { filter: invert(); }
-	.icon-links img:hover { filter: opacity(75%) invert(); }
-}
-
-.language-label {
-	display: inline-block;
-	padding: 5px 10px;
-	border: solid 1px;
-	border-radius: 10px;
-	text-decoration: none;
-	margin: 2px;
-}
-
-@media (prefers-color-scheme: light) {
-	.language-label {
-		box-shadow: 0 0 var(--language-label-shadow-radius) var(--language-label-shadow-color);
+	
+	* {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
-}
-
-footer {
-	text-align: center;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-}
-
-.foreign-value { color: var(--foreign-value-color) }
-.local-value { color: var(--local-value-color); }
-.value-declaration { color: var(--value-declaration-color); }
-
-.foreign-type { color: var(--foreign-type-color); }
-.local-type { color: var(--local-type-color); }
-.type-declaration { color: var(--type-declaration-color); }
-
-.preprocessor-directive {
-	color: var(--preprocessor-directive);
-}
-
-.comment {
-	color: var(--comment);
-}
-
-.documentation {
-	color: var(--comment);
-	font-family: ui-rounded, system-ui, sans-serif;
-}
-
-.keyword {
-	color: var(--keyword);
-	font-weight: bold;
-}
-
-.mark {
-	color: var(--mark);
-	font-weight: bold;
-}
-
-.number { color: var(--number); }
-.string { color: var(--string); }
-
-.bold {
-	font-weight: bold;
-}
-
-.not-bold {
-	font-weight: normal;
-}
-
-.terminal-grey   { color: var(--terminal-grey); }
-.terminal-blue   { color: var(--terminal-blue); }
-.terminal-red    { color: var(--terminal-red); }
-.terminal-green  { color: var(--terminal-green); }
-.terminal-yellow { color: var(--terminal-yellow); }
-.terminal-purple { color: var(--terminal-purple); }
-.terminal-pink   { color: var(--terminal-pink); }
-.terminal-cyan   { color: var(--terminal-cyan); }
-
-table {
-	border: 1px solid var(--table-border-color);
-	border-radius: 0.5rem;
-	border-spacing: 0;
-	overflow: hidden;
-	margin-block-end: 1rem;
-}
-
-table.scrollable {
-	display: block; /* right now this makes it always max-width, can that be fixed? */
-	overflow-x: scroll;
-	text-wrap: nowrap;
-}
-
-table td.larger-cell {
-	display: block;
-	text-wrap: wrap;
-}
-
-@media screen and (width > 700px) {
-	table td.larger-cell {
-		min-width: 30ch;
-	}
-}
-
-@media screen and (width <= 700px) {
-	table td.larger-cell {
-		min-width: 20ch;
-	}
-}
-
-.text-align-start {
-	text-align: start;
-}
-
-th, td {
-	padding: 0.5em;
-}
-
-th:not(:last-child), td:not(:last-child) {
-	border-right: 1px solid var(--table-border-color);
-}
-
-th {
-	background-color: var(--table-header-background-color);
-}
-
-tr:not(:last-child) th {
-	border-bottom: 1px solid var(--table-border-color);
-}
-
-*:first-child > tr:first-child > th:first-child {
-	border-top-left-radius: 0.5rem;
-}
-
-*:first-child > tr:first-child > th:last-child {
-	border-top-right-radius: 0.5rem;
-}
-
-*:last-child > tr:last-child > th:first-child {
-	border-bottom-left-radius: 0.5rem;
-}
-
-*:last-child > tr:last-child > th:last-child {
-	border-bottom-right-radius: 0.5rem;
-}
-
-tbody tr:not(:last-child) td {
-	border-bottom: 1px solid var(--table-border-color);
-}
-
-summary {
-	cursor: pointer;
 }
 
 img {
@@ -405,3 +89,144 @@ img {
 	max-width: 384px; /* 1.5x the size of the DS screen (256x192) */
 	aspect-ratio: 4 / 3;
 }
+
+a {
+	color: var(--link-color);
+	text-decoration: underline; /* for links without hrefs */
+	
+	&:not(:any-link) {
+		cursor: not-allowed;
+		opacity: 0.6;
+	}
+	
+	&:not(:any-link):active {
+		pointer-events: none;
+	}
+	
+	&.secret {
+		color: currentColor;
+		text-decoration: none;
+	}
+}
+
+mark {
+	color: var(--foreground-color);
+	border: solid var(--highlight-border-color) 1.5px;
+	border-radius: .25em;
+	background-color: var(--highlight-background-color);
+	padding: 0 .1em;
+}
+
+sup {
+	vertical-align: baseline;
+	position: relative;
+	top: -.4em;
+	font-size: 75%;
+	
+	& > a {
+		text-decoration: none;
+	}
+}
+
+.secondary {
+	color: var(--secondary-color);
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.text-align-start {
+	text-align: start;
+}
+
+summary {
+	cursor: pointer;
+}
+
+ul {
+	display: inline-block;
+	text-align: left;
+	margin: 0;
+	overflow-wrap: anywhere;
+	list-style-type: initial; /* every level of indentation should be the same */
+	
+	ul {
+		padding-inline-start: 1.25em;
+	}
+	
+	& > li:not(:last-child) {
+		margin-bottom: 0.25em;
+	}
+}
+
+blockquote {
+	background-color: var(--quote-background-color);
+	padding: 1em;
+	border-left: solid var(--quote-border-color) .25em;
+	margin: 0;
+	
+	& > *:first-child {
+		margin-top: 0;
+	}
+	
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+button {
+	background-color: var(--button-color);
+	color: var(--foreground-color);
+	border-radius: 5px;
+	border-style: none;
+	transition: box-shadow 0.2s;
+	
+	&:active {
+		background-color: var(--button-pressed-color);
+	}
+}
+
+.icon-links {
+	display: flex;
+	gap: var(--icon-link-spacing);
+	float: right;
+	margin-left: var(--icon-link-spacing);
+	
+	a {
+		text-decoration: none;
+	}
+	
+	img {
+		width: var(--icon-link-width);
+		height: var(--icon-link-height);
+		margin-top: 0.25em;
+		object-fit: contain;
+		transition-property: opacity;
+		transition-duration: 0.2s;
+		
+		/* TODO: use multiple sources instead? */
+		@media (prefers-color-scheme: light) {
+			filter: invert();
+		}
+		
+		&:hover {
+			filter: opacity(85%);
+			
+			/* TODO: use multiple sources instead? */
+			@media (prefers-color-scheme: light) {
+				filter: opacity(75%) invert();
+			}
+		}
+	}
+}
+
+footer {
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+{% include code.css %}
+{% include tables.css %}
+{% include footnotes.css %}
