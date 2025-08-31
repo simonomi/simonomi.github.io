@@ -1,7 +1,7 @@
 pre {
 	background-color: var(--background-color-code);
-	padding: .5em;
-	border-radius: .5em;
+	padding: 0.5em;
+	border-radius: 0.5em;
 	tab-size: 4;
 	overflow-x: scroll;
 	
