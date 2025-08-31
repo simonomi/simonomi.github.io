@@ -185,7 +185,7 @@ button {
 	}
 }
 
-.icon-links {
+icon-links {
 	display: flex;
 	gap: var(--icon-link-spacing);
 	float: right;
