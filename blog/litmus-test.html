@@ -1,0 +1,124 @@
+---
+---
+<!-- # a litmus test for programming languages -->
+<p>outline</p><ul><li><p>guys ive come up with this test</p><ul><li><p>why is it a litmus test</p></li></ul></li><li><p>this is what the test <em>is</em></p><ul><li><p>unassigned variable</p></li></ul></li><li><p>here’s what the test means</p><ul><li><p>design philosophy</p></li></ul></li><li><p>heres what this post is going to be</p><ul><li><p>whirlwind tour!</p></li></ul></li><li><p>lets try a bunch of different languages</p><ul><li><p>order…?</p></li></ul></li></ul><p>recently, i’ve come up with a kind of ‘litmus test’ for programming languages. it’s a short, simple experiment that gives insight into the design philosophy behind a language. despite the name, it’s not really a <em>test</em> per se, as it doesn’t have a ‘pass’ or ‘fail’ condition (though i’m willing to declare winners and losers). instead, it’s more like an experiment that shows what a language values.</p><p>ok and what if i–do this?</p><pre><code>// event 1
+unknown &lt;27>: &lt;31>
+
+// event 12199
+set flag &lt;51 8> to &lt;1>
+unknown &lt;27>: &lt;41>
+set flag &lt;100 5> to true
+</code></pre><p>the litmus test is as follows:</p><blockquote><p>what happens when you try to use a variable that you’ve declared, but not assigned a value to?</p></blockquote><p>even with such a basic task, the results we get are indicative of the language as a whole. with it, we get a simple way to test the values of a language, using fewer than 10 lines of code<sup><a id="footnote-return:1" href="#footnote:1">1</a></sup>!</p><p></p><p>note that in some languages, the only way to declare a variable <em>is</em> to assign a value to it. this in of itself is a perfectly good result, but we’ll continue further and test what happens if you use a variable that hasn’t been declared yet—just for fun!</p><p>this post is going to be a whirlwind tour of various languages. for each one, we’ll run our test, examine the results, then use them to analyze the language’s design.</p><ul><li><p>opinionated</p></li></ul><p>the best way to understand the test is to see it in action—so without further ado, let’s jump right into it!</p><p>broadly speaking, there are two possible things this action could be: either it’s valid, or it’s invalid.</p><p>if it’s valid, what behavior does the language choose?<br>if it’s valid, what behavior does the language decide is appropriate?<br>if it’s invalid, how does the language alert the programmer?</p><p>the chosen behavior is indicative of the values held by the language designers<br>indicates values of the language designers</p><p>note: talk about error messages</p><h2>outliers - DELETE ME</h2><p>we’ll start our tour with the exceptions. these languages fall into the category i mentioned earlier:</p><blockquote><p>in some languages, the only way to declare a variable <em>is</em> to assign a value to it.</p></blockquote><p>accordingly, we’ll test these languages by attempting to use an undeclared variable.</p><p>whats interesting</p><ul><li><p>how it fails (error message, runtime/comptime)</p></li><li><p>why are they this way</p></li></ul><h3>Format</h3><ul><li><p>intro to the language</p></li></ul><pre><code>code
+</code></pre><ul><li><p>syntax</p></li><li><p>first impressions</p></li></ul><pre><samp>output
+</samp></pre><ul><li><p>error</p></li><li><p>analysis</p></li></ul><h3>Python</h3><p>we’ll start with Python, since it has the shortest and simplest litmust test in this post: only one simple line of code!</p><pre><code><foreign-value>print</foreign-value>(x)</code></pre><p>this syntax probably looks familiar to most people with programming experience. it’s super simple—and thats intentional! <a href="https://en.wikipedia.org/wiki/Zen_of_Python">The Zen of Python</a> includes the following tenet:</p><blockquote><p>Simple is better than complex.</p></blockquote><p>a notable absence from the code is any kind of declaration for <code class="inline-code">x</code>.</p><p>to the experienced Python developer, this anomaly appears ordinary, even natural. to an outside observer, however, this strange custom appears… limiting.</p><p>Python chooses to make assignment declaration because</p><ul><li><p>dynamic language</p></li><li><p>https://peps.python.org/pep-0020/ OR <code class="inline-code">import this</code></p><ul><li><p>Simple is better than complex.</p></li></ul></li></ul><p>as expected, this code results in an error:</p><pre><samp>Traceback (most recent call last):
+  File "/Users/simonomi/Desktop/litmus/litmus.py", line 1, in &lt;module>
+    print(x)
+          ^
+NameError: name 'x' is not defined
+</samp></pre><p>the error we get is almost as simple</p><p>notably, this is a <em>runtime</em> error because Python is an interpreted language</p><ul><li><p>what else would it be?</p></li></ul><p>why are you this way</p><ul><li><p>interpreted</p></li><li><p>simple!</p></li></ul><h3>JavaScript</h3><p>JavaScript is also an interpreted langauge, and if we do the same thing we did in Python…</p><pre><code><foreign-value>console</foreign-value>.<foreign-value>log</foreign-value>(<local-value>x</local-value>);
+</code></pre><pre><samp>/Users/simonomi/Desktop/litmus/litmus.js:1
+console.log(x);
+            ^
+
+ReferenceError: x is not defined
+    at Object.&lt;anonymous> <terminal-grey>(/Users/simonomi/Desktop/litmus/</terminal-grey>litmus.js:1:13<terminal-grey>)
+    at Module._compile (node:internal/modules/cjs/loader:1368:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1426:10)
+    at Module.load (node:internal/modules/cjs/loader:1205:32)
+    at Module._load (node:internal/modules/cjs/loader:1021:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:142:12)
+    at node:internal/main/run_main_module:28:49</terminal-grey>
+</samp></pre><p>…we get the same result: a runtime error! this error is a bit wordier than Python’s, but it gets the point across all the same.</p><p>however, <em>unlike</em> Python, in JavaScript, we can declare that a variable exists before we ever use it, as such:</p><pre><code><code-keyword>let</code-keyword> <value-declaration>x</value-declaration>;
+<foreign-value>console</foreign-value>.<foreign-value>log</foreign-value>(<local-value>x</local-value>);
+</code></pre><pre><samp><terminal-grey>undefined</terminal-grey>
+</samp></pre><ul><li><p>defaults to undefined</p></li><li><p>makes sense, its an interpreted language</p></li></ul><p>why are you the way you are</p><ul><li><p>interpreted</p></li></ul><h3>Haskell</h3><ul><li><p>compiled languages from here on out</p></li><li><p>haskell has no way to declare a variable without using it (like python)</p></li></ul><pre><code><value-declaration>main</value-declaration> = <foreign-value>putStrLn</foreign-value> x
+</code></pre><ul><li><p>less familiar syntax</p></li><li><p>main function</p><ul><li><p>function definition syntax is so simple</p></li></ul></li><li><p>ML-style function calls (only non-c-style in this article)</p></li></ul><p>why is declaration == assignment?</p><ul><li><p>functional</p></li><li><p>equal means equal!!</p><ul><li><p>“What are you, some kind of liar?” https://learnyouahaskell.com/introduction</p></li></ul></li></ul><pre><samp><terminal-bold class="bold">litmus.hs:1:17:</terminal-bold> <terminal-red class="bold">error</terminal-red><terminal-bold class="bold">:</terminal-bold> <terminal-bold class="bold">[</terminal-bold><terminal-red class="bold">GHC-88464</terminal-red><terminal-bold class="bold">]
+    Variable not in scope: x :: String</terminal-bold>
+  <terminal-blue class="bold">|</terminal-blue>
+<terminal-blue class="bold">1 |</terminal-blue> main = putStrLn <terminal-red class="bold">x</terminal-red>
+  <terminal-blue class="bold">|</terminal-blue>                 <terminal-red class="bold">^</terminal-red>
+</samp></pre><p>Haskell, being a compiled language, gives a compile-time error</p><ul><li><p>and a pretty good one too!</p><ul><li><p>wellll, maybe not actually. “not in scope” is p vague</p><ul><li><p>but how else would you say it?</p></li></ul></li></ul></li></ul><p>completely reasonable and expected</p><h3>Swift</h3><pre><code><code-keyword>let</code-keyword> <value-declaration>x</value-declaration>: <foreign-type>Int</foreign-type>
+<foreign-value>print</foreign-value>(<local-value>x</local-value>)</code></pre><ul><li><p>looks more like python and javascript than haskell</p><ul><li><p>no main function</p></li><li><p>function call syntax</p></li></ul></li><li><p><code class="inline-code">let x: Int</code> instead of <code class="inline-code">int x</code></p><ul><li><p>even primitives are capitalized</p></li></ul></li><li><p>x must have a type - show error without?</p></li></ul><pre><samp>litmus.swift:2:7: <terminal-red class="bold">error:</terminal-red> <terminal-bold class="bold">constant 'x' used before being initialized</terminal-bold>
+<terminal-cyan>1 |</terminal-cyan> let x: Int
+  <terminal-cyan>|</terminal-cyan>     `- <terminal-bold class="bold">note: constant defined here</terminal-bold>
+<terminal-cyan>2 |</terminal-cyan> print(x)
+  <terminal-cyan>|</terminal-cyan>       `- <terminal-red class="bold">error:</terminal-red> <terminal-bold class="bold">constant 'x' used before being initialized</terminal-bold>
+<terminal-cyan>3 |</terminal-cyan> 
+</samp></pre><ul><li><p>correct</p></li><li><p>flow analysis</p></li><li><p>error message shows where x is defined</p></li></ul><p>why are you the way you are</p><ul><li><p>safety!</p></li><li><p>fancy compiler</p></li></ul><h3>Rust</h3><pre><code><code-keyword>fn</code-keyword> <value-declaration>main</value-declaration>() {
+	<code-keyword>let</code-keyword> <value-declaration>x</value-declaration>: <foreign-type>i32</foreign-type>;
+	<foreign-value>println!</foreign-value>(<code-string>"{x}"</code-string>);
+}
+</code></pre><ul><li><p>main function</p></li><li><p>semicolons</p></li><li><p>binding declaration similar to swift</p></li><li><p><code class="inline-code">println!</code> macro instead of <code class="inline-code">print</code></p></li></ul><pre><samp><terminal-red class="bold">error[E0381]</terminal-red><terminal-bold class="bold">: used binding `x` isn't initialized</terminal-bold>
+ <terminal-blue class="bold">--></terminal-blue> litmus.rs:3:12
+  <terminal-blue class="bold">|</terminal-blue>
+<terminal-blue class="bold">2 |</terminal-blue>     let x: i32;
+  <terminal-blue class="bold">|         - binding declared here but left uninitialized</terminal-blue>
+<terminal-blue class="bold">3 |</terminal-blue>     println!("{x}");
+  <terminal-blue class="bold">|</terminal-blue>               <terminal-red class="bold">^^^ `x` used here but it isn't initialized</terminal-red>
+  <terminal-blue class="bold">|</terminal-blue>
+  = <terminal-bold class="bold">note</terminal-bold>: this error originates in the macro `$crate::format_args_nl` which 
+comes from the expansion of the macro `println` (in Nightly builds, run with
+-Z macro-backtrace for more info)
+<terminal-cyan class="bold">help</terminal-cyan>: consider assigning a value
+  <terminal-blue class="bold">|</terminal-blue>
+<terminal-blue class="bold">2 |</terminal-blue>     let x: i32 <terminal-green>= 42</terminal-green>;
+  <terminal-blue class="bold">|</terminal-blue>                <terminal-green>++++</terminal-green>
+
+<terminal-red class="bold">error</terminal-red><terminal-bold class="bold">: aborting due to 1 previous error
+
+For more information about this error, try `rustc --explain E0381`.</terminal-bold>
+</samp></pre><ul><li><p>amazing compiler feedback</p><ul><li><p>gives us the solution!!!!!</p></li></ul></li></ul><h3>Java/C#</h3><pre><code><code-keyword>class</code-keyword> <type-declaration>Litmus</type-declaration> {
+	<code-keyword>public</code-keyword> <code-keyword>static</code-keyword> <foreign-type>void</foreign-type> <value-declaration>main</value-declaration>(<foreign-type>String</foreign-type>[] args) {
+		<foreign-type>int</foreign-type> <value-declaration>x</value-declaration>;
+		<foreign-type>System</foreign-type>.<foreign-value>out</foreign-value>.<foreign-value>println</foreign-value>(<local-value>x</local-value>);
+	}
+}
+</code></pre><ul><li><p>so much boilerplate</p><ul><li><p><code class="inline-code">System.out.println</code></p></li></ul></li><li><p><code class="inline-code">int x</code></p></li><li><p>semicolons</p></li></ul><pre><samp>litmus.java:4: error: variable x might not have been initialized
+        System.out.println(x);
+                           ^
+1 error
+error: compilation failed
+</samp></pre><ul><li><p>not the best error, but it’s ok</p></li></ul><pre><code><code-keyword>class</code-keyword> <type-declaration>Litmus</type-declaration> {
+	<code-keyword>static</code-keyword> <foreign-type>int</foreign-type> <value-declaration>x</value-declaration>;
+
+	<code-keyword>public</code-keyword> <code-keyword>static</code-keyword> <foreign-type>void</foreign-type> <value-declaration>main</value-declaration>(<foreign-type>String</foreign-type>[] args) {
+		<foreign-type>System</foreign-type>.<foreign-value>out</foreign-value>.<foreign-value>println</foreign-value>(<local-value>x</local-value>);
+	}
+}
+</code></pre><ul><li><p>moved x into a (static) property instead of a local variable</p></li></ul><pre><samp>0
+</samp></pre><ul><li><p>default value</p></li><li><p>inconsistant!</p><ul><li><p>error for variables, default value for properties</p></li><li><p>during writing, i was surprised</p></li></ul></li></ul><p>in fact, during writing, i was tripped up by this because i expected variables to have a default value</p><h3>Dart</h3><pre><code><foreign-type>void</foreign-type> <value-declaration>main</value-declaration>() {
+	<foreign-type>int</foreign-type> <value-declaration>x</value-declaration>;
+	<foreign-value>print</foreign-value>(<local-value>x</local-value>);
+}
+</code></pre><ul><li><p>main function</p></li><li><p>semicolons</p></li><li><p><code class="inline-code">void main</code>, <code class="inline-code">int x</code></p></li><li><p><code class="inline-code">print</code></p></li></ul><pre><samp>litmus.dart:3:8: <terminal-red>Error: Non-nullable variable 'x' must be assigned before it
+can be used.</terminal-red>
+    print(x);
+          ^
+</samp></pre><ul><li><p>same as rust and swift</p><ul><li><p>though the error message isnt as good</p></li></ul></li><li><p>nullable? whats that</p></li></ul><pre><code><foreign-type>void</foreign-type> <value-declaration>main</value-declaration>() {
+	<foreign-type>int?</foreign-type> <value-declaration>x</value-declaration>;
+	<foreign-value>print</foreign-value>(<local-value>x</local-value>);
+}
+</code></pre><pre><samp>null
+</samp></pre><ul><li><p>nullable types default to null</p><ul><li><p>same as swift, actually!</p></li></ul></li><li><p>what about <code class="inline-code">var</code>?</p></li></ul><pre><code><foreign-type>void</foreign-type> <value-declaration>main</value-declaration>() {
+	<code-keyword>var</code-keyword> <value-declaration>x</value-declaration>;
+	<foreign-value>print</foreign-value>(<local-value>x</local-value>);
+}
+</code></pre><pre><samp>null
+</samp></pre><ul><li><p>var defaults to a nullable type??</p><ul><li><p><code class="inline-code">null</code> is <code class="inline-code">Null</code></p></li><li><p><a href="https://dart.dev/null-safety/understanding-null-safety#nullability-in-the-type-system">weird subtyping shenanigans</a></p></li></ul></li></ul><h3>Go</h3><pre><code><code-keyword>package</code-keyword> main
+
+<code-keyword>import</code-keyword> <code-string>"fmt"</code-string>
+
+<code-keyword>func</code-keyword> <value-declaration>main</value-declaration>() {
+    <code-keyword>var</code-keyword> <value-declaration>x</value-declaration> <foreign-type>int</foreign-type>
+    fmt.<foreign-value>Println</foreign-value>(<local-value>x</local-value>)
+}
+</code></pre><pre><samp>0
+</samp></pre><ul><li><p>defaults to 0</p></li><li><p>go has a whole feature about this! (and it’s horrifying)</p><ul><li><p><code class="inline-code">0</code>, <code class="inline-code">0.0</code>, <code class="inline-code">""</code>, <code class="inline-code">false</code>, <code class="inline-code">(0+0i)</code>, <code class="inline-code">nil</code>, etc.</p></li><li><p>anyone can create a zero-value!</p></li><li><p><a href="https://stackoverflow.com/questions/30731687/how-do-i-represent-an-optional-string-in-go">no good <code class="inline-code">Optional</code></a> without a pointer</p></li></ul></li></ul><h3>C/C++</h3><pre><code><preprocessor-directive>#import</preprocessor-directive> <code-string>&lt;stdio.h></code-string>
+
+<foreign-type>int</foreign-type> <value-declaration>main</value-declaration>() {
+	<foreign-type>int</foreign-type> <value-declaration>x</value-declaration>;
+	<foreign-value>printf</foreign-value>(<code-string>"%d\n"</code-string>, <local-value>x</local-value>);
+	<code-keyword>return</code-keyword> <code-number>0</code-number>;
+}
+</code></pre><ul><li><p>semicolons</p></li><li><p><code class="inline-code">int main</code>, <code class="inline-code">int x</code></p></li><li><p>printf - format string</p></li><li><p>returns an int</p></li></ul><p>why are you the way you are</p><ul><li><p>too old for flow analysis</p></li><li><p>too low level for a default value</p></li></ul><pre><samp>8952720
+</samp></pre><ul><li><p>undefined behavior</p></li><li><p>the worst possible thing you could do</p></li></ul><hr><ol id="footnotes"><li id="footnote:1"><p> and if a language requires more than 10 lines of code for this test, that says a lot <a class="footnote-return-link" href="#footnote-return:1">⏎</a></p></li></ol>

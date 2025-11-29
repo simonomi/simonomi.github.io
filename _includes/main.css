@@ -45,13 +45,19 @@
 	--string: light-dark(#c41a16, #fc6a5d);
 	
 	--terminal-grey: light-dark(#a0a0a0, #bfbfbf);
-	--terminal-blue: light-dark(#074cb2, #bd93f9);
-	--terminal-red: light-dark(#ac422e, #ff6e67);
-	--terminal-green: light-dark(#1f7d08, #5af78e);
+	--terminal-red: light-dark(#ac422e, #ff5555);
+	--terminal-light-red: light-dark(green, #ff6e67); /* TODO: light mode color */
+	--terminal-green: light-dark(#1f7d08, #50fa7b);
+	--terminal-light-green: light-dark(green, #5af78e); /* TODO: light mode color */
 	--terminal-yellow: light-dark(#a95906, #f1fa8c);
-	--terminal-purple: light-dark(#6350cc, #caa9fa);
-	--terminal-pink: light-dark(#ab3172, #ff92d0);
-	--terminal-cyan: light-dark(#0773b2, #9aedfe);
+	--terminal-light-yellow: light-dark(green, #f1fa8c); /* TODO: light mode color */
+	--terminal-blue: light-dark(#074cb2, #bd93f9);
+	--terminal-light-blue: light-dark(green, #caa9fa); /* TODO: light mode color */
+	--terminal-pink: light-dark(#ab3172, #ff79c9);
+	--terminal-light-pink: light-dark(green, #ff92d0); /* TODO: light mode color */
+	--terminal-cyan: light-dark(#0773b2, #8be9fd);
+	--terminal-light-cyan: light-dark(green, #9aedfe); /* TODO: light mode color */
+	--terminal-bold: light-dark(green, #6b75ff); /* TODO: light mode color */
 }
 
 /* some dummy code so noir can tell there's a dark mode */

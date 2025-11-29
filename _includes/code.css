@@ -26,9 +26,14 @@ code:not(pre code) {
 	border-radius: .25em;
 }
 
-foreign-value { color: var(--foreign-value-color) }
+/* rogue generates code with a figure around it */
+figure {
+	margin: 0;
+}
+
+foreign-value, .nb, .bp { color: var(--foreign-value-color) }
 local-value { color: var(--local-value-color); }
-value-declaration { color: var(--value-declaration-color); }
+value-declaration, .n, .nx, .nf { color: var(--value-declaration-color); }
 
 foreign-type { color: var(--foreign-type-color); }
 local-type { color: var(--local-type-color); }
@@ -36,14 +41,14 @@ type-declaration { color: var(--type-declaration-color); }
 
 preprocessor-directive { color: var(--preprocessor-directive); }
 
-code-comment { color: var(--comment); }
+code-comment, .c, .cm, .sd { color: var(--comment); }
 
 code-documentation {
 	color: var(--comment);
 	font-family: ui-rounded, system-ui, sans-serif;
 }
 
-code-keyword {
+code-keyword, .k, .kc, .kd, .kn, .kp, .kr, .kt, .nl {
 	color: var(--keyword);
 	font-weight: bold;
 }
@@ -53,17 +58,23 @@ code-mark {
 	font-weight: bold;
 }
 
-code-number { color: var(--number); }
-code-string { color: var(--string); }
+code-number, .m { color: var(--number); }
+code-string, .s, .sb, .sc, .s2, .sh, .sx, .sr, .s1, .ss, .sa { color: var(--string); }
 
-terminal-grey   { color: var(--terminal-grey); }
-terminal-blue   { color: var(--terminal-blue); }
-terminal-red    { color: var(--terminal-red); }
-terminal-green  { color: var(--terminal-green); }
-terminal-yellow { color: var(--terminal-yellow); }
-terminal-purple { color: var(--terminal-purple); }
-terminal-pink   { color: var(--terminal-pink); }
-terminal-cyan   { color: var(--terminal-cyan); }
+terminal-grey         { color: var(--terminal-grey);         }
+terminal-red          { color: var(--terminal-red);          }
+terminal-light-red    { color: var(--terminal-light-red);    }
+terminal-green        { color: var(--terminal-green);        }
+terminal-light-green  { color: var(--terminal-light-green);  }
+terminal-yellow       { color: var(--terminal-yellow);       }
+terminal-light-yellow { color: var(--terminal-light-yellow); }
+terminal-blue         { color: var(--terminal-blue);         }
+terminal-light-blue   { color: var(--terminal-light-blue);   }
+terminal-pink         { color: var(--terminal-pink);         }
+terminal-light-pink   { color: var(--terminal-light-pink);   }
+terminal-cyan         { color: var(--terminal-cyan);         }
+terminal-light-cyan   { color: var(--terminal-light-cyan);   }
+terminal-bold         { color: var(--terminal-bold);         }
 
 /* to allow easy nesting */
 foreign-value, local-value, value-declaration, foreign-type, local-type, type-declaration, preprocessor-directive, code-comment, code-documentation, code-number, code-string, terminal-grey, terminal-blue, terminal-red, terminal-green, terminal-yellow, terminal-purple, terminal-pink, terminal-cyan {

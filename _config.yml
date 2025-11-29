@@ -8,3 +8,15 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - .jj
+  - drafts/
+
+kramdown:
+  hard_wrap: false
+  gfm_quirks: [no_auto_typographic]
+
+defaults:
+  - scope:
+      path: "blog"
+    values:
+      layout: "blogpost"
+      permalink: "/:path/:basename/index"

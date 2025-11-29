@@ -1,0 +1,45 @@
+---
+title: alice's blog
+layout: default
+permalink: "/blog"
+---
+<div>
+	<icon-links>
+		<a href="/rss" title="rss">
+			<img src="/images/rss.svg">
+		</a>
+		
+		<a href="https://simonomi.dev" title="home">
+			<img src="/images/home.svg" alt="an icon of a home">
+		</a>
+	</icon-links>
+	
+	<hgroup>
+		<h1>{{ page.title }}</h1>
+	</hgroup>
+	
+	{% for post in site.data.posts %}
+		<a class="secret" href="/blog/{{ post.slug }}">
+			<hgroup>
+				<h3>{{ post.title }}</h3>
+				<p class="secondary">{{ post.date }}</p>
+			</hgroup>
+		</a>
+	{% endfor %}
+	
+	<!-- <a href="https://example.com" class="secret-link"> -->
+		<!-- <hgroup> -->
+			<!-- <h3>refinement types for swift</h3> -->
+			<!-- <p class="secondary">2024-03-05</p> -->
+		<!-- </hgroup> -->
+	<!-- </a> -->
+	
+	<!-- <a href="https://example.com" class="secret-link"> -->
+		<!-- <hgroup> -->
+			<!-- <h3>what even is a type??</h3> -->
+			<!-- <p class="secondary">2024-03-12</p> -->
+		<!-- </hgroup> -->
+	<!-- </a> -->
+	
+	<!-- repeat ad nauseam -->
+</div>
