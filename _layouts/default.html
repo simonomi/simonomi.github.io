@@ -4,7 +4,13 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>{{ page.title }}</title>
+		{% if page.layout == "blogpost" %}
+			{% assign slug = page.name | split: "." | first %}
+			{% assign post = site.data.posts | where: "slug", slug %}
+			<title>{{ post | map: "title" }}</title>
+		{% else %}
+			<title>{{ page.title }}</title>
+		{% endif %}
 		<link rel="icon" href="/images/logo-circle.png">
 		
 		{%- if page.description -%}
