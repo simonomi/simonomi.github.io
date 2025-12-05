@@ -62,6 +62,7 @@ code-number, .m { color: var(--number); }
 code-string, .s, .sb, .sc, .s2, .sh, .sx, .sr, .s1, .ss, .sa { color: var(--string); }
 
 terminal-grey         { color: var(--terminal-grey);         }
+terminal-light-grey   { color: var(--terminal-light-grey);   }
 terminal-red          { color: var(--terminal-red);          }
 terminal-light-red    { color: var(--terminal-light-red);    }
 terminal-green        { color: var(--terminal-green);        }

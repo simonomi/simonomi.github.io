@@ -44,6 +44,8 @@
 	--number: light-dark(#1c00cf, #d0bf69);
 	--string: light-dark(#c41a16, #fc6a5d);
 	
+	/* oh god, apparently "Dynamic foreground colors" changes these sometimes */
+	/* --terminal-grey: light-dark(green, #44475a); /* TODO: light mode color */
 	--terminal-grey: light-dark(#a0a0a0, #bfbfbf);
 	--terminal-red: light-dark(#ac422e, #ff5555);
 	--terminal-light-red: light-dark(green, #ff6e67); /* TODO: light mode color */

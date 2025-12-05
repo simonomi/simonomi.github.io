@@ -3,10 +3,14 @@ layout: default
 style: blogpost
 ---
 
+{% assign slug = page.name | split: "." | first %}
+{% assign post = site.data.posts | where: "slug", slug %}
+
 <hgroup>
-	<!-- <h1>{{ page.title }}</h1> -->
-	<!-- <p class="secondary">{{ page.author }} • {{ page.date | date: "%Y-%m-%d" }}</p> -->
-	<p>hiii</p>
+	<h1>{{ post | map: "title" }}</h1>
+	<p class="secondary">alice pellerin • {{ post | map: "date" | date: "%Y-%m-%d" }}</p>
 </hgroup>
+
+<p><mark>TODO: home button, blog button, rss button</mark></p>
 
 {{ content }}
