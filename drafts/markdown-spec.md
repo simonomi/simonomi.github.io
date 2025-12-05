@@ -23,6 +23,7 @@ this is `inline code` in a sentence
 ```language
 code block <mark>highlighted</mark> and normal
 ```
+- <mark>TODO: make code highlighting work</mark>
 
 ```python
 print("this is python code!")

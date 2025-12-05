@@ -15,18 +15,6 @@ outline
 
 recently, i've come up with a kind of 'litmus test' for programming languages. it's a short, simple experiment that gives insight into the design philosophy behind a language. despite the name, it's not really a _test_ per se, as it doesn't have a 'pass' or 'fail' condition (though i'm willing to declare winners and losers). instead, it's more like an experiment that shows what a language values.
 
-ok and what if i--do this?
-
-```dex
-// event 1
-unknown <27>: <31>
-
-// event 12199
-set flag <51 8> to <1>
-unknown <27>: <41>
-set flag <100 5> to true
-```
-
 the litmus test is as follows:
 
 > what happens when you try to use a variable that you've declared, but not assigned a value to?

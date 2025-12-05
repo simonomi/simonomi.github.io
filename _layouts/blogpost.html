@@ -6,11 +6,19 @@ style: blogpost
 {% assign slug = page.name | split: "." | first %}
 {% assign post = site.data.posts | where: "slug", slug %}
 
+<icon-links>
+	<a href="/blog" title="blog">
+		<img src="/images/blog.svg">
+	</a>
+	
+	<a href="https://simonomi.dev" title="home">
+		<img src="/images/home.svg" alt="an icon of a home">
+	</a>
+</icon-links>
+
 <hgroup>
-	<h1>{{ post | map: "title" }}</h1>
+	<h1><a class="secret" href="/blog/{{ post | map: "slug" }}">{{ post | map: "title" }}</a></h1>
 	<p class="secondary">alice pellerin • {{ post | map: "date" | date: "%Y-%m-%d" }}</p>
 </hgroup>
-
-<p><mark>TODO: home button, blog button, rss button</mark></p>
 
 {{ content }}
