@@ -18,13 +18,18 @@ permalink: "/blog"
 		<h1>{{ page.title }}</h1>
 	</hgroup>
 	
-	{% assign postsReversed = site.data.posts | reverse %}
-	{% for post in postsReversed %}
+	{%- for post in site.data.posts reversed -%}
+		{%- if post.draft -%}
+			{%- unless site.show_drafts -%}
+				{% continue %}
+			{%- endunless -%}
+		{%- endif -%}
+		
 		<a class="secret" href="/blog/{{ post.slug }}">
 			<hgroup>
 				<h3>{{ post.title }}</h3>
 				<p class="secondary">{{ post.date | date: "%Y-%m-%d" }}</p>
 			</hgroup>
 		</a>
-	{% endfor %}
+	{%- endfor -%}
 </div>

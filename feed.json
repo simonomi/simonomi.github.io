@@ -17,6 +17,12 @@
 	"language": "en-US",
 	"items": [
 		{%- for post in site.data.posts -%}
+			{%- if post.draft -%}
+				{%- unless site.show_drafts -%}
+					{% continue %}
+				{%- endunless -%}
+			{%- endif -%}
+			
 			{
 				"id": "https://simonomi.dev/blog/{{ post.slug }}",
 				"url": "https://simonomi.dev/blog/{{ post.slug }}",
