@@ -1,0 +1,29 @@
+---
+---
+{
+	"title": "alice's blog",
+	"version": "https://jsonfeed.org/version/1.1",
+	"home_page_url": "https://simonomi.dev",
+	"feed_url": "https://simonomi.dev/feed.json",
+	"icon": "https://simonomi.dev/images/logo-circle.png",
+	"favicon": "https://simonomi.dev/images/logo-circle.png",
+	"authors": [
+		{
+			"name": "alice pellerin",
+			"url": "https://simonomi.dev",
+			"avatar": "https://simonomi.dev/images/logo-circle.png"
+		}
+	],
+	"language": "en-US",
+	"items": [
+		{%- for post in site.data.posts -%}
+			{
+				"id": "https://simonomi.dev/blog/{{ post.slug }}",
+				"url": "https://simonomi.dev/blog/{{ post.slug }}",
+				"title": "{{ post.title }}",
+				"content_text": "",
+				"date_published": "{{ post.date | date_to_xmlschema }}"
+			}{%- unless forloop.last -%},{%- endunless -%}
+		{%- endfor -%}
+	]
+}

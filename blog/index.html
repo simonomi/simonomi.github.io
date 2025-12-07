@@ -5,7 +5,7 @@ permalink: "/blog"
 ---
 <div>
 	<icon-links>
-		<a href="/rss" title="rss">
+		<a href="/feed.json" title="json feed">
 			<img src="/images/rss.svg">
 		</a>
 		
@@ -23,7 +23,7 @@ permalink: "/blog"
 		<a class="secret" href="/blog/{{ post.slug }}">
 			<hgroup>
 				<h3>{{ post.title }}</h3>
-				<p class="secondary">{{ post.date }}</p>
+				<p class="secondary">{{ post.date | date: "%Y-%m-%d" }}</p>
 			</hgroup>
 		</a>
 	{% endfor %}
