@@ -1,0 +1,15 @@
+template_extensions:
+  - html
+  - css
+  - json
+
+ignore:
+  - LICENSE
+  - CNAME # TODO: does this break dns?
+  - drafts/
+
+site:
+  base_url: "https://simonomi.dev"
+
+syntax_highlight:
+  enabled: false

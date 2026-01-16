@@ -1,6 +1,6 @@
 ---
 title: alice's blog
-layout: default
+layout: default.html
 permalink: "/blog/"
 ---
 <div>
@@ -21,7 +21,7 @@ permalink: "/blog/"
 	{%- for post in site.data.posts reversed -%}
 		{%- if post.draft -%}
 			{%- unless site.show_drafts -%}
-				{% continue %}
+				{%- continue -%}
 			{%- endunless -%}
 		{%- endif -%}
 		

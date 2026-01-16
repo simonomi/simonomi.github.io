@@ -1,10 +1,12 @@
 ---
-layout: default
-style: blogpost
+layout: default.html
+data:
+  isBlogpost: true
+  style: blogpost
 ---
 
-{% assign slug = page.name | split: "." | first %}
-{% assign post = site.data.posts | where: "slug", slug %}
+{%- assign slug = page.name | split: "." | first -%}
+{%- assign post = site.data.posts | where: "slug", slug -%}
 
 <icon-links>
 	<a href="/blog" title="blog">

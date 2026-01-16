@@ -4,16 +4,14 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>Redirecting to {{ page.redirecturl }}...</title>
+		<title>Redirecting to {{ page.data.redirectURL }}...</title>
 		<link rel="icon" href="/images/logo-circle.png">
 		
-		<meta http-equiv="refresh" content="0; URL={{ page.redirecturl }}">
+		<meta http-equiv="refresh" content="0; URL={{ page.data.redirectURL }}">
 		
 		<style>
-			{%- capture maincss -%}
-				{%- include main.css -%}
-			{%- endcapture -%}
-			{{- maincss | normalize_whitespace -}}
+			/* TODO: minify css */
+			{%- render "main.css" -%}
 		</style>
 	</head>
 </html>

@@ -4,43 +4,40 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		{% if page.layout == "blogpost" %}
-			{% assign slug = page.name | split: "." | first %}
-			{% assign post = site.data.posts | where: "slug", slug %}
+		{%- if page.data.isBlogpost -%}
+			{%- assign slug = page.name | split: "." | first -%}
+			{%- assign post = site.data.posts | where: "slug", slug -%}
 			<title>{{ post | map: "title" }}</title>
-		{% else %}
+		{%- else -%}
 			<title>{{ page.title }}</title>
-		{% endif %}
+		{%- endif -%}
 		<link rel="icon" href="/images/logo-circle.png">
 		<link rel="alternate" type="application/feed+json" href="/feed.json"/>
 		
-		{%- if page.description -%}
+		{%- if page.description and page.description != "" -%}
 			<meta name="description" content="{{ page.description }}">
 		{%- endif -%}
 		
 		<style>
-			{%- capture maincss -%}
-				{%- include main.css -%}
-			{%- endcapture -%}
-			{{- maincss | normalize_whitespace -}}
+			/* TODO: minify css (and html ideally) */
+			{%- render "main.css" -%}
 			
-			{%- if page.style -%}
-				{%- capture pagecss -%}
-					{%- include {{ page.style }}.css -%}
-				{%- endcapture -%}
-				{{- pagecss | normalize_whitespace -}}
+			{%- if page.data.style -%}
+				{%- assign styleFile = page.data.style | append: ".css" -%}
+				{%- render styleFile -%}
 			{%- endif -%}
 		</style>
 		
-		{%- if page.script -%}
+		{%- if page.data.script -%}
 			<script>
-				{%- include {{ page.script }}.js -%}
+				{%- assign scriptFile = page.data.script | append: ".js" -%}
+				{%- render scriptFile -%}
 			</script>
 		{%- endif -%}
 	</head>
 	<body>
-		{{- content -}}
-		{%- unless page.nofooter -%}
+		{{- page.content -}}
+		{%- unless page.data.nofooter -%}
 		<footer>
 			<small>© <time>{{ "now" | date: "%Y" }}</time> alice pellerin</small>
 		</footer>

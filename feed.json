@@ -1,4 +1,5 @@
 ---
+permalink: /feed.json
 ---
 {
 	"title": "alice's blog",
@@ -19,7 +20,7 @@
 		{%- for post in site.data.posts -%}
 			{%- if post.draft -%}
 				{%- unless site.show_drafts -%}
-					{% continue %}
+					{%- continue -%}
 				{%- endunless -%}
 			{%- endif -%}
 			
@@ -28,7 +29,7 @@
 				"url": "https://simonomi.dev/blog/{{ post.slug }}",
 				"title": "{{ post.title }}",
 				"content_text": "",
-				"date_published": "{{ post.date | date_to_xmlschema }}"
+				"date_published": "{{ post.date | date: "%Y-%m-%dT%H:%M:%S%z" }}"
 			}{%- unless forloop.last -%},{%- endunless -%}
 		{%- endfor -%}
 	]
