@@ -19,7 +19,7 @@ jobs:
         curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh | \
           sh -s -- \
           --git wilsonzlin/minify-html \
-          --crate minhtml \
+          --crate minify-html \
           --target x86_64-unknown-linux-gnu
     - name: build
       run: ~/.cargo/bin/cobalt build
