@@ -27,7 +27,6 @@ ruby > rt { display: var(--furigana-display, revert); }
 #show-furigana { display: var(--furigana-show-button, initial); }
 #hide-furigana { display: var(--furigana-hide-button, initial); }
 
-/* TODO: if i add more languages, this will need to be added to */
 @media screen and (min-width: 600px) {
 	.main {
 		grid-row: 1;
