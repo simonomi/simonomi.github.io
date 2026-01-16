@@ -16,15 +16,11 @@ jobs:
           --target x86_64-unknown-linux-gnu
     - name: install minify-html
       run: |
-        curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh | \
-          sh -s -- \
-          --git wilsonzlin/minify-html \
-          --crate minify-html \
-          --target x86_64-unknown-linux-gnu
+        curl -LSfs --output ~/minhtml https://github.com/wilsonzlin/minify-html/releases/download/v0.18.1/minhtml-0.18.1-x86_64-unknown-linux-gnu
     - name: build
       run: ~/.cargo/bin/cobalt build
     - name: minify
-      run: ~/.cargo/bin/minhtml --minify-css --minify-js --keep-html-and-head-opening-tags --keep-closing-tags _site/**.html
+      run: ~/minhtml --minify-css --minify-js --keep-html-and-head-opening-tags --keep-closing-tags _site/**.html
     - name: upload static files as artifact
       uses: actions/upload-pages-artifact@v4
       with:
