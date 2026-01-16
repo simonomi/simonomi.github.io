@@ -1,0 +1,44 @@
+name: Publish
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - name: install Cobalt
+      run: |
+        curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh | \
+          sh -s -- \
+          --git cobalt-org/cobalt.rs \
+          --crate cobalt \
+          --target x86_64-unknown-linux-gnu
+    - name: install minify-html
+      run: |
+        curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh | \
+          sh -s -- \
+          --git wilsonzlin/minify-html \
+          --crate minhtml \
+          --target x86_64-unknown-linux-gnu
+    - name: build
+      run: ~/.cargo/bin/cobalt build
+    - name: minify
+      run: ~/.cargo/bin/minhtml --minify-css --minify-js --keep-html-and-head-opening-tags --keep-closing-tags _site/**.html
+    - name: upload static files as artifact
+      uses: actions/upload-pages-artifact@v4
+      with:
+        path: _site/
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write 
+    steps:
+    - name: deploy
+      id: deployment
+      uses: actions/deploy-pages@v4
