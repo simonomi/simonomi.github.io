@@ -1,0 +1,5 @@
+# title
+# slug
+# date yyyy-mm-dd
+# time hh:mm:ss (for json feed)
+# timezone: +00/-06/etc (for json feed)

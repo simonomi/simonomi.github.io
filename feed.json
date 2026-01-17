@@ -29,7 +29,7 @@ permalink: /feed.json
 				"url": "https://simonomi.dev/blog/{{ post.slug }}",
 				"title": "{{ post.title }}",
 				"content_text": "",
-				"date_published": "{{ post.date | date: "%Y-%m-%dT%H:%M:%S%z" }}"
+				"date_published": "{{ post.date }}T{{ post.time }}{{ post.timezone }}:00"
 			}{%- unless forloop.last -%},{%- endunless -%}
 		{%- endfor -%}
 	]
