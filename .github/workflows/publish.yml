@@ -21,7 +21,7 @@ jobs:
     - name: build
       run: ~/.cargo/bin/cobalt build
     - name: minify
-      run: ~/minhtml --minify-css --minify-js --keep-html-and-head-opening-tags --keep-closing-tags _site/**.html
+      run: ~/minhtml --minify-css --minify-js --keep-html-and-head-opening-tags --keep-closing-tags $(find _site/ -type f -name "*.html")
     - name: upload static files as artifact
       uses: actions/upload-pages-artifact@v4
       with:
