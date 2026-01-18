@@ -18,7 +18,7 @@
 	--quote-border-color: light-dark(deepskyblue, deepskyblue);
 	--quote-background-color: light-dark(#eee, black);
 	
-	--icon-link-width: 32px;
+	--icon-link-width: 2rem;
 	--icon-link-height: var(--icon-link-width);
 	--icon-link-spacing: 1rem;
 	

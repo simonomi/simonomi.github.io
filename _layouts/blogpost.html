@@ -1,26 +1,55 @@
----
-layout: default.html
-data:
-  isBlogpost: true
-  style: blogpost
----
+{%- assign post = site.data.posts | where: "slug", page.slug -%}
 
-{%- assign slug = page.name | split: "." | first -%}
-{%- assign post = site.data.posts | where: "slug", slug -%}
-
-<icon-links>
-	<a href="/blog" title="blog">
-		<img src="/images/blog.svg">
-	</a>
-	
-	<a href="https://simonomi.dev" title="home">
-		<img src="/images/home.svg" alt="an icon of a home">
-	</a>
-</icon-links>
-
-<hgroup>
-	<h1><a class="secret" href="/blog/{{ post | map: "slug" }}">{{ post | map: "title" }}</a></h1>
-	<p class="secondary">alice pellerin • {{ post | map: "date" | date: "%Y-%m-%d" }}</p>
-</hgroup>
-
-{{ content }}
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title>{{ post | map: "title" }}</title>
+		<link rel="icon" href="/images/logo-circle.png">
+		<link rel="alternate" type="application/feed+json" href="/feed.json"/>
+		
+		{%- if post.description and post.description != "" -%}
+			<meta name="description" content="{{ page.description }}">
+		{%- endif -%}
+		
+		<style>
+			{%- render "main.css" -%}
+			
+			{%- if post.style -%}
+				{%- assign styleFile = post.style | append: ".css" -%}
+				{%- render styleFile -%}
+			{%- endif -%}
+		</style>
+		
+		{%- if post.script -%}
+			<script>
+				{%- assign scriptFile = post.script | append: ".js" -%}
+				{%- render scriptFile -%}
+			</script>
+		{%- endif -%}
+	</head>
+	<body>
+		<icon-links>
+			<a href="/blog" title="blog">
+				<img src="/images/blog.svg">
+			</a>
+			
+			<a href="https://simonomi.dev" title="home">
+				<img src="/images/home.svg" alt="an icon of a home">
+			</a>
+		</icon-links>
+		
+		<hgroup>
+			<h1><a class="secret" href="/blog/{{ page.slug }}">{{ post | map: "title" }}</a></h1>
+			<p class="secondary">alice pellerin • {{ post | map: "date" }}</p>
+		</hgroup>
+		
+		{{- page.content -}}
+		
+		<footer>
+			<small>© <time>{{ "now" | date: "%Y" }}</time> alice pellerin</small>
+		</footer>
+	</body>
+</html>
