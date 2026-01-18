@@ -1,5 +1,6 @@
 # title
 # slug
+# isDraft (optional)
 # description (optional)
 # style (optional)
 # script (optional)
@@ -7,3 +8,10 @@
 # time: hh:mm:ss (for json feed)
 # timezone: +00/-06/etc (for json feed)
 # use :blogpost or :blognow
+
+- title: your hex editor should color-code bytes
+  slug: color-code-your-bytes
+  isDraft: true
+  date: 2026-01-18
+  time: 16:54
+  timezone: "-06"

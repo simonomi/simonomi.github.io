@@ -1,0 +1,61 @@
+%YAML 1.2
+---
+name: hex
+version: 2
+scope: source.hex
+
+contexts:
+  main:
+    - match: "^[0-9a-f]{8}"
+      scope: byte-address
+    - match: "  (?=[\\w\\W]{16}$)"
+      push: ascii
+    - match: "00"
+      scope: byte-00
+    - match: "0[1-9a-fA-F]"
+      scope: byte-0
+    - match: "1[0-9a-fA-F]"
+      scope: byte-1
+    - match: "2[0-9a-fA-F]"
+      scope: byte-2
+    - match: "3[0-9a-fA-F]"
+      scope: byte-3
+    - match: "4[0-9a-fA-F]"
+      scope: byte-4
+    - match: "5[0-9a-fA-F]"
+      scope: byte-5
+    - match: "6[0-9a-fA-F]"
+      scope: byte-6
+    - match: "7[0-9a-fA-F]"
+      scope: byte-7
+    - match: "8[0-9a-fA-F]"
+      scope: byte-8
+    - match: "9[0-9a-fA-F]"
+      scope: byte-9
+    - match: "[aA][0-9a-fA-F]"
+      scope: byte-A
+    - match: "[bB][0-9a-fA-F]"
+      scope: byte-B
+    - match: "[cC][0-9a-fA-F]"
+      scope: byte-C
+    - match: "[dD][0-9a-fA-F]"
+      scope: byte-D
+    - match: "[eE][0-9a-fA-F]"
+      scope: byte-E
+    - match: "[fF][0-9a-eA-E]"
+      scope: byte-F
+    - match: "[fF][fF]"
+      scope: byte-FF
+
+  ascii:
+    - meta_scope: byte-ASCII
+    - match: "⋄"
+      scope: byte-00
+    - match: "•"
+      scope: byte-ASCII-non-graphic
+    - match: "×"
+      scope: byte-non-ASCII
+    - match: "╳"
+      scope: byte-FF
+    - match: "$"
+      pop: true

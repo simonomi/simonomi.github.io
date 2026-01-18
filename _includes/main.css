@@ -3,11 +3,11 @@
 	--foreground-color: light-dark(black, #eee);
 	--secondary-color: light-dark(grey, #bbb);
 	
-	--background-color: light-dark(#fefefe, #161a1c);
-	--background-color-code: light-dark(#e0e0e0, #303030);
+	--background-color: light-dark(white, #161a1c);
+	--background-color-code: light-dark(#f0f0f0, #303030);
 	--background-color-terminal: #282a36;
 	
-	--button-color: light-dark(silver, #555);
+	--button-color: light-dark(#ddd, #555);
 	--button-pressed-color: light-dark(lightgrey, #242e33);
 	
 	--link-color: light-dark(dodgerblue, deepskyblue);
@@ -27,6 +27,10 @@
 	
 	--table-border-color: light-dark(#a0a0a0, #a0a0a0);
 	--table-header-background-color: light-dark(#e0e0e0, #303030);
+	
+	--tab-open-color: light-dark(#ccc, #303030);
+	--tab-closed-color: light-dark(#ddd, #202020);
+	--tab-corner-radius: 0.5rem;
 	
 	--foreign-value-color: light-dark(#6c36a9, #a167e6);
 	--local-value-color: light-dark(#326d74, #67b7a4);
@@ -49,9 +53,9 @@
 	--terminal-grey: light-dark(#a0a0a0, #bfbfbf);
 	--terminal-red: light-dark(#ac422e, #ff5555);
 	--terminal-light-red: light-dark(green, #ff6e67); /* TODO: light mode color */
-	--terminal-green: light-dark(#1f7d08, #50fa7b);
+	--terminal-green: light-dark(#54ad45, #50fa7b);
 	--terminal-light-green: light-dark(green, #5af78e); /* TODO: light mode color */
-	--terminal-yellow: light-dark(#a95906, #f1fa8c);
+	--terminal-yellow: light-dark(#d17e3b, #f1fa8c);
 	--terminal-light-yellow: light-dark(green, #f1fa8c); /* TODO: light mode color */
 	--terminal-blue: light-dark(#074cb2, #bd93f9);
 	--terminal-light-blue: light-dark(green, #caa9fa); /* TODO: light mode color */
@@ -60,6 +64,28 @@
 	--terminal-cyan: light-dark(#0773b2, #8be9fd);
 	--terminal-light-cyan: light-dark(green, #9aedfe); /* TODO: light mode color */
 	--terminal-bold: light-dark(green, #6b75ff); /* TODO: light mode color */
+	
+	--byte-address: light-dark(#8abbc3, #8abbc3);
+	--byte-ASCII-non-graphic: light-dark(#54ad45, #50fa7b);
+	--byte-non-ASCII: light-dark(#bbb31e, #f1fa8c);
+	--byte-00: light-dark(#808080, #a0a0a0);
+	--byte-0:  light-dark(oklch(67% 0.18 360), oklch(75% 0.18 360));
+	--byte-1:  light-dark(oklch(67% 0.18 23), oklch(75% 0.18 23));
+	--byte-2:  light-dark(oklch(67% 0.18 50), oklch(75% 0.18 50));
+	--byte-3:  light-dark(oklch(67% 0.18 65), oklch(75% 0.18 65));
+	--byte-4:  light-dark(oklch(67% 0.18 77), oklch(75% 0.18 77));
+	--byte-5:  light-dark(oklch(67% 0.18 103), oklch(75% 0.18 103));
+	--byte-6:  light-dark(oklch(67% 0.18 130), oklch(75% 0.18 130));
+	--byte-7:  light-dark(oklch(67% 0.18 142), oklch(75% 0.18 142));
+	--byte-8:  light-dark(oklch(67% 0.18 150), oklch(75% 0.18 150));
+	--byte-9:  light-dark(oklch(67% 0.18 163), oklch(75% 0.18 163));
+	--byte-A:  light-dark(oklch(67% 0.18 184), oklch(75% 0.18 184));
+	--byte-B:  light-dark(oklch(67% 0.18 209), oklch(75% 0.18 209));
+	--byte-C:  light-dark(oklch(67% 0.18 232), oklch(75% 0.18 232));
+	--byte-D:  light-dark(oklch(67% 0.18 254), oklch(75% 0.18 254));
+	--byte-E:  light-dark(oklch(67% 0.18 294), oklch(75% 0.18 294));
+	--byte-F:  light-dark(oklch(67% 0.18 328), oklch(75% 0.18 328));
+	--byte-FF: light-dark(black, white);
 }
 
 /* some dummy code so noir can tell there's a dark mode */
@@ -152,9 +178,91 @@ summary {
 	cursor: pointer;
 }
 
+tab-group {
+	display: grid;
+	grid-template-rows: auto 1fr;
+	/* the min being 0 allows the grid to be smaller than its contents */
+	grid-template-columns: repeat(var(--tabs), minmax(0, 1fr));
+	row-gap: 0.5rem;
+	margin-block-start: 1rem;
+	margin-block-end: 1rem;
+	
+	& > details {
+		display: grid;
+		grid-template-rows: subgrid;
+		grid-template-columns: subgrid;
+		grid-row: 1 / -1;
+		grid-column: 1 / -1;
+		
+		& > summary {
+			grid-row: 1;
+			z-index: 1;
+			padding: 0.3rem;
+			min-height: 2rem;
+			text-align: center;
+			align-content: center; /* vertical alignment */
+			list-style: none;
+			
+			&:hover {
+				filter: brightness(0.95);
+			}
+			
+			&:active {
+				transform: translateY(1px);
+			}
+		}
+		
+		&:first-child > summary {
+			border-start-start-radius: var(--tab-corner-radius);
+			border-end-start-radius: var(--tab-corner-radius);
+		}
+		
+		&:last-child > summary {
+			border-start-end-radius: var(--tab-corner-radius);
+			border-end-end-radius: var(--tab-corner-radius);
+		}
+		
+		&[open] > summary {
+			background-color: var(--tab-open-color);
+			font-weight: bold;
+		}
+		
+		&:not([open]) > summary {
+			background-color: var(--tab-closed-color);
+			color: var(--secondary-color);
+		}
+		
+		&:nth-child(1) > summary { grid-column: 1; }
+		&:nth-child(2) > summary { grid-column: 2; }
+		&:nth-child(3) > summary { grid-column: 3; }
+		&:nth-child(4) > summary { grid-column: 4; }
+		&:nth-child(5) > summary { grid-column: 5; }
+		&:nth-child(6) > summary { grid-column: 6; }
+		&:nth-child(7) > summary { grid-column: 7; }
+		
+		&::details-content {
+			grid-row: 2;
+			grid-column: 1 / -1;
+		}
+		
+		/* normally, all details are at the same z-index, so selecting is broken */
+		&[open]::details-content {
+			z-index: 1;
+		}
+		
+		&:not([open])::details-content {
+			z-index: -1;
+		}
+		
+		/* the tab-group normally wraps the margin into its size, preventing it from merging with adjacent elements */
+		& > :last-child {
+			margin-block-start: 0;
+			margin-block-end: 0;
+		}
+	}
+}
+
 ul {
-	margin-top: 0.25rem;
-	margin-bottom: 0.25rem;
 	list-style-type: initial; /* every level of indentation should be the same */
 	
 	ul {

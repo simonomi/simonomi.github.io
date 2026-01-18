@@ -12,4 +12,5 @@ site:
   base_url: "https://simonomi.dev"
 
 syntax_highlight:
-  enabled: false
+  theme: "css"
+  enabled: true

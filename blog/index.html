@@ -18,7 +18,7 @@ layout: default.html
 	</hgroup>
 	
 	{%- for post in site.data.posts reversed -%}
-		{%- if post.draft -%}
+		{%- if post.isDraft -%}
 			{%- unless site.show_drafts -%}
 				{%- continue -%}
 			{%- endunless -%}

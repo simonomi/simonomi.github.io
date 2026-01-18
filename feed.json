@@ -18,7 +18,7 @@ permalink: /feed.json
 	"language": "en-US",
 	"items": [
 		{%- for post in site.data.posts -%}
-			{%- if post.draft -%}
+			{%- if post.isDraft -%}
 				{%- unless site.show_drafts -%}
 					{%- continue -%}
 				{%- endunless -%}

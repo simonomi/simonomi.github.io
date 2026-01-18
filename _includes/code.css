@@ -77,6 +77,29 @@ terminal-cyan         { color: var(--terminal-cyan);         }
 terminal-light-cyan   { color: var(--terminal-light-cyan);   }
 terminal-bold         { color: var(--terminal-bold);         }
 
+byte-address, .c-byte-address { color: var(--byte-address); }
+byte-ASCII, .c-byte-ASCII { color: var(--string); }
+byte-ASCII-non-graphic, .c-byte-ASCII-non-graphic { color: var(--byte-ASCII-non-graphic); }
+byte-non-ASCII, .c-byte-non-ASCII { color: var(--byte-non-ASCII); }
+byte-00, .c-byte-00 { color: var(--byte-00); }
+byte-0, .c-byte-0 { color: var(--byte-0); }
+byte-1, .c-byte-1 { color: var(--byte-1); }
+byte-2, .c-byte-2 { color: var(--byte-2); }
+byte-3, .c-byte-3 { color: var(--byte-3); }
+byte-4, .c-byte-4 { color: var(--byte-4); }
+byte-5, .c-byte-5 { color: var(--byte-5); }
+byte-6, .c-byte-6 { color: var(--byte-6); }
+byte-7, .c-byte-7 { color: var(--byte-7); }
+byte-8, .c-byte-8 { color: var(--byte-8); }
+byte-9, .c-byte-9 { color: var(--byte-9); }
+byte-A, .c-byte-A { color: var(--byte-A); }
+byte-B, .c-byte-B { color: var(--byte-B); }
+byte-C, .c-byte-C { color: var(--byte-C); }
+byte-D, .c-byte-D { color: var(--byte-D); }
+byte-E, .c-byte-E { color: var(--byte-E); }
+byte-F, .c-byte-F { color: var(--byte-F); }
+byte-FF, .c-byte-FF { color: var(--byte-FF); }
+
 /* to allow easy nesting */
 foreign-value, local-value, value-declaration, foreign-type, local-type, type-declaration, preprocessor-directive, code-comment, code-documentation, code-number, code-string, terminal-grey, terminal-blue, terminal-red, terminal-green, terminal-yellow, terminal-purple, terminal-pink, terminal-cyan {
 	font-weight: normal;
