@@ -8,8 +8,23 @@
 		<link rel="icon" href="/images/logo-circle.png">
 		<link rel="alternate" type="application/feed+json" href="/feed.json"/>
 		
+		{%- if page.permalink == "" or page.permalink == "index.html" -%}
+			<meta property="og:title" content="{{ page.title }}"/>
+			<meta property="og:type" content="profile"/>
+			<meta property="og:url" content="{{ site.base_url }}"/>
+			
+			<meta property="profile:first_name" content="alice"/>
+			<meta property="profile:last_name" content="pellerin"/>
+			<meta property="profile:username" content="simonomi"/>
+			<meta property="profile:gender" content="female"/>
+		{%- endif -%}
+		
 		{%- if page.description and page.description != "" -%}
 			<meta name="description" content="{{ page.description }}">
+			
+			{%- if page.permalink == "" or page.permalink == "index.html" -%}
+				<meta property="og:description" content="{{ page.description }}"/>
+			{%- endif -%}
 		{%- endif -%}
 		
 		<style>

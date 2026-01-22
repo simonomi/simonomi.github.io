@@ -1,15 +1,23 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		
 		<title>{{ page.title }}</title>
-		<link rel="icon" href="/images/logo-circle.png">
+		<link rel="icon" href="/images/logo-circle.png"/>
 		<link rel="alternate" type="application/feed+json" href="/feed.json"/>
 		
+		<meta property="og:title" content="{{ page.title }}"/>
+		<meta property="og:type" content="article"/>
+		<meta property="og:url" content="{{ site.base_url }}/{{ page.permalink }}"/>
+		
+		<meta property="article:author" content="{{ site.base_url }}"/>
+		<meta property="article:published_time" content="{{ page.published_date | date: "%Y-%m-%dT%H:%M:%S%:z" }}"/>
+		
 		{%- if page.description and page.description != "" -%}
-			<meta name="description" content="{{ page.description }}">
+			<meta name="description" content="{{ page.description }}"/>
+			<meta property="og:description" content="{{ page.description }}"/>
 		{%- endif -%}
 		
 		<style>
@@ -31,11 +39,11 @@
 	<body>
 		<icon-links>
 			<a href="/blog" title="blog">
-				<img src="/images/blog.svg">
+				<img src="/images/blog.svg"/>
 			</a>
 			
 			<a href="/" title="home">
-				<img src="/images/home.svg" alt="an icon of a home">
+				<img src="/images/home.svg" alt="an icon of a home"/>
 			</a>
 		</icon-links>
 		

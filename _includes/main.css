@@ -143,6 +143,11 @@ tab-group {
 			align-content: center; /* vertical alignment */
 			list-style: none;
 			
+			/* fixes the focus outline being covered by the adjacent summary */
+			&:focus {
+				z-index: 2;
+			}
+			
 			&:hover {
 				filter: brightness(0.95);
 			}
