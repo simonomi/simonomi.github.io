@@ -1,5 +1,7 @@
 ---
 permalink: /feed.json
+pagination:
+  include: All
 ---
 {
 	"title": "alice's blog",
@@ -17,19 +19,13 @@ permalink: /feed.json
 	],
 	"language": "en-US",
 	"items": [
-		{%- for post in site.data.posts -%}
-			{%- if post.isDraft -%}
-				{%- unless site.show_drafts -%}
-					{%- continue -%}
-				{%- endunless -%}
-			{%- endif -%}
-			
+		{%- for post in paginator.pages -%}
 			{
-				"id": "https://simonomi.dev/blog/{{ post.slug }}",
-				"url": "https://simonomi.dev/blog/{{ post.slug }}",
+				"id": "{{ post.slug }}",
+				"url": "{{ site.base_url }}/{{ post.permalink }}",
 				"title": "{{ post.title }}",
 				"content_text": "",
-				"date_published": "{{ post.date }}T{{ post.time }}{{ post.timezone }}:00"
+				"date_published": "{{ post.published_date | date: "%Y-%m-%dT%H:%M:%S%:z" }}"
 			}{%- unless forloop.last -%},{%- endunless -%}
 		{%- endfor -%}
 	]

@@ -1,31 +1,29 @@
-{%- assign post = site.data.posts | where: "slug", page.slug -%}
-
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>{{ post | map: "title" }}</title>
+		<title>{{ page.title }}</title>
 		<link rel="icon" href="/images/logo-circle.png">
 		<link rel="alternate" type="application/feed+json" href="/feed.json"/>
 		
-		{%- if post.description and post.description != "" -%}
+		{%- if page.description and page.description != "" -%}
 			<meta name="description" content="{{ page.description }}">
 		{%- endif -%}
 		
 		<style>
 			{%- render "main.css" -%}
 			
-			{%- if post.style -%}
-				{%- assign styleFile = post.style | append: ".css" -%}
+			{%- if page.data.style -%}
+				{%- assign styleFile = page.data.style | append: ".css" -%}
 				{%- render styleFile -%}
 			{%- endif -%}
 		</style>
 		
-		{%- if post.script -%}
+		{%- if page.data.script -%}
 			<script>
-				{%- assign scriptFile = post.script | append: ".js" -%}
+				{%- assign scriptFile = page.data.script | append: ".js" -%}
 				{%- render scriptFile -%}
 			</script>
 		{%- endif -%}
@@ -42,8 +40,8 @@
 		</icon-links>
 		
 		<hgroup>
-			<h1><a class="secret" href="/blog/{{ page.slug }}">{{ post | map: "title" }}</a></h1>
-			<p class="secondary">alice pellerin • {{ post | map: "date" }}</p>
+			<h1><a class="secret" href="/blog/{{ page.slug }}">{{ page.title }}</a></h1>
+			<p class="secondary">alice pellerin • {{ page.published_date | date: "%Y-%m-%d" }}</p>
 		</hgroup>
 		
 		{{- page.content -}}

@@ -4,13 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		{%- if page.data.isBlogpost -%}
-			{%- assign slug = page.name | split: "." | first -%}
-			{%- assign post = site.data.posts | where: "slug", slug -%}
-			<title>{{ post | map: "title" }}</title>
-		{%- else -%}
-			<title>{{ page.title }}</title>
-		{%- endif -%}
+		<title>{{ page.title }}</title>
 		<link rel="icon" href="/images/logo-circle.png">
 		<link rel="alternate" type="application/feed+json" href="/feed.json"/>
 		
@@ -36,6 +30,7 @@
 	</head>
 	<body>
 		{{- page.content -}}
+		
 		{%- unless page.data.nofooter -%}
 		<footer>
 			<small>© <time>{{ "now" | date: "%Y" }}</time> alice pellerin</small>

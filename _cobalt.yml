@@ -6,10 +6,14 @@ template_extensions:
 ignore:
   - LICENSE
   - CNAME
-  - drafts/
 
 site:
   base_url: "https://simonomi.dev"
+
+posts:
+  dir: blog
+  # i would prefer "drafts", but it renders drafts anyway without the _
+  drafts_dir: _drafts
 
 syntax_highlight:
   theme: "css"

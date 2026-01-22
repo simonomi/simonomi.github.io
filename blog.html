@@ -1,6 +1,9 @@
 ---
 title: alice's blog
 layout: default.html
+permalink: /blog/
+pagination:
+  include: All
 ---
 <div>
 	<icon-links>
@@ -17,19 +20,11 @@ layout: default.html
 		<h1>{{ page.title }}</h1>
 	</hgroup>
 	
-	{{ site }}
-	
-	{%- for post in site.data.posts reversed -%}
-		{%- if post.isDraft -%}
-			{%- unless site.show_drafts -%}
-				{%- continue -%}
-			{%- endunless -%}
-		{%- endif -%}
-		
-		<a class="secret" href="/blog/{{ post.slug }}">
+	{%- for post in paginator.pages -%}
+		<a class="secret" href="/{{ post.permalink }}">
 			<hgroup>
 				<h3>{{ post.title }}</h3>
-				<p class="secondary">{{ post.date | date: "%Y-%m-%d" }}</p>
+				<p class="secondary">{{ post.published_date | date: "%Y-%m-%d" }}</p>
 			</hgroup>
 		</a>
 	{%- endfor -%}
