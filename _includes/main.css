@@ -4,18 +4,16 @@
 	--secondary-color: light-dark(grey, #bbb);
 	
 	--background-color: light-dark(white, #161a1c);
-	--background-color-code: light-dark(#f0f0f0, #303030);
-	--background-color-terminal: #282a36;
 	
 	--button-color: light-dark(#ddd, #555);
 	--button-pressed-color: light-dark(lightgrey, #242e33);
 	
 	--link-color: light-dark(dodgerblue, deepskyblue);
 	
-	--highlight-border-color: light-dark(deepskyblue, deepskyblue);
+	--highlight-border-color: deepskyblue; /* same light/dark */
 	--highlight-background-color: light-dark(grey, #202020);
 	
-	--quote-border-color: light-dark(deepskyblue, deepskyblue);
+	--quote-border-color: deepskyblue; /* same light/dark */
 	--quote-background-color: light-dark(#eee, black);
 	
 	--icon-link-width: 2rem;
@@ -25,67 +23,9 @@
 	--language-label-shadow-radius: 3px;
 	--language-label-shadow-color: lightgrey;
 	
-	--table-border-color: light-dark(#a0a0a0, #a0a0a0);
-	--table-header-background-color: light-dark(#e0e0e0, #303030);
-	
 	--tab-open-color: light-dark(#ccc, #303030);
 	--tab-closed-color: light-dark(#ddd, #202020);
 	--tab-corner-radius: 0.5rem;
-	
-	--foreign-value-color: light-dark(#6c36a9, #a167e6);
-	--local-value-color: light-dark(#326d74, #67b7a4);
-	--value-declaration-color: light-dark(#0f68a0, #41a1c0);
-	
-	--foreign-type-color: light-dark(#3900a0, #d0a8ff);
-	--local-type-color: light-dark(#1c464a, #9ef1dd);
-	--type-declaration-color: light-dark(#0b4f79, #5dd8ff);
-	
-	--preprocessor-directive: light-dark(#643820, #fd8f3f);
-	--comment: light-dark(#5d6c79, #6c7986);
-	--keyword: light-dark(#9b2393, #fc5fa3);
-	--mark: light-dark(#4a5560, #92a1b1);
-	
-	--number: light-dark(#1c00cf, #d0bf69);
-	--string: light-dark(#c41a16, #fc6a5d);
-	
-	/* oh god, apparently "Dynamic foreground colors" changes these sometimes */
-	/* --terminal-grey: light-dark(green, #44475a); /* TODO: light mode color */
-	--terminal-grey: light-dark(#a0a0a0, #bfbfbf);
-	--terminal-red: light-dark(#ac422e, #ff5555);
-	--terminal-light-red: light-dark(green, #ff6e67); /* TODO: light mode color */
-	--terminal-green: light-dark(#54ad45, #50fa7b);
-	--terminal-light-green: light-dark(green, #5af78e); /* TODO: light mode color */
-	--terminal-yellow: light-dark(#d17e3b, #f1fa8c);
-	--terminal-light-yellow: light-dark(green, #f1fa8c); /* TODO: light mode color */
-	--terminal-blue: light-dark(#074cb2, #bd93f9);
-	--terminal-light-blue: light-dark(green, #caa9fa); /* TODO: light mode color */
-	--terminal-pink: light-dark(#ab3172, #ff79c9);
-	--terminal-light-pink: light-dark(green, #ff92d0); /* TODO: light mode color */
-	--terminal-cyan: light-dark(#0773b2, #8be9fd);
-	--terminal-light-cyan: light-dark(green, #9aedfe); /* TODO: light mode color */
-	--terminal-bold: light-dark(green, #6b75ff); /* TODO: light mode color */
-	
-	--byte-address: light-dark(#8abbc3, #8abbc3);
-	--byte-ASCII-non-graphic: light-dark(#54ad45, #50fa7b);
-	--byte-non-ASCII: light-dark(#bbb31e, #f1fa8c);
-	--byte-00: light-dark(#808080, #a0a0a0);
-	--byte-0:  light-dark(oklch(67% 0.18 360), oklch(75% 0.18 360));
-	--byte-1:  light-dark(oklch(67% 0.18 23), oklch(75% 0.18 23));
-	--byte-2:  light-dark(oklch(67% 0.18 50), oklch(75% 0.18 50));
-	--byte-3:  light-dark(oklch(67% 0.18 65), oklch(75% 0.18 65));
-	--byte-4:  light-dark(oklch(67% 0.18 77), oklch(75% 0.18 77));
-	--byte-5:  light-dark(oklch(67% 0.18 103), oklch(75% 0.18 103));
-	--byte-6:  light-dark(oklch(67% 0.18 130), oklch(75% 0.18 130));
-	--byte-7:  light-dark(oklch(67% 0.18 142), oklch(75% 0.18 142));
-	--byte-8:  light-dark(oklch(67% 0.18 150), oklch(75% 0.18 150));
-	--byte-9:  light-dark(oklch(67% 0.18 163), oklch(75% 0.18 163));
-	--byte-A:  light-dark(oklch(67% 0.18 184), oklch(75% 0.18 184));
-	--byte-B:  light-dark(oklch(67% 0.18 209), oklch(75% 0.18 209));
-	--byte-C:  light-dark(oklch(67% 0.18 232), oklch(75% 0.18 232));
-	--byte-D:  light-dark(oklch(67% 0.18 254), oklch(75% 0.18 254));
-	--byte-E:  light-dark(oklch(67% 0.18 294), oklch(75% 0.18 294));
-	--byte-F:  light-dark(oklch(67% 0.18 328), oklch(75% 0.18 328));
-	--byte-FF: light-dark(black, white);
 }
 
 /* some dummy code so noir can tell there's a dark mode */

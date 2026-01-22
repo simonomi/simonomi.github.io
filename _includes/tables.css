@@ -1,4 +1,7 @@
 :root {
+	--table-border-color: #a0a0a0; /* same light/dark */
+	--table-header-background-color: light-dark(#e0e0e0, #303030);
+	
 	--true-color: light-dark(#50c878, #50c878);
 	--false-color: #f27464;
 }
