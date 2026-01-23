@@ -14,6 +14,8 @@ jobs:
           --git cobalt-org/cobalt.rs \
           --crate cobalt \
           --target x86_64-unknown-linux-gnu
+    - name: check available highlight themes
+      run: cobalt debug highlight themes
     - name: download minify-html
       run: curl -LSfs --output ~/minhtml https://github.com/wilsonzlin/minify-html/releases/download/v0.18.1/minhtml-0.18.1-x86_64-unknown-linux-gnu
     - name: make minhtml executable
