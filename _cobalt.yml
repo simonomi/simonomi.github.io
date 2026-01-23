@@ -6,6 +6,7 @@ template_extensions:
 ignore:
   - LICENSE
   - CNAME
+  - giscus.json
 
 site:
   base_url: "https://simonomi.dev"
