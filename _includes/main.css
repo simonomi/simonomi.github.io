@@ -45,6 +45,10 @@ body {
 	max-width: min(100vw - 2rem, 90rch);
 }
 
+p {
+	font-size: 1.125rem;
+}
+
 hgroup {
 	margin-top: 1rem;
 	margin-bottom: 1rem;
@@ -57,6 +61,24 @@ hgroup {
 
 img {
 	width: 100%;
+	
+	&.very-thin {
+		max-width: 10rem;
+	}
+	
+	&.thin {
+		max-width: 440px; /* the width of an iPhone Pro Max */
+	}
+	
+	&.nearest {
+		image-rendering: crisp-edges;
+	}
+	
+	&.centered {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 .ds-screenshot {
@@ -114,8 +136,27 @@ sup {
 	text-align: center;
 }
 
-summary {
-	cursor: pointer;
+details {
+	summary {
+		cursor: pointer;
+	
+		h1, h2, h3, h4, h5, h6 {
+			display: inline;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	
+	}
+	
+	&:has(summary h1),
+	&:has(summary h2),
+	&:has(summary h3),
+	&:has(summary h4),
+	&:has(summary h5),
+	&:has(summary h6) {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
 }
 
 tab-group {
@@ -240,6 +281,7 @@ button {
 	border-radius: 5px;
 	border-style: none;
 	transition: box-shadow 0.2s;
+	font-size: 1rem;
 	
 	&:active {
 		background-color: var(--button-pressed-color);
