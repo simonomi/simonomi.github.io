@@ -1,9 +1,13 @@
 .footnote-link {
 	scroll-margin-top: 30vh;
+	user-select: none;
+	-webkit-user-select: none;
 }
 
 .footnote-return-link {
 	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
 }
 
 #footnotes > li {

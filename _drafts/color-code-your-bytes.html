@@ -126,7 +126,9 @@ here are a few more examples:
 		</details>
 	</tab-group>
 	
-	<p>this file starts with the <a href="https://en.wikipedia.org/wiki/List_of_file_signatures">magic bytes</a> <code>KPS</code>, then a series of (<a href="https://en.wikipedia.org/wiki/Endianness">little-endian</a>) 32-bit integers. the colors make it quick to regonize that each 32-bit integer is relatively small, as the two high bytes are always 0. if you spend a little longer, you may notice a few other patterns: the 1st and 3rd columns look pretty similar, as do the 2nd and 4th. some of the numbers in these columns are vaguely in increasing order.</p>
+	<p>this file starts with the <a href="https://en.wikipedia.org/wiki/List_of_file_signatures">magic bytes</a> <code>KPS</code>, then a series of (<a href="https://en.wikipedia.org/wiki/Endianness">little-endian</a>) 32-bit integers. the colors make it quick to regonize that each 32-bit integer is relatively small, as the two high bytes are always 0. if you look closely, you may notice other patterns, like the numbers counting up every <code>0x18</code> bytes starting at <code>0xC</code>.</p>
+	
+	<p>if you're curious about this particular file format, <a href="https://github.com/simonomi/carbonizer/blob/be03d7a5d436e1a9c5348305648307b86fd2d2b2/Sources/Carbonizer/files/ff1/KPS.swift#L4-L25">the code that parses it</a> is pretty simple, even if you're not a programmer. there's even a <a href="https://simonomi.dev/fftechwiki/file-formats/KPS/">wiki page</a> for the data it represents, if you're into <a href="https://en.wikipedia.org/wiki/Fossil_Fighters">Fossil Fighters</a>.</p>
 </details>
 
 <details open>
@@ -374,5 +376,5 @@ here are a few more examples:
 <hr>
 
 <ol id="footnotes">
-	<li id="footnote:1" tabindex="-1">every time i say “hex editor”, i’m also including tools like <code>xxd</code> or <code>hexyl</code> that show hex but don't let you edit it <a class="footnote-return-link" href="#footnote-return:1">⏎</a></li>
+	<li id="footnote:1" tabindex="-1">every time i say “hex editor”, i’m also including tools like <code>xxd</code> or <code>hexyl</code> that show hex but don't let you edit it<a class="footnote-return-link" href="#footnote-return:1"> ⏎</a></li>
 </ol>

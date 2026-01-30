@@ -183,6 +183,8 @@ tab-group {
 			text-align: center;
 			align-content: center; /* vertical alignment */
 			list-style: none;
+			user-select: none;
+			-webkit-user-select: none;
 			
 			/* fixes the focus outline being covered by the adjacent summary */
 			&:focus {
@@ -293,6 +295,8 @@ icon-links {
 	gap: var(--icon-link-spacing);
 	float: right;
 	margin-left: var(--icon-link-spacing);
+	user-select: none;
+	-webkit-user-select: none;
 	
 	a {
 		text-decoration: none;
