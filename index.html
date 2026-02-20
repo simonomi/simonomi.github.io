@@ -8,7 +8,7 @@ data:
 <div>
 	<icon-links>
 		<a href="/blog" title="blog">
-			<img src="/images/blog.svg">
+			<img src="/images/blog.svg" alt="an icon meant to depict a blog">
 		</a>
 		
 		<a href="/resume" title="resume">
@@ -30,91 +30,106 @@ data:
 	
 	<hgroup>
 		<h1>{{ page.title }}</h1>
-		<p class="secondary">she/it/they</p>
+		<p class="secondary">she/her</p>
 	</hgroup>
 	
-	<p>hey! i'm alice, a person who occasionally does things online. i enjoy anime, horror movies, skiing, <a href="/languages">language learning</a>, and <a class="secret" href="https://steamcommunity.com/id/simonomi">video games</a>. i've been an avid programmer for as long as i can remember, constantly working on various projects.</p>
-	<p>i'm interested in application development, programming languages, compilers, system frameworks, embedded systems, GPU acceleration, and high-performance environments.</p>
-	<p>currently, i've been using <a href="https://www.swift.org" class="swift">Swift</a> and <a href="https://developer.apple.com/xcode/swiftui/" class="swiftui">SwiftUI</a> to create iOS apps, and i was recently an intern on the SwiftUI team at <a href="https://apple.com">Apple</a>.</p>
+	<p>hey! i'm alice, a person who occasionally does things online. i'm a programmer, knowledge enjoyer, and all-around reality improvement enthusiast</p>
+	
+	<p>i'm super interested in programming languages, especially in improving safety, clarity, and performance. i could go on and on about argument labels, algebraic effects, first-class types, and tons of other stuff (seriously, hit me up somtime!)</p>
+	
+	<p>i also like <a href="/languages">learning non-programming languages</a> <span class="secondary">(日本語, русский, <a href="https://linktr.ee/ClongCraft">Clong</a>)</span>, reading <span class="secondary">(Cradle, Mother of Learning)</span>, playing <a class="secret" href="https://steamcommunity.com/id/simonomi">video games</a> <span class="secondary">(Outer Wilds, Factorio, The Last Clockwinder)</span>, anime <span class="secondary">(Dr. STONE, Made in Abyss, Wonder Egg Priority)</span>, skiing, rock climbing, learning, and teaching</p>
 </div>
 
-<!-- TODO: add ParallelPowder, fftechwiki -->
 <div>
 	<h2>projects</h2>
 	
 	<div class="repos">
 		<div class="repo">
-			<a class="repo-link" href="https://github.com/simonomi/carbonizer">
-				<img class="github-logo" src="/images/github.svg">
-				<p>carbonizer</p>
-			</a>
-			<p>a pure swift, easy-to-use Fossil Fighters ROM-hacking tool</p>
-			<div class="repo-languages">
-				<a href="https://www.swift.org" class="swift language-label">Swift</a>
-				<a href="https://developer.apple.com/documentation/foundation" class="foundation language-label">Foundation</a>
-			</div>
+			<p class="repo-link">
+				<a href="https://github.com/simonomi/carbonizer">
+					<img class="github-logo" src="/images/github.svg">
+					carbonizer
+				</a>
+			</p>
+			
+			<p>a ROM-hacking tool for the Nintendo DS game <a href="https://wikipedia.org/wiki/Fossil_Fighters">Fossil Fighters</a>. the game has a small cult following, and <a href="/fftechwiki/file-formats">a bunch of unique file formats</a>, which i've contributed pretty heavily to reverse-engineering</p>
 		</div>
 		
 		<div class="repo">
-			<a class="repo-link" href="https://github.com/simonomi/MetalRayTracing">
-				<img class="github-logo" src="/images/github.svg">
-				<p>Metal&ZeroWidthSpace;Ray&ZeroWidthSpace;Tracing</p>
-			</a>
-			<p>a custom ray tracing engine written from scratch using Metal</p>
-			<div class="repo-languages">
-				<a href="https://www.swift.org" class="swift language-label">Swift</a>
-				<a href="https://developer.apple.com/metal" class="metal language-label">Metal</a>
-			</div>
+			<p class="repo-link">
+				<a href="https://github.com/simonomi/MetalRayTracing">
+					<img class="github-logo" src="/images/github.svg">
+					Metal&ZeroWidthSpace;Ray&ZeroWidthSpace;Tracing
+				</a>
+			</p>
+			
+			<p>a custom ray-tracing engine written from scratch using <a href="https://developer.apple.com/metal/">Metal</a>! i was inspired by <a href="https://www.youtube.com/watch?v=Qz0KTGYJtUk">this video</a>, and found that writing a custom ray-tracer is a super fun way to dive into graphics programming</p>
+			
+			<p>it supports emissive, reflective, and colored surfaces, plus a way to import custom meshes. the GitHub page has some pretty renders, check 'em out!</p>
 		</div>
 		
 		<div class="repo">
-			<a class="repo-link">
-				<img class="mage-logo" src="/images/mage.svg">
-				<p>mage (unreleased)</p>
-			</a>
-			<p>a trakt client I've been working on in various forms for years</p>
-			<div class="repo-languages">
-				<a href="https://www.swift.org" class="swift language-label">Swift</a>
-				<a href="https://developer.apple.com/xcode/swiftui" class="swiftui language-label">SwiftUI</a>
-				<a href="https://trakt.docs.apiary.io/" class="trakt language-label">Trakt</a>
-			</div>
+			<p class="repo-link">
+				<a href="https://github.com/simonomi/ff1-binary-formats/wiki">
+					<img class="github-logo" src="/images/github.svg">
+					ff1-binary-formats
+				</a>
+			</p>
+			
+			<p>a wiki for various Fossil Fighters file formats. it explains the high-level purpose and detailed byte layout for each one</p>
+		</div>
+		
+		<!-- <div class="repo"> -->
+			<!-- <p class="repo-link"> -->
+				<!-- <a href="/fftechwiki"> -->
+					<!-- <img src="/images/stamp.png"> -->
+					<!-- FF Tech Wiki -->
+				<!-- </a> -->
+			<!-- </p> -->
+			
+			<!-- <p>TODO: description</p> -->
+		<!-- </div> -->
+		
+		<div class="repo">
+			<p class="repo-link">
+				<a href="https://github.com/simonomi/ParallelPowder">
+					<img class="github-logo" src="/images/github.svg">
+					ParallelPowder
+				</a>
+			</p>
+			
+			<p>i was inspired by <a href="https://www.youtube.com/watch?v=prXuyMCgbTc">this GDC talk about Noita</a> to make a <a href="https://wikipedia.org/wiki/Falling-sand_game">falling sand</a> game engine that can run in parallel on a GPU. i liked the idea of having a 'speed of light', and designed an algorithm around a <a href="https://wikipedia.org/wiki/Principle_of_locality">principle of locality</a></p>
+			
+			<p>the result is a simulation that comfortably runs at 300fps on my 4480×2520 M1 iMac, for a total of over 3.3 billion pixel-ticks per second >:)</p>
 		</div>
 		
 		<div class="repo">
-			<a class="repo-link" href="https://github.com/simonomi/ff1-binary-formats">
-				<img class="github-logo" src="/images/github.svg">
-				<p>ff1-binary-formats</p>
-			</a>
-			<p>a catalog of format definitions for the binary files used in Fossil Fighters</p>
-			<div class="repo-languages">
-				<a href="https://www.python.org" class="python language-label">Python</a>
-				<a href="https://www.markdownguide.org" class="markdown language-label">Markdown</a>
-			</div>
+			<p class="repo-link">
+				<a class="trailing-margin" href="https://github.com/simonomi/minecraftNews">
+					<img class="github-logo" src="/images/github.svg">
+					minecraftNews
+				</a>
+				
+				<a href="/minecraftNews/feed.json">
+					<img class="rss-logo" src="/images/rss.svg">
+					JSON Feed
+				</a>
+			</p>
+			
+			<p>i got fed up with there not being an official RSS feed (or JSON Feed) for Minecraft snapshots, so i made one myself! it uses a Discord bot that follows the changlog announcements on the official Minecraft Discord server</p>
+			
+			<p>there's a bit of a delay before new snapshots are added to the feed (a few hours), but otherwise it's pretty solid. feel free to use it for yourself, and definitely let me know if you have any issues with it</p>
 		</div>
 		
 		<div class="repo">
-			<a class="repo-link" href="https://github.com/simonomi/obsidian-separated-recurrence">
-				<img class="github-logo" src="/images/github.svg">
-				<p>obsidian-separated-recurrence</p>
-			</a>
-			<p>my custom implementation of spaced repetition in obsidian</p>
-			<div class="repo-languages">
-				<a href="https://www.typescriptlang.org" class="typescript language-label">TypeScript</a>
-				<a href="https://www.javascript.com" class="javascript language-label">JavaScript</a>
-				<a href="https://www.obsidian.md" class="obsidian language-label">Obsidian</a>
-			</div>
-		</div>
-		
-		<div class="repo">
-			<a class="repo-link" href="https://github.com/simonomi/Coding-Royale">
-				<img class="github-logo" src="/images/github.svg">
-				<p>Coding-Royale</p>
-			</a>
-			<p>a battle royale style coding game for java. it's not very fun</p>
-			<div class="repo-languages">
-				<a href="https://www.python.org" class="python language-label">Python</a>
-				<a href="https://www.java.com" class="java language-label">Java</a>
-			</div>
+			<p class="repo-link">
+				<a>
+					<img class="mage-logo" src="/images/mage.svg">
+					mage (unreleased)
+				</a>
+			</p>
+			
+			<p>a trakt client I've been working on in various forms for a while. maybe it'll be released someday :)</p>
 		</div>
 	</div>
 </div>

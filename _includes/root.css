@@ -7,7 +7,7 @@
 	grid-template-columns: repeat(2, auto);
 	gap: 0.5rem;
 	
-	@media screen and (width <= 500px) {
+	@media screen and (width <= 75rch) {
 		grid-template-columns: auto;
 	}
 }
@@ -16,55 +16,40 @@
 	border: solid 1px var(--repo-border-color);
 	border-radius: 15px;
 	padding: 0.75em;
+	
+	& > p:not(.repo-link) {
+		margin-top: 0.75rem;
+		margin-bottom: 0;
+	}
 }
 
 .repo-link {
-	text-decoration: none;
-	display: inline;
+	margin-top: 0;
+	margin-bottom: 0.5rem;
 	
-	p {
-		margin: 0;
+	a {
+		text-decoration: none;
 	}
-	
+	 
 	img {
-		float:left;
+		vertical-align: bottom;
 		width: 1lh;
 		height: 1lh;
 		object-fit: contain;
-		margin-right: 0.5rem;
+		margin-right: 0.25rem;
 		
 		&.mage-logo {
 			border-radius: 25%;
 		}
 		
 		@media (prefers-color-scheme: light) {
-			&.github-logo {
+			&.github-logo, &.rss-logo {
 				filter: invert();
 			}
 		}
 	}
 }
 
-.language-label {
-	display: inline-block;
-	padding: 5px 10px;
-	border: solid 1px;
-	border-radius: 10px;
-	text-decoration: none;
-	margin: 2px;
-	
-	@media (prefers-color-scheme: light) {
-		box-shadow: 0 0 var(--language-label-shadow-radius) var(--language-label-shadow-color);
-	}
+.trailing-margin {
+	margin-inline-end: 0.5em;
 }
-
-.foundation { color: #6495ed; }
-.java { color: #ed8b00; }
-.javascript { color: #f7df1e; }
-.metal { color: #d74e57; }
-.obsidian { color: #7f6df2; }
-.python { color: #ffde57; }
-.swift { color: #f05138; }
-.swiftui { color: #00daff; }
-.trakt { color: #da3b32; }
-.typescript { color: #358ef1; }
