@@ -164,3 +164,12 @@ byte-D, .c-byte-D { color: var(--byte-D); }
 byte-E, .c-byte-E { color: var(--byte-E); }
 byte-F, .c-byte-F { color: var(--byte-F); }
 byte-FF, .c-byte-FF { color: var(--byte-FF); }
+
+/* the ⋄ character doesn't render as monospaced properly, so this is a workaround to fix it when in a hex ascii block */
+.c-byte-ASCII .c-byte-00,
+.c-plain-byte-ASCII .c-plain-byte-00 {
+	display: inline-block;
+	width: 1ch;
+	text-align: center;
+}
+

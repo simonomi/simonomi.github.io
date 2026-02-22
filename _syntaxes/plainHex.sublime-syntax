@@ -1,0 +1,17 @@
+%YAML 1.2
+---
+name: plainHex
+version: 2
+scope: source.plainHex
+
+contexts:
+  main:
+    - match: "  (?=[\\w\\W]{16}$)"
+      push: ascii
+
+  ascii:
+    - meta_scope: plain-byte-ASCII
+    - match: "⋄"
+      scope: plain-byte-00
+    - match: "$"
+      pop: true
