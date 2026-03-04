@@ -11,7 +11,7 @@
 	--link-color: light-dark(dodgerblue, deepskyblue);
 	
 	--highlight-border-color: deepskyblue; /* same light/dark */
-	--highlight-background-color: light-dark(grey, #202020);
+	--highlight-background-color: light-dark(#ddd, #202020);
 	
 	--quote-border-color: deepskyblue; /* same light/dark */
 	--quote-background-color: light-dark(#eee, black);
