@@ -4,7 +4,7 @@ pagination:
   include: All
 ---
 {
-	"title": "alice's blog",
+	"title": "alice pellerin's blog",
 	"version": "https://jsonfeed.org/version/1.1",
 	"home_page_url": "https://simonomi.dev",
 	"feed_url": "https://simonomi.dev/feed.json",
