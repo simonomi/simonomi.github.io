@@ -6,7 +6,12 @@
 		
 		<title>{{ page.title }}</title>
 		<link rel="icon" href="/images/logo-circle.png">
-		<link rel="alternate" type="application/feed+json" href="/feed.json"/>
+		<link rel="alternate" type="application/feed+json" title="JSON Feed" href="/feed.json"/>
+		
+		<meta name="fediverse:creator" content="@simonomi@mstdn.social" />
+		
+		<meta name="theme-color" content="white" media="(prefers-color-scheme: light)"/>
+		<meta name="theme-color" content="#161a1c" media="(prefers-color-scheme: dark)"/>
 		
 		{%- if page.permalink == "" or page.permalink == "index.html" -%}
 			<meta property="og:title" content="{{ page.title }}"/>
