@@ -1,0 +1,34 @@
+%YAML 1.2
+---
+name: hexyl
+version: 2
+scope: source.hexyl
+
+contexts:
+  main:
+    - match: "^[0-9a-f]{8}"
+      scope: byte-address
+    - match: "  (?=[\\w\\W]{16}$)"
+      push: ascii
+    - match: "00"
+      scope: byte-00
+    - match: "[01][0-9a-fA-F]|20|7[fF]"
+      scope: byte-ASCII-non-graphic
+    - match: "[2-6][0-9a-fA-F]|7[0-9a-eA-E]"
+      scope: byte-ASCII-hexyl
+    - match: "[89a-fA-F][0-9a-fA-F]"
+      scope: byte-non-ASCII
+
+  ascii:
+    - meta_scope: byte-ASCII-hexyl
+    - match: "⋄"
+      scope: byte-00
+    # this is a hack because this syntax is only used for ascending.bin
+    # in general there is no good way to highlight ASCII whitespace `_`s
+    # different from the normal ASCII `_` character
+    - match: "•|_+•"
+      scope: byte-ASCII-non-graphic
+    - match: "×"
+      scope: byte-non-ASCII
+    - match: "$"
+      pop: true

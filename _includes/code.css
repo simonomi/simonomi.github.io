@@ -22,22 +22,20 @@
 	/* --terminal-grey: light-dark(green, #44475a); /* TODO: light mode color */
 	--terminal-grey: light-dark(#a0a0a0, #bfbfbf);
 	--terminal-red: light-dark(#ac422e, #ff5555);
-	--terminal-light-red: light-dark(green, #ff6e67); /* TODO: light mode color */
+	--terminal-light-red: light-dark(#ff6e67, #ff6e67); /* TODO: light mode color */
 	--terminal-green: light-dark(#54ad45, #50fa7b);
-	--terminal-light-green: light-dark(green, #5af78e); /* TODO: light mode color */
-	--terminal-yellow: light-dark(#d17e3b, #f1fa8c);
-	--terminal-light-yellow: light-dark(green, #f1fa8c); /* TODO: light mode color */
+	--terminal-light-green: light-dark(#5af78e, #5af78e); /* TODO: light mode color */
+	--terminal-yellow: light-dark(#bbb31e, #f1fa8c);
+	--terminal-light-yellow: var(--terminal-yellow);
 	--terminal-blue: light-dark(#074cb2, #bd93f9);
-	--terminal-light-blue: light-dark(green, #caa9fa); /* TODO: light mode color */
+	--terminal-light-blue: light-dark(#caa9fa, #caa9fa); /* TODO: light mode color */
 	--terminal-pink: light-dark(#ab3172, #ff79c9);
-	--terminal-light-pink: light-dark(green, #ff92d0); /* TODO: light mode color */
+	--terminal-light-pink: light-dark(#ff92d0, #ff92d0); /* TODO: light mode color */
 	--terminal-cyan: light-dark(#0773b2, #8be9fd);
-	--terminal-light-cyan: light-dark(green, #9aedfe); /* TODO: light mode color */
-	--terminal-bold: light-dark(green, #6b75ff); /* TODO: light mode color */
+	--terminal-light-cyan: light-dark(#9aedfe, #9aedfe); /* TODO: light mode color */
+	--terminal-bold: light-dark(#6b75ff, #6b75ff); /* TODO: light mode color */
 	
 	--byte-address: light-dark(#8abbc3, #8abbc3);
-	--byte-ASCII-non-graphic: light-dark(#54ad45, #50fa7b);
-	--byte-non-ASCII: light-dark(#bbb31e, #f1fa8c);
 	--byte-00: light-dark(#808080, #a0a0a0);
 	--byte-0:  light-dark(oklch(67% 0.18 360), oklch(75% 0.18 360));
 	--byte-1:  light-dark(oklch(67% 0.18 23), oklch(75% 0.18 23));
@@ -146,8 +144,9 @@ foreign-value, local-value, value-declaration, foreign-type, local-type, type-de
 
 byte-address, .c-byte-address { color: var(--byte-address); }
 byte-ASCII, .c-byte-ASCII { color: var(--string); }
-byte-ASCII-non-graphic, .c-byte-ASCII-non-graphic { color: var(--byte-ASCII-non-graphic); }
-byte-non-ASCII, .c-byte-non-ASCII { color: var(--byte-non-ASCII); }
+byte-ASCII-hexyl, .c-byte-ASCII-hexyl { color: var(--terminal-cyan) }
+byte-ASCII-non-graphic, .c-byte-ASCII-non-graphic { color: var(--terminal-green); }
+byte-non-ASCII, .c-byte-non-ASCII { color: var(--terminal-yellow); }
 byte-00, .c-byte-00 { color: var(--byte-00); }
 byte-0, .c-byte-0 { color: var(--byte-0); }
 byte-1, .c-byte-1 { color: var(--byte-1); }
