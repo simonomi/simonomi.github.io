@@ -3,7 +3,7 @@ layout: blogpost.html
 title: your hex editor should color-code bytes
 slug: color-code-your-bytes
 permalink: /blog/color-code-your-bytes/
-published_date: 2026-01-29 21:29:04 -0600
+published_date: 2026-03-29 23:24:51 -0500
 ---
 
 <p>too often, i see hex editors<sup><a id="footnote-return:1" class="footnote-link" href="#footnote:1">1</a></sup> that look like this:</p>
@@ -268,7 +268,7 @@ published_date: 2026-01-29 21:29:04 -0600
 	
 	<p>there's a big difference between the two parts that can be hard to notice without the help of colors. the tree mostly has bytes in the range <code><byte-00>00</byte-00></code>–<code><byte-0>0F</byte-0></code> (plus some low <code><byte-8>80</byte-8></code>s and <code><byte-c>C0</byte-c></code>s), but the bitstream has bytes evenly distributed throughout the entire range of <code><byte-00>00</byte-00></code>–<code><byte-FF>FF</byte-FF></code></p>
 	
-	<p>the bitstream is much more colorful and chaotic because good compression algorithms output data that looks visually random. ideally, any patterns you would've noticed in the data were already found by the algorithm, which then used them to make the compressed output smaller</p>
+	<p>the bitstream is much more colorful and chaotic because good compression algorithms output data that looks visually random. ideally, any patterns you would've noticed in the data were already found by the algorithm, and then used to make the compressed output smaller</p>
 </details>
 
 <details open>
@@ -369,11 +369,11 @@ published_date: 2026-01-29 21:29:04 -0600
 	<p>because the bitmap uses 4-bit color indices, each digit of the hexdump encodes exactly one pixel of the image. i think the result mostly speaks for itself, but i'd specifically like to point out the highlight at the bottom right of the hole. in the plain hexdump, you might be able to pick out the general shape of the hole—especially if you look at the character panel on the right—but the colors manage to capture an incredible amount of detail!</p>
 </details>
 
-<h2>what colors are best?</h2>
+<h2 id="what-colors-are-best">what colors are best?</h2>
 
 <p>if you’ve used a hex editor with color-coding before, you may have noticed something different about the way i’m choosing to color-code bytes</p>
 
-<p>most colorful hex editors have a few categories that they use to color each byte. categories like <code>00</code> bytes, printable ASCII, ASCII whitespace, other ASCII, non-ASCII, or <code>FF</code> bytes</p>
+<p>most colorful hex editors have a few categories they sort bytes into, like <code>00</code> bytes, printable ASCII, ASCII whitespace, other ASCII, non-ASCII, or <code>FF</code> bytes</p>
 
 <p><a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a>, for example, uses the following categories:</p>
 
@@ -441,23 +441,67 @@ published_date: 2026-01-29 21:29:04 -0600
 {%- endhighlight -%}
 </details>
 
-<p>having more colors makes it possible to recognize more complex patterns, like the ascending offsets from <a href="#example-2">example 2</a>. ASCII text is still recognizable, but instead of solid cyan, it's a variated green and orange:</p>
+<p>having more colors makes it possible to recognize more complex patterns, like the ascending offsets from <a href="#example-2">example 2</a> or the different sections in <a href="#example-3">example 3</a>. ASCII text is still recognizable, but instead of solid cyan, it's a variated green and orange:</p>
 
-{%- highlight hex -%}
+<tab-group style="--tabs: 2;">
+	<details open name="ascii-example">
+		<summary>my colors</summary>
+		
+		{%- highlight hex -%}
 00000000  6C 6F 6F 6B  20 6D 61 2C  20 69 27 6D  20 41 53 43  look ma, i'm ASC
 00000010  49 49 21 20  6C 6F 72 65  6D 20 69 70  73 75 6D 20  II! lorem ipsum 
 00000020  61 6E 64 20  61 6C 6C 20  74 68 61 74  20 69 67     and all that ig
 {%- endhighlight -%}
+	</details>
+	
+	<details name="ascii-example">
+		<summary><code>hexyl</code>'s colors</summary>
+		
+		{%- highlight hexyl -%}
+00000000  6C 6F 6F 6B  20 6D 61 2C  20 69 27 6D  20 41 53 43  look ma, i'm ASC
+00000010  49 49 21 20  6C 6F 72 65  6D 20 69 70  73 75 6D 20  II! lorem ipsum 
+00000020  61 6E 64 20  61 6C 6C 20  74 68 61 74  20 69 67     and all that ig
+{%- endhighlight -%}
+	</details>
+</tab-group>
 
-<!-- TODO: more? -->
+<p>non-ASCII UTF-8, on the other hand, looks completely different, with its own unique pattern that's only visible if you use a large number of color groups:</p>
 
-<h2>so what can you do about it?</h2>
+<tab-group style="--tabs: 2;">
+	<details open name="utf8-example">
+		<summary>my colors</summary>
+		
+		{%- highlight hex -%}
+00000000  73 6F 6D 65  20 55 54 46  2D 38 3A 20  E3 81 93 E3  some UTF-8: ××××
+00000010  82 93 E3 81  AB E3 81 A1  E3 81 AF E3  80 81 E3 82  ××××××××××××××××
+00000020  A2 E3 83 AA  E3 82 B9 E3  81 A7 E3 81  99 EF BC 81  ××××××××××××××××
+{%- endhighlight -%}
+	</details>
+	
+	<details name="utf8-example">
+		<summary><code>hexyl</code>'s colors</summary>
+		
+		{%- highlight hexyl -%}
+00000000  73 6F 6D 65  20 55 54 46  2D 38 3A 20  E3 81 93 E3  some UTF-8: ××××
+00000010  82 93 E3 81  AB E3 81 A1  E3 81 AF E3  80 81 E3 82  ××××××××××××××××
+00000020  A2 E3 83 AA  E3 82 B9 E3  81 A7 E3 81  99 EF BC 81  ××××××××××××××××
+{%- endhighlight -%}
+	</details>
+</tab-group>
 
-<p>if you currently use <code>xxd</code>, try switching to <a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a>! it's pretty nice, and even slightly faster on my machine (with colors off)</p>
+<p>there are a million more examples i could give, like negative numbers in <a href="https://wikipedia.org/wiki/Two%27s_complement">two's complement</a> <nobr>(<code><byte-b>BD</byte-b> <byte-ff>FF FF FF</byte-ff></code>)</nobr>, machine code, encrypted data, color palettes, transformation matrices, and so on, but hopefully the ones i've given are enough to get my point across</p>
 
-<p>i don't have any other tools to suggest, unfortunately :/. if you know any, please let me know! if you work on any tools that show hexdumps, i highly recommend adding color-coding, ideally with a large number of color groups (feel free to copy mine). and if you'd like to submit a feature request for the tool you use most, i hope this article can be an explanation for why such a feature is worth adding</p>
+<p>colorful output in a hexdump is useful for the same reason that syntax highlighting for code is useful: it takes advantage of our brains' powerful visual pattern recognition. it lets us notice details in the data just as quickly as we notice details in the environment around us. color-coded bytes should be as prevalent in hex editors as syntax highlighting is in code editors today</p>
 
-<p>i actually started writing my own custom hex editor recently, called <a href="https://github.com/simonomi/hexapoda">hexapoda</a>, because i didn't love any of the existing options i found &gt;_&lt;. it takes inspiration from <a href="https://helix-editor.com">Helix</a> and <a href="https://lib.rs/crates/teehee">Teehee</a> (among others), with modal editing, multiple cursors, and selection-first operations. if enough people want, i might polish it up and write some docs so anyone can use it</p>
+<h2 id="what-can-you-do">so what can you do about it?</h2>
+
+<p>if you currently use <code>xxd</code>, try switching to <a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a>! it's pretty nice, and even slightly faster on my machine (with colors off). it doesn't have the full 18 colors that i prefer, but it's certainly way better than plain black and white</p>
+
+<p>unfortunately, i don't have any suggestions for other types of tools :/. if you know any, please let me know! if you work on any tools that show hexdumps, i highly recommend adding colors, ideally with a large number of groups (feel free to copy mine!)</p>
+
+<p>the main goal of this article is to spread awareness that this feature exists. it provides a lot of utility with practically no downside, and more people should be asking for it. if you'd like to submit a feature request for the tool you use most, i hope this article can serve as an explanation for why color-coded bytes are worth adding</p>
+
+<p>while writing this article, i actually started making my own custom hex editor, called <a href="https://github.com/simonomi/hexapoda">hexapoda</a> &gt;_&lt;. it takes inspiration from <a href="https://helix-editor.com">Helix</a> and <a href="https://lib.rs/crates/teehee">Teehee</a> (among others), with modal editing, multiple cursors, and selection-first operations (written in Rust, with <a href="https://ratatui.rs">Ratatui</a>!). if enough people want, i might polish it up and write some docs so anyone can use it, but for now, it's just for me</p>
 
 <hr>
 
