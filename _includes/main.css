@@ -79,11 +79,13 @@ img {
 		margin-left: auto;
 		margin-right: auto;
 	}
-}
-
-.ds-screenshot {
-	max-width: 384px; /* 1.5x the size of the DS screen (256x192) */
-	aspect-ratio: 4 / 3;
+	
+	&.ds-screenshot {
+		max-width: 384px; /* 1.5x the size of the DS's screen (256x192) */
+		aspect-ratio: 4 / 3;
+		border-radius: 0.25rem;
+		image-rendering: crisp-edges;
+	}
 }
 
 a {
@@ -108,15 +110,15 @@ a {
 mark {
 	color: var(--foreground-color);
 	border: solid var(--highlight-border-color) 1.5px;
-	border-radius: .25em;
+	border-radius: 0.25em;
 	background-color: var(--highlight-background-color);
-	padding: 0 .1em;
+	padding: 0 0.1em;
 }
 
 sup {
 	vertical-align: baseline;
 	position: relative;
-	top: -.4em;
+	top: -0.4em;
 	font-size: 75%;
 	
 	& > a {
@@ -139,13 +141,16 @@ sup {
 details {
 	summary {
 		cursor: pointer;
-	
+		
 		h1, h2, h3, h4, h5, h6 {
 			display: inline;
 			margin-top: 0;
 			margin-bottom: 0;
 		}
-	
+		
+		& + img {
+			margin-top: 0.25rem;
+		}
 	}
 	
 	&:has(summary h1),
@@ -265,7 +270,7 @@ ul {
 blockquote {
 	background-color: var(--quote-background-color);
 	padding: 1em;
-	border-left: solid var(--quote-border-color) .25em;
+	border-left: solid var(--quote-border-color) 0.25em;
 	margin: 0;
 	
 	& > *:first-child {

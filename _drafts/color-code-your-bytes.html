@@ -126,9 +126,9 @@ published_date: 2026-01-29 21:29:04 -0600
 		</details>
 	</tab-group>
 	
-	<p>this file starts with the <a href="https://en.wikipedia.org/wiki/List_of_file_signatures">magic bytes</a> <code>KPS</code>, then a bunch of (<a href="https://en.wikipedia.org/wiki/Endianness">little-endian</a>) 32-bit integers that range from 0 to 999 (<code>0x3E7</code>). the colors make it quick to regonize that every 32-bit integer is relatively small, as the two high bytes are always <code><byte-00>00 00</byte-00></code>. if you look closely, you may notice other patterns, like the numbers counting up every <code>0x18</code> bytes starting at <code>0xC</code></p>
+	<p>this file starts with the <a href="https://wikipedia.org/wiki/List_of_file_signatures">magic bytes</a> <code>KPS</code>, then a bunch of (<a href="https://wikipedia.org/wiki/Endianness">little-endian</a>) 32-bit integers that range from 0 to 999 (<code>0x3E7</code>). the colors make it quick to regonize that every 32-bit integer is relatively small, as the two high bytes are always <code><byte-00>00 00</byte-00></code>. if you look closely, you may notice other patterns, like the numbers counting up every <code>0x18</code> bytes starting at <code>0xC</code></p>
 	
-	<p>if you're curious about this particular file format, <a href="https://github.com/simonomi/carbonizer/blob/be03d7a5d436e1a9c5348305648307b86fd2d2b2/Sources/Carbonizer/files/ff1/KPS.swift#L4-L25">the code that parses it</a> is pretty simple, even if you're not a programmer. there's even a <a href="/fftechwiki/file-formats/KPS/">wiki page</a> for the data it represents, if you're into <a href="https://en.wikipedia.org/wiki/Fossil_Fighters">Fossil Fighters</a></p>
+	<p>if you're curious about this particular file format, <a href="https://github.com/simonomi/carbonizer/blob/6c311b6a2801576033cd42a8ba95461cee2ac6d1/Sources/Carbonizer/files/ff1/KPS.swift#L4-L25">the code that parses it</a> is pretty simple, even if you're not a programmer. there's even a <a href="/fftechwiki/file-formats/KPS/">wiki page</a> for the data it represents, if you're into <a href="https://wikipedia.org/wiki/Fossil_Fighters">Fossil Fighters</a></p>
 </details>
 
 <details open>
@@ -218,7 +218,7 @@ published_date: 2026-01-29 21:29:04 -0600
 		</details>
 	</tab-group>
 	
-	<p>this excerpt, starting at <code>0x14</code>, has a long series of increasing 32-bit integers (<a href="https://en.wikipedia.org/wiki/Endianness">little-endian</a> again). each one is an index to a later point in the file, to <a href="https://github.com/simonomi/carbonizer/blob/be03d7a5d436e1a9c5348305648307b86fd2d2b2/Sources/Carbonizer/files/ff1/DAL.swift#L20-L107">a structure</a> usually about <code>0x3C</code> bytes long. the roughly-evenly-spaced indices make for some very pretty rainbow gradients</p>
+	<p>this excerpt, starting at <code>0x14</code>, has a long series of increasing 32-bit integers (<a href="https://wikipedia.org/wiki/Endianness">little-endian</a> again). each one is an index to a later point in the file, to <a href="https://github.com/simonomi/carbonizer/blob/6c311b6a2801576033cd42a8ba95461cee2ac6d1/Sources/Carbonizer/files/ff1/DAL.swift#L20-L107">a structure</a> usually about <code>0x3C</code> bytes long. the roughly-evenly-spaced indices make for some very pretty rainbow gradients</p>
 </details>
 
 <details open>
@@ -264,7 +264,7 @@ published_date: 2026-01-29 21:29:04 -0600
 		</details>
 	</tab-group>
 	
-	<p>this data is compressed using a <a href="https://en.wikipedia.org/wiki/Huffman_coding">Huffman code</a>, specifically one compatible with <a href="https://problemkaputt.de/gbatek.htm#biosdecompressionfunctions">the Nintendo DS BIOS</a>. it starts with <code>0x20</code> bytes encoding the Huffman tree used, then <code>0x90</code> bytes of compressed bitstream—the actual compressed file contents</p>
+	<p>this data is compressed using a <a href="https://wikipedia.org/wiki/Huffman_coding">Huffman code</a>, specifically one compatible with <a href="https://problemkaputt.de/gbatek.htm#biosdecompressionfunctions">the Nintendo DS BIOS</a>. it starts with <code>0x20</code> bytes encoding the Huffman tree used, then <code>0x90</code> bytes of compressed bitstream—the actual compressed file contents</p>
 	
 	<p>there's a visual difference between the two parts of the data, which can be hard to notice without the help of colors. the tree mostly has bytes in the range <code><byte-00>00</byte-00></code>–<code><byte-0>0F</byte-0></code> (plus some low <code><byte-8>80</byte-8></code>s and <code><byte-c>C0</byte-c></code>s). the bitstream, however, has bytes evenly distributed throughout the entire range of <code><byte-00>00</byte-00></code>–<code><byte-FF>FF</byte-FF></code></p>
 	
@@ -311,6 +311,7 @@ published_date: 2026-01-29 21:29:04 -0600
 000001e8  00 00 00 80  99 57 33 45  75 57 66 78  A8 00 00 00  ⋄⋄⋄××W3EuWfx×⋄⋄⋄
 000001f8  00 00 00 00  08 99 A9 0A  9A A0 A9 9A  08 00 00 00  ⋄⋄⋄⋄•××⏎××××•⋄⋄⋄
 00000208  00 00 00 00  00 90 80 00  80 00 87 80  00 00 00 00  ⋄⋄⋄⋄⋄××⋄×⋄××⋄⋄⋄⋄
+00000218  00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00  ⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄
 ...
 {%- endhighlight -%}
 		</details>
@@ -351,26 +352,24 @@ published_date: 2026-01-29 21:29:04 -0600
 000001e8  00 00 00 80  99 57 33 45  75 57 66 78  A8 00 00 00  ⋄⋄⋄××W3EuWfx×⋄⋄⋄
 000001f8  00 00 00 00  08 99 A9 0A  9A A0 A9 9A  08 00 00 00  ⋄⋄⋄⋄•××⏎××××•⋄⋄⋄
 00000208  00 00 00 00  00 90 80 00  80 00 87 80  00 00 00 00  ⋄⋄⋄⋄⋄××⋄×⋄××⋄⋄⋄⋄
+00000218  00 00 00 00  00 00 00 00  00 00 00 00  00 00 00 00  ⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄⋄
 ...
 {%- endhighlight -%}
 		</details>
 	</tab-group>
 	
-	<p>texture file, specifically for <code>fieldchar/ana*</code></p>
+	<p>this final excerpt is from the <a href="https://github.com/simonomi/carbonizer/blob/6c311b6a2801576033cd42a8ba95461cee2ac6d1/Sources/Carbonizer/models/Texture.swift#L5-L28">bitmap data</a> for the following image:</p>
 	
-	<p>this is probably my favorite example, since it<mark>...</mark></p>
+	<img loading="lazy" class="nearest very-thin centered" src="/images/{{ page.slug }}/ana.png" alt="a shallow, top-down, pixel-art hole in the ground">
 	
-	<p>the excerpt is from the bitmap data for the following image:</p>
+	<p>like all the other examples, it comes from the Nintendo DS game <a href="https://wikipedia.org/wiki/Fossil_Fighters">Fossil Fighters</a>. specifically, the hole the player makes when digging for fossils:</p>
 	
-	<img class="nearest very-thin centered" src="/images/color-code-your-bytes/ana.png">
+	<img loading="lazy" class="ds-screenshot centered" src="/images/{{ page.slug }}/diggy-diggy-hole.png" alt="a screenshot from Fossil Fighters showing the player character holding a pickaxe, with the hole from before on the ground in front of him">
 	
-	<p>yada yada</p>
-	
-	<!-- point out details in the image that can be noticed with colors -->
-	<!-- - the highlight in the bottom right -->
+	<p>because the bitmap uses 4-bit color indices, each digit of the hexdump encodes exactly one pixel of the image. i think the result mostly speaks for itself, but i'd specifically like to point out the highlight at the bottom right of the hole. in the plain version, you might be able to pick out the general shape of the hole—especially if you look at the character panel on the right—but the colors manage to capture an incredible amount of detail.</p>
 </details>
 
-<h2>header to split off the examples?</h2>
+<h2>header to split off the examples</h2>
 
 <p>this visual pattern recognition can be especially helpful when scrolling through a large binary file</p>
 
@@ -384,7 +383,7 @@ published_date: 2026-01-29 21:29:04 -0600
 
 <p>these color categories are enough to pick out common patterns like repeated null bytes and ASCII strings. there’s also enough variation to easily track scrolling</p>
 
-<p>i, however, am going further, with 18 total categories: one for each leading <a href="https://en.wikipedia.org/wiki/Nibble">nybble</a> (<code>0X</code>, <code>1X</code>, <code>2X</code>...) and two extras for <code>00</code> and<code>FF</code></p>
+<p>i, however, am going further, with 18 total categories: one for each leading <a href="https://wikipedia.org/wiki/Nibble">nybble</a> (<code>0X</code>, <code>1X</code>, <code>2X</code>...) and two extras for <code>00</code> and<code>FF</code></p>
 
 <p>my colors:</p>
 
@@ -407,5 +406,5 @@ published_date: 2026-01-29 21:29:04 -0600
 <hr>
 
 <ol id="footnotes">
-	<li id="footnote:1" tabindex="-1">every time i say “hex editor”, i’m also including tools like <code>xxd</code> or <code>hexyl</code> that show hex but don't let you edit it<a class="footnote-return-link" href="#footnote-return:1"> ⏎</a></li>
+	<li id="footnote:1" tabindex="-1">and also tools like <code>xxd</code> or <code>hexyl</code> that show hex but don't let you edit it<a class="footnote-return-link" href="#footnote-return:1"> ⏎</a></li>
 </ol>
