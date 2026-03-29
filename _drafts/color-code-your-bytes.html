@@ -449,15 +449,15 @@ published_date: 2026-01-29 21:29:04 -0600
 00000020  61 6E 64 20  61 6C 6C 20  74 68 61 74  20 69 67     and all that ig
 {%- endhighlight -%}
 
+<!-- TODO: more? -->
+
 <h2>so what can you do about it?</h2>
-<ul>
-	<li>switch to hexyl (or others?)</li>
-	<li>if you make a hex editor, please add an option!</li>
-	<li>hexapoda</li>
-	<ul>
-		<li>if enough people want, i might polish it up and write some docs so anyone can use it</li>
-	</ul>
-</ul>
+
+<p>if you currently use <code>xxd</code>, try switching to <a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a>! it's pretty nice, and even slightly faster on my machine (with colors off)</p>
+
+<p>i don't have any other tools to suggest, unfortunately :/. if you know any, please let me know! if you work on any tools that show hexdumps, i highly recommend adding color-coding, ideally with a large number of color groups (feel free to copy mine). and if you'd like to submit a feature request for the tool you use most, i hope this article can be an explanation for why such a feature is worth adding</p>
+
+<p>i actually started writing my own custom hex editor recently, called <a href="https://github.com/simonomi/hexapoda">hexapoda</a>, because i didn't love any of the existing options i found &gt;_&lt;. it takes inspiration from <a href="https://helix-editor.com">Helix</a> and <a href="https://lib.rs/crates/teehee">Teehee</a> (among others), with modal editing, multiple cursors, and selection-first operations. if enough people want, i might polish it up and write some docs so anyone can use it</p>
 
 <hr>
 
