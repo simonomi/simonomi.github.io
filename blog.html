@@ -21,7 +21,7 @@ pagination:
 	</hgroup>
 	
 	{%- for post in paginator.pages -%}
-		{%- if post.data.beta -%}
+		{%- if post.data.unlisted -%}
 			{%- continue -%}
 		{%- endif -%}
 		

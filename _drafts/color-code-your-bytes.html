@@ -4,6 +4,8 @@ title: your hex editor should color-code bytes
 slug: color-code-your-bytes
 permalink: /blog/color-code-your-bytes/
 published_date: 2026-03-29 23:24:51 -0500
+data:
+    unlisted: true
 ---
 
 <p>too often, i see hex editors<sup><a id="footnote-return:1" class="footnote-link" href="#footnote:1">1</a></sup> that look like this:</p>
@@ -366,7 +368,7 @@ published_date: 2026-03-29 23:24:51 -0500
 	
 	<img loading="lazy" class="ds-screenshot centered" src="/images/{{ page.slug }}/diggy-diggy-hole.png" alt="a screenshot from Fossil Fighters showing the player character holding a pickaxe, with the hole from before on the ground in front of him">
 	
-	<p>because the bitmap uses 4-bit color indices, each digit of the hexdump encodes exactly one pixel of the image. i think the result mostly speaks for itself, but i'd specifically like to point out the highlight at the bottom right of the hole. in the plain hexdump, you might be able to pick out the general shape of the hole—especially if you look at the character panel on the right—but the colors manage to capture an incredible amount of detail!</p>
+	<p>because the bitmap uses 4-bit color indices, each digit of the hexdump encodes exactly one pixel of the image. i think the result mostly speaks for itself, but i'd specifically like to point out the highlight at the bottom right of the hole. in the plain hexdump, you might be able to pick out the general shape of the hole—especially if you look at the character panel on the right—but with color, you can pick up an incredible amount of detail!</p>
 </details>
 
 <h2 id="what-colors-are-best">what colors are best?</h2>
@@ -465,7 +467,7 @@ published_date: 2026-03-29 23:24:51 -0500
 	</details>
 </tab-group>
 
-<p>non-ASCII UTF-8, on the other hand, looks completely different, with its own unique pattern that's only visible if you use a large number of color groups:</p>
+<p>non-ASCII UTF-8, on the other hand, looks completely different, with its own unique pattern that's only visible if you have a large number of color groups:</p>
 
 <tab-group style="--tabs: 2;">
 	<details open name="utf8-example">
@@ -497,9 +499,9 @@ published_date: 2026-03-29 23:24:51 -0500
 
 <p>if you currently use <code>xxd</code>, try switching to <a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a>! it's pretty nice, and even slightly faster on my machine (with colors off). it doesn't have the full 18 colors that i prefer, but it's certainly way better than plain black and white</p>
 
-<p>unfortunately, i don't have any suggestions for other types of tools :/. if you know any, please let me know! if you work on any tools that show hexdumps, i highly recommend adding colors, ideally with a large number of groups (feel free to copy mine!)</p>
+<p>unfortunately, i don't have any suggestions for other types of tools :/. if you know any, please let me know! if you work on any tools that show hexdumps, i highly recommend adding colors, ideally with a large number of groups (feel free to copy <a href="https://github.com/simonomi/simonomi.github.io/blob/2c53957ab2134dcf51b9047b672acf51ce82f88d/_includes/code.css#L41-L58">mine</a>!)</p>
 
-<p>the main goal of this article is to spread awareness that this feature exists. it provides a lot of utility with practically no downside, and more people should be asking for it. if you'd like to submit a feature request for the tool you use most, i hope this article can serve as an explanation for why color-coded bytes are worth adding</p>
+<p>the main goal of this article is to spread awareness that this feature exists. it provides a lot of utility with practically no downside, and more people should be asking for it. if you'd like to submit a feature request for the tool you use most, i hope this article can serve as an explanation for why it's worth adding</p>
 
 <p>while writing this article, i actually started making my own custom hex editor, called <a href="https://github.com/simonomi/hexapoda">hexapoda</a> &gt;_&lt;. it takes inspiration from <a href="https://helix-editor.com">Helix</a> and <a href="https://lib.rs/crates/teehee">Teehee</a> (among others), with modal editing, multiple cursors, and selection-first operations (written in Rust, with <a href="https://ratatui.rs">Ratatui</a>!). if enough people want, i might polish it up and write some docs so anyone can use it, but for now, it's just for me</p>
 
