@@ -16,7 +16,7 @@ jobs:
           --target x86_64-unknown-linux-gnu
     - name: install minify-html
       run: |
-        curl -LSfs https://raw.githubusercontent.com/crate-ci/gh-install/master/v1/install.sh | \
+        curl -LSfs https://github.com/crate-ci/gh-install/blob/master/v1/install.sh | \
           sh -s -- \
           --git wilsonzlin/minify-html \
           --crate minhtml \
