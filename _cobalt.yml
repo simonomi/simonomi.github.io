@@ -7,6 +7,7 @@ ignore:
   - LICENSE
   - CNAME
   - giscus.json
+  - codebook.toml
 
 site:
   base_url: "https://simonomi.dev"
