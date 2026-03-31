@@ -21,6 +21,10 @@ pagination:
 	"language": "en-US",
 	"items": [
 		{%- for post in paginator.pages -%}
+			{%- if post.data.unlisted -%}
+				{%- continue -%}
+			{%- endif -%}
+			
 			{
 				"id": "{{ post.slug }}",
 				"url": "{{ site.base_url }}/{{ post.permalink }}",
