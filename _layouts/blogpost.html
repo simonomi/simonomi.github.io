@@ -69,17 +69,20 @@
 		{%- assign discussionSites = "" | split: "" -%}
 		
 		{%- if page.data.mastodonURL -%}
-			{%- assign newSite = "<a>Mastodon</a>" | split: "notInTheOriginalString" -%}
+			{%- capture newSite -%}<a href="{{ page.data.mastodonURL }}">Mastodon</a>{%- endcapture -%}
+			{%- assign newSite = newSite | split: "notInTheOriginalString" -%}
 			{%- assign discussionSites = discussionSites | concat: newSite -%}
 		{%- endif -%}
 		
 		{%- if page.data.lobstersURL -%}
-			{%- assign newSite = "<a>Lobsters</a>" | split: "notInTheOriginalString" -%}
+			{%- capture newSite -%}<a href="{{ page.data.lobstersURL }}">Lobsters</a>{%- endcapture -%}
+			{%- assign newSite = newSite | split: "notInTheOriginalString" -%}
 			{%- assign discussionSites = discussionSites | concat: newSite -%}
 		{%- endif -%}
 		
 		{%- if page.data.hackerNewsURL -%}
-			{%- assign newSite = "<a>Hacker News</a>" | split: "notInTheOriginalString" -%}
+			{%- capture newSite -%}<a href="{{ page.data.hackerNewsURL }}">Hacker News</a>{%- endcapture -%}
+			{%- assign newSite = newSite | split: "notInTheOriginalString" -%}
 			{%- assign discussionSites = discussionSites | concat: newSite -%}
 		{%- endif -%}
 		
