@@ -53,3 +53,20 @@
 .trailing-margin {
 	margin-inline-end: 0.5em;
 }
+
+#logo-explanation {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5rem;
+	
+	#logo {
+		width: 5rem;
+		height: 5rem;
+		border-radius: 0.25rem;
+	}
+	
+	p {
+		margin: 0;
+	}
+}

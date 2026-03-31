@@ -298,7 +298,7 @@ button {
 icon-links {
 	display: flex;
 	gap: var(--icon-link-spacing);
-	float: right;
+	float: inline-end;
 	margin-left: var(--icon-link-spacing);
 	user-select: none;
 	-webkit-user-select: none;
