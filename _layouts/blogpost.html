@@ -66,7 +66,33 @@
 		
 		<p class="text-align-center">entirely human-made,<br>please don't hesitate to <a href="https://github.com/simonomi/simonomi.github.io/issues">report a mistake</a> or <a href="https://github.com/simonomi/simonomi.github.io/edit/main/{{ page.file.permalink }}">suggest a fix</a>!</p>
 		
-		<script src="https://giscus.app/client.js" data-repo="simonomi/simonomi.github.io" data-repo-id="R_kgDOI4sZTA" data-category="Announcements" data-category-id="DIC_kwDOI4sZTM4C1V_T" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" data-loading="lazy" crossorigin="anonymous" async></script>
+		{%- assign discussionSites = "" | split: "" -%}
+		
+		{%- if page.data.mastodonURL -%}
+			{%- assign newSite = "<a>Mastodon</a>" | split: "notInTheOriginalString" -%}
+			{%- assign discussionSites = discussionSites | concat: newSite -%}
+		{%- endif -%}
+		
+		{%- if page.data.lobstersURL -%}
+			{%- assign newSite = "<a>Lobsters</a>" | split: "notInTheOriginalString" -%}
+			{%- assign discussionSites = discussionSites | concat: newSite -%}
+		{%- endif -%}
+		
+		{%- if page.data.hackerNewsURL -%}
+			{%- assign newSite = "<a>Hacker News</a>" | split: "notInTheOriginalString" -%}
+			{%- assign discussionSites = discussionSites | concat: newSite -%}
+		{%- endif -%}
+		
+		{%- case discussionSites.size -%}
+			{%- when 1 -%}
+				<p class="text-align-center">discuss on {{ discussionSites[0] }}</p>
+			{%- when 2 -%}
+				<p class="text-align-center">discuss on {{ discussionSites[0] }} or {{ discussionSites[1] }}</p>
+			{%- when 3 -%}
+				<p class="text-align-center">discuss on {{ discussionSites[0] }}, {{ discussionSites[1] }}, or {{ discussionSites[2] }}</p>
+		{%- endcase -%}
+		
+		<script src="https://giscus.app/client.js" data-repo="simonomi/simonomi.github.io" data-repo-id="R_kgDOI4sZTA" data-category="posts" data-category-id="DIC_kwDOI4sZTM4C1V_T" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" data-loading="lazy" crossorigin="anonymous" async></script>
 		
 		<footer>
 			<small>© <time>{{ "now" | date: "%Y" }}</time> alice pellerin</small>
