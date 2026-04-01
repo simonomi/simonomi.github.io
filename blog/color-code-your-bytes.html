@@ -379,7 +379,7 @@ data:
 
 <p>most colorful hex editors have a few categories they sort bytes into, like <code>00</code> bytes, printable ASCII, ASCII whitespace, other ASCII, non-ASCII, or <code>FF</code> bytes</p>
 
-<p><a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a>, for example, uses the following categories:</p>
+<p><a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a>, for example, uses the following categories by default:</p>
 
 <pre><code><terminal-grey>⋄ NULL bytes (0x00)</terminal-grey>
 <terminal-cyan>a ASCII printable characters (0x20 - 0x7E)</terminal-cyan>
@@ -499,17 +499,39 @@ data:
 
 <h2 id="what-can-you-do">so what can you do about it?</h2>
 
-<p>if you currently use <code>xxd</code><sup><a id="footnote-return:2" class="footnote-link" href="#footnote:2">2</a></sup>, try switching to <a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a>! it's pretty nice, and even slightly faster on my machine (with colors off). it doesn't have the full 18 colors that i prefer, but it's certainly way better than plain black and white</p>
+<p>there are tons of tools out there that use color, here are some that i know of:</p>
 
-<p>unfortunately, i don't have any suggestions for other types of tools :/. if you know any, please let me know! if you work on any tools that show hexdumps, i highly recommend adding colors, ideally with a large number of groups (feel free to copy <a href="https://github.com/simonomi/simonomi.github.io/blob/2c53957ab2134dcf51b9047b672acf51ce82f88d/_includes/code.css#L41-L58">mine</a>!)</p>
+<p>hex viewers:</p>
+
+<ul>
+	<li><a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a></li>
+		<ul><li>byte categories by default, gradient option</li></ul>
+	<li><a href="https://hacktivis.me/projects/xcd-rgb">xcd-rgb</a></li>
+		<ul><li>full rainbow byte coloring</li></ul>
+	<li><a href="https://codeberg.org/arnauc/hevi">hevi</a></li>
+		<ul><li>uses colors to indicate sections for certain file types</li></ul>
+	<li><code>xxd</code></li>
+		<ul><li>option for byte categories, off<sup><a id="footnote-return:2" class="footnote-link" href="#footnote:2">2</a></sup> by default</li></ul>
+</ul>
+
+<p>hex editors:</p>
+
+<ul>
+	<li><a href="https://crumblingstatue.github.io/hexerator-book/0.4.0/hexerator.html">Hexerator</a></li>
+		<ul><li>full rainbow byte coloring, and tons of other features</li></ul>
+	<li><a href="https://rehex.solemnwarning.net">REHex</a></li>
+		<ul><li>multiple color options, off by default</li></ul>
+</ul>
+
+<p>if you know any other good ones, please let me know! if you work on any tools that show hexdumps, i highly recommend adding colors, ideally with a large number of groups (feel free to copy <a href="https://github.com/simonomi/simonomi.github.io/blob/2c53957ab2134dcf51b9047b672acf51ce82f88d/_includes/code.css#L41-L58">mine</a>!). at the very least, making <code><byte-00>00</byte-00></code>s more subtle than other bytes is extremely helpful</p>
 
 <p>the main goal of this article is to spread awareness that this feature exists. it provides a lot of utility with practically no downside, and more people should be asking for it. if you'd like to submit a feature request for the tool you use most, i hope this article can serve as an explanation for why it's worth adding</p>
 
-<p>while writing this article, i actually started making my own custom hex editor, called <a href="https://github.com/simonomi/hexapoda">hexapoda</a> &gt;_&lt;. it takes inspiration from <a href="https://helix-editor.com">Helix</a> and <a href="https://lib.rs/crates/teehee">Teehee</a> (among others), with modal editing, multiple cursors, and selection-first operations (written in Rust, with <a href="https://ratatui.rs">Ratatui</a>!). if enough people want, i might polish it up and write some docs so anyone can use it, but for now, it's just for me</p>
+<p>while writing this article, i actually started making my own custom hex editor, called <a href="https://github.com/simonomi/hexapoda">hexapoda</a> &gt;_&lt;. it takes inspiration from <a href="https://helix-editor.com">Helix</a> and <a href="https://lib.rs/crates/teehee">Teehee</a> (among others), with modal editing, multiple cursors, and selection-first operations (written in Rust, with <a href="https://ratatui.rs">Ratatui</a>!). if enough people want, i might polish it up and write some docs so anyone can use it, but for now, it's just for me :3</p>
 
 <hr>
 
 <ol id="footnotes">
 	<li id="footnote:1" tabindex="-1">and also tools like <code>xxd</code> or <code>hexyl</code> that show hex but don't let you edit it<a class="footnote-return-link" href="#footnote-return:1"> ⏎</a></li>
-	<li id="footnote:2" tabindex="-1">update: apparently <code>xxd</code> has an option for byte coloring, but for whatever reason, the default "auto" mode doesn't output any color for me. i still prefer <code>hexyl</code>'s output, but if you want colors with <code>xxd</code>, try passing <code>-R always</code><a class="footnote-return-link" href="#footnote-return:2"> ⏎</a></li>
+	<li id="footnote:2" tabindex="-1">by default, <code>xxd</code>'s color output is set to "auto", which doesn't output any color for me, so i'm not sure what it's doing<a class="footnote-return-link" href="#footnote-return:2"> ⏎</a></li>
 </ol>

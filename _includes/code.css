@@ -36,7 +36,7 @@
 	--terminal-bold: light-dark(#6b75ff, #6b75ff); /* TODO: light mode color */
 	
 	--byte-address: light-dark(#8abbc3, #8abbc3);
-	--byte-00: light-dark(#808080, #a0a0a0);
+	--byte-00: light-dark(#808080, #808080);
 	--byte-0:  light-dark(oklch(67% 0.18 360), oklch(75% 0.18 360));
 	--byte-1:  light-dark(oklch(67% 0.18 23), oklch(75% 0.18 23));
 	--byte-2:  light-dark(oklch(67% 0.18 50), oklch(75% 0.18 50));
