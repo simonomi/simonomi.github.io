@@ -381,15 +381,15 @@ data:
 
 <p><a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a>, for example, uses the following categories by default:</p>
 
-<pre><code><terminal-grey>⋄ NULL bytes (0x00)</terminal-grey>
-<terminal-cyan>a ASCII printable characters (0x20 - 0x7E)</terminal-cyan>
-<terminal-green>_ ASCII whitespace (0x09 - 0x0D, 0x20)
-• ASCII control characters (except NULL and whitespace)</terminal-green>
-<terminal-yellow>× Non-ASCII bytes (0x80 - 0xFF)</terminal-yellow></code></pre>
+<pre><code><byte-00><force-monospace-character>⋄</force-monospace-character> NULL bytes (0x00)</byte-00>
+<byte-ASCII-hexyl>a ASCII printable characters (0x20 - 0x7E)</byte-ASCII-hexyl>
+<byte-ASCII-non-graphic>_ ASCII whitespace (0x09 - 0x0D, 0x20)
+• ASCII control characters (except NULL and whitespace)</byte-ASCII-non-graphic>
+<byte-non-ASCII>× Non-ASCII bytes (0x80 - 0xFF)</byte-non-ASCII></code></pre>
 
 <p>which end up looking something like this:</p>
 
-<pre><code><terminal-grey>00</terminal-grey> <terminal-green>01 10 20</terminal-green> <terminal-cyan>30 40 50 60 70</terminal-cyan> <terminal-yellow>80 90 A0 B0 C0 D0 E0 F0 FF</terminal-yellow></code></pre>
+<pre><code><byte-00>00</byte-00> <byte-ASCII-non-graphic>01 10 20</byte-ASCII-non-graphic> <byte-ASCII-hexyl>30 40 50 60 70</byte-ASCII-hexyl> <byte-non-ASCII>80 90 A0 B0 C0 D0 E0 F0 FF</byte-non-ASCII></code></pre>
 
 <details>
 	<summary>full hexdump with <code>hexyl</code> colors</summary>

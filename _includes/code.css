@@ -18,25 +18,37 @@
 	--number: light-dark(#1c00cf, #d0bf69);
 	--string: light-dark(#c41a16, #fc6a5d);
 	
-	/* oh god, apparently "Dynamic foreground colors" changes these sometimes */
-	/* --terminal-grey: light-dark(green, #44475a); /* TODO: light mode color */
-	--terminal-grey: light-dark(#a0a0a0, #bfbfbf);
-	--terminal-red: light-dark(#ac422e, #ff5555);
-	--terminal-light-red: light-dark(#ff6e67, #ff6e67); /* TODO: light mode color */
-	--terminal-green: light-dark(#54ad45, #50fa7b);
-	--terminal-light-green: light-dark(#5af78e, #5af78e); /* TODO: light mode color */
-	--terminal-yellow: light-dark(#bbb31e, #f1fa8c);
+	--terminal-grey: #bfbfbf;
+	--terminal-red: #ff5555;
+	--terminal-light-red: #ff6e67;
+	--terminal-green: #50fa7b;
+	--terminal-light-green: #5af78e;
+	--terminal-yellow: #f1fa8c;
 	--terminal-light-yellow: var(--terminal-yellow);
-	--terminal-blue: light-dark(#074cb2, #bd93f9);
-	--terminal-light-blue: light-dark(#caa9fa, #caa9fa); /* TODO: light mode color */
-	--terminal-pink: light-dark(#ab3172, #ff79c9);
-	--terminal-light-pink: light-dark(#ff92d0, #ff92d0); /* TODO: light mode color */
-	--terminal-cyan: light-dark(#0773b2, #8be9fd);
-	--terminal-light-cyan: light-dark(#9aedfe, #9aedfe); /* TODO: light mode color */
-	--terminal-bold: light-dark(#6b75ff, #6b75ff); /* TODO: light mode color */
+	--terminal-blue: #bd93f9;
+	--terminal-light-blue: #caa9fa;
+	--terminal-pink: #ff79c9;
+	--terminal-light-pink: #ff92d0;
+	--terminal-cyan: #8be9fd;
+	--terminal-light-cyan: #9aedfe;
+	--terminal-bold: #6b75ff;
 	
-	--byte-address: light-dark(#8abbc3, #8abbc3);
-	--byte-00: light-dark(#808080, #808080);
+	/* terminal is always in dark mode, if we want color in a <code> block,
+	   it needs to support light mode */
+	--code-grey: light-dark(#808080, var(--terminal-grey));
+	--code-red: light-dark(#ac422e, var(--terminal-red));
+	--code-green: light-dark(#54ad45, var(--terminal-green));
+	--code-yellow: light-dark(#bbb31e, var(--terminal-yellow));
+	--code-blue: light-dark(#074cb2, var(--blue));
+	--code-pink: light-dark(#ab3172, var(--pink));
+	--code-cyan: light-dark(#0773b2, var(--terminal-cyan));
+	
+	--byte-address: #8abbc3;
+	--byte-ASCII: var(--string);
+	--byte-ASCII-hexyl: var(--code-cyan);
+	--byte-ASCII-non-graphic: var(--code-green);
+	--byte-non-ASCII: var(--code-yellow);
+	--byte-00: #808080;
 	--byte-0:  light-dark(oklch(67% 0.18 360), oklch(75% 0.18 360));
 	--byte-1:  light-dark(oklch(67% 0.18 23), oklch(75% 0.18 23));
 	--byte-2:  light-dark(oklch(67% 0.18 50), oklch(75% 0.18 50));
@@ -65,6 +77,7 @@ pre {
 	
 	&:has(samp) {
 		background-color: var(--background-color-terminal);
+		color: white;
 	}
 	
 	& > code > mark {
@@ -137,16 +150,39 @@ terminal-cyan         { color: var(--terminal-cyan);         }
 terminal-light-cyan   { color: var(--terminal-light-cyan);   }
 terminal-bold         { color: var(--terminal-bold);         }
 
+code-grey         { color: var(--code-grey);         }
+code-light-grey   { color: var(--code-light-grey);   }
+code-red          { color: var(--code-red);          }
+code-light-red    { color: var(--code-light-red);    }
+code-green        { color: var(--code-green);        }
+code-light-green  { color: var(--code-light-green);  }
+code-yellow       { color: var(--code-yellow);       }
+code-light-yellow { color: var(--code-light-yellow); }
+code-blue         { color: var(--code-blue);         }
+code-light-blue   { color: var(--code-light-blue);   }
+code-pink         { color: var(--code-pink);         }
+code-light-pink   { color: var(--code-light-pink);   }
+code-cyan         { color: var(--code-cyan);         }
+code-light-cyan   { color: var(--code-light-cyan);   }
+code-bold         { color: var(--code-bold);         }
+
+/* DON'T USE TERMINAL COLORS IN CODE BLOCKS */
+code {
+	terminal-grey, terminal-red, terminal-light-red, terminal-green, terminal-light-green, terminal-yellow, terminal-light-yellow, terminal-blue, terminal-light-blue, terminal-pink, terminal-light-pink, terminal-cyan, terminal-light-cyan, terminal-bold {
+		background-color: red;
+	}
+}
+
 /* to allow easy nesting */
 foreign-value, local-value, value-declaration, foreign-type, local-type, type-declaration, preprocessor-directive, code-comment, code-documentation, code-number, code-string, terminal-grey, terminal-blue, terminal-red, terminal-green, terminal-yellow, terminal-purple, terminal-pink, terminal-cyan {
 	font-weight: normal;
 }
 
 byte-address, .c-byte-address { color: var(--byte-address); }
-byte-ASCII, .c-byte-ASCII { color: var(--string); }
-byte-ASCII-hexyl, .c-byte-ASCII-hexyl { color: var(--terminal-cyan) }
-byte-ASCII-non-graphic, .c-byte-ASCII-non-graphic { color: var(--terminal-green); }
-byte-non-ASCII, .c-byte-non-ASCII { color: var(--terminal-yellow); }
+byte-ASCII, .c-byte-ASCII { color: var(--byte-ASCII); }
+byte-ASCII-hexyl, .c-byte-ASCII-hexyl { color: var(--byte-ASCII-hexyl) }
+byte-ASCII-non-graphic, .c-byte-ASCII-non-graphic { color: var(--byte-ASCII-non-graphic); }
+byte-non-ASCII, .c-byte-non-ASCII { color: var(--byte-non-ASCII); }
 byte-00, .c-byte-00 { color: var(--byte-00); }
 byte-0, .c-byte-0 { color: var(--byte-0); }
 byte-1, .c-byte-1 { color: var(--byte-1); }
@@ -168,7 +204,8 @@ byte-FF, .c-byte-FF { color: var(--byte-FF); }
 
 /* the ⋄ character doesn't render as monospaced properly, so this is a workaround to fix it when in a hex ascii block */
 .c-byte-ASCII .c-byte-00,
-.c-plain-byte-ASCII .c-plain-byte-00 {
+.c-plain-byte-ASCII .c-plain-byte-00,
+force-monospace-character {
 	display: inline-block;
 	width: 1ch;
 	text-align: center;
