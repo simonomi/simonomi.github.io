@@ -499,7 +499,7 @@ data:
 
 <h2 id="what-can-you-do">so what can you do about it?</h2>
 
-<p>if you currently use <code>xxd</code>, try switching to <a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a>! it's pretty nice, and even slightly faster on my machine (with colors off). it doesn't have the full 18 colors that i prefer, but it's certainly way better than plain black and white</p>
+<p>if you currently use <code>xxd</code><sup><a id="footnote-return:2" class="footnote-link" href="#footnote:2">2</a></sup>, try switching to <a href="https://github.com/sharkdp/hexyl"><code>hexyl</code></a>! it's pretty nice, and even slightly faster on my machine (with colors off). it doesn't have the full 18 colors that i prefer, but it's certainly way better than plain black and white</p>
 
 <p>unfortunately, i don't have any suggestions for other types of tools :/. if you know any, please let me know! if you work on any tools that show hexdumps, i highly recommend adding colors, ideally with a large number of groups (feel free to copy <a href="https://github.com/simonomi/simonomi.github.io/blob/2c53957ab2134dcf51b9047b672acf51ce82f88d/_includes/code.css#L41-L58">mine</a>!)</p>
 
@@ -511,4 +511,5 @@ data:
 
 <ol id="footnotes">
 	<li id="footnote:1" tabindex="-1">and also tools like <code>xxd</code> or <code>hexyl</code> that show hex but don't let you edit it<a class="footnote-return-link" href="#footnote-return:1"> ⏎</a></li>
+	<li id="footnote:2" tabindex="-1">update: apparently <code>xxd</code> has an option for byte coloring, but for whatever reason, the default "auto" mode doesn't output any color for me. i still prefer <code>hexyl</code>'s output, but if you want colors with <code>xxd</code>, try passing <code>-R always</code><a class="footnote-return-link" href="#footnote-return:2"> ⏎</a></li>
 </ol>
