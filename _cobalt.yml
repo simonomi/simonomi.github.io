@@ -6,7 +6,6 @@ template_extensions:
 ignore:
   - LICENSE
   - CNAME
-  - giscus.json
   - codebook.toml
 
 site:

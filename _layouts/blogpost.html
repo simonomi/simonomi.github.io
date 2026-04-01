@@ -10,8 +10,6 @@
 		
 		<meta name="fediverse:creator" content="@simonomi@mstdn.social" />
 		
-		<meta name="giscus:backlink" content="{{ site.base_url }}/{{ page.permalink }}"/>
-		
 		<meta name="theme-color" content="white" media="(prefers-color-scheme: light)"/>
 		<meta name="theme-color" content="#161a1c" media="(prefers-color-scheme: dark)"/>
 		
@@ -80,22 +78,12 @@
 			{%- assign discussionSites = discussionSites | concat: newSite -%}
 		{%- endif -%}
 		
-		{%- if page.data.hackerNewsURL -%}
-			{%- capture newSite -%}<a href="{{ page.data.hackerNewsURL }}">Hacker News</a>{%- endcapture -%}
-			{%- assign newSite = newSite | split: "notInTheOriginalString" -%}
-			{%- assign discussionSites = discussionSites | concat: newSite -%}
-		{%- endif -%}
-		
 		{%- case discussionSites.size -%}
 			{%- when 1 -%}
 				<p class="text-align-center">discuss on {{ discussionSites[0] }}</p>
 			{%- when 2 -%}
 				<p class="text-align-center">discuss on {{ discussionSites[0] }} or {{ discussionSites[1] }}</p>
-			{%- when 3 -%}
-				<p class="text-align-center">discuss on {{ discussionSites[0] }}, {{ discussionSites[1] }}, or {{ discussionSites[2] }}</p>
 		{%- endcase -%}
-		
-		<script src="https://giscus.app/client.js" data-repo="simonomi/simonomi.github.io" data-repo-id="R_kgDOI4sZTA" data-category="posts" data-category-id="DIC_kwDOI4sZTM4C1V_T" data-mapping="title" data-strict="1" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="en" data-loading="lazy" crossorigin="anonymous" async></script>
 		
 		<footer>
 			<small>© <time>{{ "now" | date: "%Y" }}</time> alice pellerin</small>
