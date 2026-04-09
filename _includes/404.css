@@ -1,3 +1,39 @@
 body {
 	text-align: center;
 }
+
+a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	text-decoration: none;
+	color: var(--foreground-color);
+	user-select: none;
+	-webkit-user-select: none;
+	
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	
+	@media (prefers-color-scheme: light) {
+		filter: invert();
+	}
+	
+	&:hover {
+		filter: opacity(85%);
+		
+		@media (prefers-color-scheme: light) {
+			filter: opacity(75%) invert();
+		}
+	}
+	
+	img {
+		width: var(--icon-link-width);
+		height: var(--icon-link-height);
+	}
+	
+	h3 {
+		display: inline;
+		margin: 0;
+	}
+}

@@ -319,7 +319,6 @@ icon-links {
 		transition-property: opacity;
 		transition-duration: 0.2s;
 		
-		/* TODO: use multiple sources instead? */
 		@media (prefers-color-scheme: light) {
 			filter: invert();
 		}
@@ -327,7 +326,6 @@ icon-links {
 		&:hover {
 			filter: opacity(85%);
 			
-			/* TODO: use multiple sources instead? */
 			@media (prefers-color-scheme: light) {
 				filter: opacity(75%) invert();
 			}

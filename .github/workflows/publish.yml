@@ -1,7 +1,10 @@
+# yaml-language-server: $schema=https://www.schemastore.org/github-workflow.json
 name: Publish
+
 on:
   push:
     branches: [main]
+
 jobs:
   build:
     runs-on: ubuntu-latest
