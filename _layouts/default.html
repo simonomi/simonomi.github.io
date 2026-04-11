@@ -6,29 +6,29 @@
 		
 		<title>{{ page.title }}</title>
 		<link rel="icon" href="/images/logo-circle.png">
-		<link rel="alternate" type="application/feed+json" title="JSON Feed" href="/feed.json"/>
+		<link rel="alternate" type="application/feed+json" title="JSON Feed" href="/feed.json">
 		
-		<meta name="fediverse:creator" content="@simonomi@mstdn.social" />
+		<meta name="fediverse:creator" content="@simonomi@mstdn.social" >
 		
-		<meta name="theme-color" content="white" media="(prefers-color-scheme: light)"/>
-		<meta name="theme-color" content="#161a1c" media="(prefers-color-scheme: dark)"/>
+		<meta name="theme-color" content="white" media="(prefers-color-scheme: light)">
+		<meta name="theme-color" content="#161a1c" media="(prefers-color-scheme: dark)">
 		
 		{%- if page.permalink == "" or page.permalink == "index.html" -%}
-			<meta property="og:title" content="{{ page.title }}"/>
-			<meta property="og:type" content="profile"/>
-			<meta property="og:url" content="{{ site.base_url }}"/>
+			<meta property="og:title" content="{{ page.title }}">
+			<meta property="og:type" content="profile">
+			<meta property="og:url" content="{{ site.base_url }}">
 			
-			<meta property="profile:first_name" content="alice"/>
-			<meta property="profile:last_name" content="pellerin"/>
-			<meta property="profile:username" content="simonomi"/>
-			<meta property="profile:gender" content="female"/>
+			<meta property="profile:first_name" content="alice">
+			<meta property="profile:last_name" content="pellerin">
+			<meta property="profile:username" content="simonomi">
+			<meta property="profile:gender" content="female">
 		{%- endif -%}
 		
 		{%- if page.description and page.description != "" -%}
 			<meta name="description" content="{{ page.description }}">
 			
 			{%- if page.permalink == "" or page.permalink == "index.html" -%}
-				<meta property="og:description" content="{{ page.description }}"/>
+				<meta property="og:description" content="{{ page.description }}">
 			{%- endif -%}
 		{%- endif -%}
 		
