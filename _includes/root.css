@@ -38,7 +38,7 @@
 		object-fit: contain;
 		margin-right: 0.25rem;
 		
-		&.mage-logo {
+		&#mage-logo {
 			border-radius: 25%;
 		}
 		
