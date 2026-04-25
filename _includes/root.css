@@ -36,11 +36,7 @@
 		width: 1lh;
 		height: 1lh;
 		object-fit: contain;
-		margin-right: 0.25rem;
-		
-		&#mage-logo {
-			border-radius: 25%;
-		}
+		margin-right: 0.2rem;
 		
 		@media (prefers-color-scheme: light) {
 			&.github-logo, &.rss-logo {
