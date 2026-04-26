@@ -106,15 +106,18 @@ figure {
 
 foreign-value { color: var(--foreign-value-color) }
 local-value { color: var(--local-value-color); }
-value-declaration { color: var(--value-declaration-color); }
+value-declaration, .c-toml.c-tag,
+/* quoted toml tags should be value declarations, not strings */
+.c-toml.c-tag > .c-string, .c-toml.c-tag > .c-string > *
+{ color: var(--value-declaration-color); }
 
 foreign-type { color: var(--foreign-type-color); }
 local-type { color: var(--local-type-color); }
-type-declaration { color: var(--type-declaration-color); }
+type-declaration, .c-toml.c-table { color: var(--type-declaration-color); }
 
 preprocessor-directive { color: var(--preprocessor-directive); }
 
-code-comment { color: var(--comment); }
+code-comment, .c-comment { color: var(--comment); }
 
 code-documentation {
 	color: var(--comment);
@@ -132,7 +135,7 @@ code-mark {
 }
 
 code-number { color: var(--number); }
-code-string { color: var(--string); }
+code-string, .c-string { color: var(--string); }
 
 terminal-grey         { color: var(--terminal-grey);         }
 terminal-light-grey   { color: var(--terminal-light-grey);   }

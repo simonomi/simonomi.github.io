@@ -1,0 +1,79 @@
+---
+layout: default.html
+title: hexapoda config
+permalink: /hexapoda/config/
+data:
+  style: hexapoda
+---
+
+<icon-links>
+	<a href="/hexapoda/install" title="install">
+		<img src="/images/download.svg" alt="the download icon">
+	</a>
+	
+	<a href="https://github.com/simonomi/hexapoda" title="source">
+		<img src="/images/github.svg" alt="the GitHub logo">
+	</a>
+</icon-links>
+
+<hgroup>
+	<h1>
+		<a class="secret" href="/hexapoda/" title="hexapoda homepage">
+			<img id="logo" src="/images/hexapoda.svg" alt="an icon of a colorful hexagon-shaped bug">
+		</a>
+		{{ page.title }}
+	</h1>
+</hgroup>
+
+<p>to override the <a href="#default-config">default configuration</a>, you can create a config file at:</p>
+
+<ul>
+	<li>
+		Linux and MacOS: <code>$XDG_CONFIG_HOME/hexapoda.toml</code>
+		<ul>
+			<li>if <code>$XDG_CONFIG_HOME</code> is not defined, falls back to <code>~/.config/hexapoda.toml</code></li>
+		</ul>
+	</li>
+	<li>Windows: <code>%APPDATA%\hexapoda.toml</code></li>
+</ul>
+
+<p>if you use a language server for TOML like <a href="https://tombi-toml.github.io/tombi/">Tombi</a>, you can use the JSON Schema at <code>https://simonomi.dev/hexapoda/config/schema.json</code> (see below) to get autocomplete and diagnostics for your config file</p>
+
+<h2 id="example-config">example config</h2>
+
+<p>by default, hexapoda uses <code>ijkl</code> for movement. if you prefer the more traditional <code>hjkl</code>, you can use the following config:</p>
+
+{%- highlight toml -%}
+#:schema https://simonomi.dev/hexapoda/config/schema.json
+
+[normal]
+k = "move_byte_up"
+j = "move_byte_down"
+h = "move_byte_left"
+
+[normal.goto]
+h = "goto_line_start"
+
+[normal.repeat]
+k = "move_byte_up"
+j = "move_byte_down"
+h = "move_byte_left"
+
+
+[select]
+k = "extend_byte_up"
+j = "extend_byte_down"
+h = "extend_byte_left"
+
+[select.goto]
+h = "extend_line_start"
+
+[select.repeat]
+k = "extend_byte_up"
+j = "extend_byte_down"
+h = "extend_byte_left"
+{%- endhighlight -%}
+
+<h2 id="default-config">default config</h2>
+
+{%- render "hexapoda/hexapoda v0.1.toml" -%}

@@ -1,0 +1,267 @@
+{%- highlight toml -%}
+#:schema https://simonomi.dev/hexapoda/config/schema-v0.1.json
+
+[normal]
+q = "quit_if_saved"
+Q = "quit"
+
+v = "select_mode"
+
+g = "goto"
+z = "view"
+r = "replace"
+" " = "space"
+"*" = "repeat"
+t = "to"
+
+i = "move_byte_up"
+k = "move_byte_down"
+j = "move_byte_left"
+l = "move_byte_right"
+
+up = "move_byte_up"
+down = "move_byte_down"
+left = "move_byte_left"
+right = "move_byte_right"
+
+G = "goto_file_end"
+
+"C-e" = "scroll_down"
+"C-y" = "scroll_up"
+
+"C-d" = "page_cursor_half_down"
+"C-u" = "page_cursor_half_up"
+
+"C-f" = "page_down"
+"C-b" = "page_up"
+
+w = "move_next_word_start"
+e = "move_next_word_end"
+b = "move_previous_word_start"
+
+";" = "collapse_selection"
+"A-;" = "flip_selections"
+
+x = "extend_line_below"
+X = "extend_line_above"
+
+d = "delete"
+
+u = "undo"
+U = "redo"
+
+"C-j" = "previous_buffer"
+"C-l" = "next_buffer"
+
+C = "copy_selection_on_next_line"
+
+"(" = "rotate_selections_backward"
+")" = "rotate_selections_forward"
+
+"," = "keep_primary_selection"
+"A-," = "remove_primary_selection"
+
+1 = "split_selections_into_1s"
+2 = "split_selections_into_2s"
+3 = "split_selections_into_3s"
+4 = "split_selections_into_4s"
+5 = "split_selections_into_5s"
+6 = "split_selections_into_6s"
+7 = "split_selections_into_7s"
+8 = "split_selections_into_8s"
+9 = "split_selections_into_9s"
+
+J = "jump_to_selected_offset_relative_to_mark"
+"A-J" = "jump_to_selected_offset"
+
+m = "toggle_mark"
+
+y = "yank"
+
+"C- " = "inspect_selection"
+"A- " = "inspect_selection_color"
+
+[normal.goto]
+j = "goto_line_start"
+l = "goto_line_end"
+
+g = "goto_file_start"
+
+[normal.view]
+z = "align_view_center"
+b = "align_view_bottom"
+t = "align_view_top"
+
+[normal.space]
+w = "save"
+
+q = "quit_if_saved"
+Q = "quit"
+
+[normal.repeat]
+i = "move_byte_up"
+k = "move_byte_down"
+j = "move_byte_left"
+l = "move_byte_right"
+
+up = "move_byte_up"
+down = "move_byte_down"
+left = "move_byte_left"
+right = "move_byte_right"
+
+"C-e" = "scroll_down"
+"C-y" = "scroll_up"
+
+"C-d" = "page_cursor_half_down"
+"C-u" = "page_cursor_half_up"
+
+"C-f" = "page_down"
+"C-b" = "page_up"
+
+w = "move_next_word_start"
+e = "move_next_word_end"
+b = "move_previous_word_start"
+
+x = "extend_line_below"
+X = "extend_line_above"
+
+d = "delete"
+
+C = "copy_selection_on_next_line"
+
+[normal.till]
+m = "find_till_mark"
+0 = "find_till_null"
+f = "find_till_ff"
+
+
+[select]
+q = "quit_if_saved"
+Q = "quit"
+
+v = "normal_mode"
+
+g = "goto"
+z = "view"
+r = "replace"
+" " = "space"
+"*" = "repeat"
+t = "to"
+
+i = "extend_byte_up"
+k = "extend_byte_down"
+j = "extend_byte_left"
+l = "extend_byte_right"
+
+G = "extend_file_end"
+
+up = "extend_byte_up"
+down = "extend_byte_down"
+left = "extend_byte_left"
+right = "extend_byte_right"
+
+"C-e" = "scroll_down"
+"C-y" = "scroll_up"
+
+"C-d" = "page_cursor_half_down"
+"C-u" = "page_cursor_half_up"
+
+"C-f" = "page_down"
+"C-b" = "page_up"
+
+w = "extend_next_word_start"
+e = "extend_next_word_end"
+b = "extend_previous_word_start"
+
+";" = "collapse_selection"
+"A-;" = "flip_selections"
+
+x = "extend_line_below"
+X = "extend_line_above"
+
+d = "delete"
+
+u = "undo"
+U = "redo"
+
+C = "copy_selection_on_next_line"
+
+"(" = "rotate_selections_backward"
+")" = "rotate_selections_forward"
+
+"," = "keep_primary_selection"
+"A-," = "remove_primary_selection"
+
+1 = "split_selections_into_1s"
+2 = "split_selections_into_2s"
+3 = "split_selections_into_3s"
+4 = "split_selections_into_4s"
+5 = "split_selections_into_5s"
+6 = "split_selections_into_6s"
+7 = "split_selections_into_7s"
+8 = "split_selections_into_8s"
+9 = "split_selections_into_9s"
+
+J = "jump_to_selected_offset_relative_to_mark"
+"A-J" = "jump_to_selected_offset"
+
+m = "toggle_mark"
+
+y = "yank"
+
+"C- " = "inspect_selection"
+"A- " = "inspect_selection_color"
+
+[select.goto]
+j = "extend_line_start"
+l = "extend_line_end"
+
+g = "extend_file_start"
+
+[select.view]
+z = "align_view_center"
+b = "align_view_bottom"
+t = "align_view_top"
+
+[select.space]
+w = "save"
+
+q = "quit_if_saved"
+Q = "quit"
+
+[select.repeat]
+i = "extend_byte_up"
+k = "extend_byte_down"
+j = "extend_byte_left"
+l = "extend_byte_right"
+
+up = "extend_byte_up"
+down = "extend_byte_down"
+left = "extend_byte_left"
+right = "extend_byte_right"
+
+"C-e" = "scroll_down"
+"C-y" = "scroll_up"
+
+"C-d" = "page_cursor_half_down"
+"C-u" = "page_cursor_half_up"
+
+"C-f" = "page_down"
+"C-b" = "page_up"
+
+w = "extend_next_word_start"
+e = "extend_next_word_end"
+b = "extend_previous_word_start"
+
+x = "extend_line_below"
+X = "extend_line_above"
+
+d = "delete"
+
+C = "copy_selection_on_next_line"
+
+[select.till]
+m = "extend_till_mark"
+0 = "extend_till_null"
+f = "extend_till_ff"
+{%- endhighlight -%}
