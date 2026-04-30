@@ -28,12 +28,48 @@ data:
 	</h1>
 </hgroup>
 
+<h2>a colorful modal hex editor</h2>
+
+<script async src="https://asciinema.org/a/P2tCRvr4cwvmsmPl.js" id="asciicast-P2tCRvr4cwvmsmPl"></script>
+
+<p>keys pressed in this recording: <code>eeyeJv*ev4Jmeevev4Jt0&lt;C-space&gt;&lt;C-space&gt;</code></p>
+
+<h2>features</h2>
+
 <ul>
-	<li>colorful</li>
-	<li>modal</li>
-	<li>multi-cursor</li>
-	<li>inspect</li>
-	<li>mark?</li>
-	<li>jump?</li>
-	<li>showcase video(s)</li>
+	<li><a href="/blog/color-code-your-bytes">color-codes bytes</a> by value</li>
+	<li>
+		modal editing
+		<ul>
+			<li>selection-first, like <a href="https://kakoune.org">Kakoune</a> and <a href="https://helix-editor.com">Helix</a></li>
+		</ul>
+	</li>
+	<li>
+		multiple selections
+		<ul>
+			<li>split selection(s) into #-byte chunks</li>
+		</ul>
+	</li>
+	<li>undo/redo</li>
+	<li>
+		inspect the current selection(s)
+		<ul>
+			<li>signed, unsigned, binary, fixed-point, UTF-8, color</li>
+		</ul>
+	</li>
+	<li>mark notable offsets</li>
+	<li>jump to selected offset</li>
+</ul>
+
+<h3>notable features that are missing (for now)</h3>
+
+<ul>
+	<li>search</li>
+	<li>diffing</li>
+	<li>
+		inserting bytes
+		<ul>
+			<li>only replacing and deleting right now</li>
+		</ul>
+	</li>
 </ul>
