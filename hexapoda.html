@@ -34,7 +34,7 @@ data:
 
 <p>keys pressed in this recording: <code>eeyeJv*ev4Jmeevev4Jt0&lt;C-space&gt;&lt;C-space&gt;</code></p>
 
-<h2>features</h2>
+<h2 id="features">features</h2>
 
 <ul>
 	<li><a href="/blog/color-code-your-bytes">color-codes bytes</a> by value</li>
@@ -47,24 +47,27 @@ data:
 	<li>
 		multiple selections
 		<ul>
-			<li>split selection(s) into #-byte chunks</li>
+			<li>split selection(s) into #-byte chunks (<code>1</code>/<code>2</code>/<code>3</code>/...)</li>
 		</ul>
 	</li>
-	<li>undo/redo</li>
+	<li><a href="/hexapoda/config">configurable keybinds</a></li>
+	<li>undo/redo (<code>u</code>/<code>U</code>)</li>
 	<li>
-		inspect the current selection(s)
+		inspect the current selection(s) (<code>C-space</code>)
 		<ul>
 			<li>signed, unsigned, binary, fixed-point, UTF-8, color</li>
 		</ul>
 	</li>
-	<li>mark notable offsets</li>
-	<li>jump to selected offset</li>
+	<li>mark notable offsets (<code>m</code>)</li>
+	<li>jump to selected offset (<code>J</code>)</li>
+	<li>...and more!</li>
 </ul>
 
 <h3>notable features that are missing (for now)</h3>
 
 <ul>
 	<li>search</li>
+	<li>jump to entered offset</li>
 	<li>diffing</li>
 	<li>
 		inserting bytes
@@ -72,4 +75,13 @@ data:
 			<li>only replacing and deleting right now</li>
 		</ul>
 	</li>
+</ul>
+
+<h2 id="usage">usage</h2>
+
+<p>for the most part, hexapoda works pretty similar to <a href="https://docs.helix-editor.com/usage.html">Helix</a>, but there are a few big differences:</p>
+
+<ul>
+	<li>hexapoda uses <code>ijkl</code> for cursor movement by default, instead of <code>hjkl</code>. if you prefer the Obviously Worse <code>hjkl</code>, you can use <a href="/hexapoda/config#example">this config</a></li>
+	<li><mark>TODO: yank/repeat</mark></li>
 </ul>

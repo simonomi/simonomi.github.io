@@ -25,7 +25,7 @@ data:
 	</h1>
 </hgroup>
 
-<p>to override the <a href="#default-config">default configuration</a>, you can create a config file at:</p>
+<p>to override the <a href="#default">default configuration</a>, you can create a config file at:</p>
 
 <ul>
 	<li>
@@ -39,7 +39,7 @@ data:
 
 <p>if you use a language server for TOML like <a href="https://tombi-toml.github.io/tombi/">Tombi</a>, you can use the JSON Schema at <code>https://simonomi.dev/hexapoda/config/schema.json</code> (see the examples below) to get autocomplete and diagnostics for your config file</p>
 
-<h2 id="example-config">example config</h2>
+<h2 id="example">example config</h2>
 
 <p>by default, hexapoda uses <code>ijkl</code> for movement. if you prefer the more traditional <code>hjkl</code>, you can use the following config:</p>
 
@@ -74,6 +74,6 @@ j = "extend_byte_down"
 h = "extend_byte_left"
 {%- endhighlight -%}
 
-<h2 id="default-config">default config</h2>
+<h2 id="default">default config</h2>
 
 {%- render "hexapoda/hexapoda v1.0.0.toml" -%}

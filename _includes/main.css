@@ -138,6 +138,14 @@ sup {
 	text-align: center;
 }
 
+.asciicast {
+	margin: 0 !important;
+	
+	& + p {
+		margin-top: 0.5rem;
+	}
+}
+
 details {
 	summary {
 		cursor: pointer;

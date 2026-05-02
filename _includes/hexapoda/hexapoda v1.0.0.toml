@@ -87,6 +87,9 @@ l = "goto_line_end"
 
 g = "goto_file_start"
 
+p = "previous_buffer"
+n = "next_buffer"
+
 [normal.view]
 z = "align_view_center"
 b = "align_view_bottom"
@@ -217,6 +220,9 @@ j = "extend_line_start"
 l = "extend_line_end"
 
 g = "extend_file_start"
+
+p = "previous_buffer"
+n = "next_buffer"
 
 [select.view]
 z = "align_view_center"
