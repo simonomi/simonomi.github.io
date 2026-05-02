@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "https://simonomi.dev/hexapoda/config/schema-v0.1.json",
+	"$id": "https://simonomi.dev/hexapoda/config/schema.json",
 	"title": "hexapoda config",
 	"description": "configuration format for hexapoda. see https://simonomi.dev/hexapoda/config/ for details",
 	"type": "object",

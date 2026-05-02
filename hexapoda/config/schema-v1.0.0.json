@@ -1,0 +1,60 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://simonomi.dev/hexapoda/config/schema-v1.0.0.json",
+	"title": "hexapoda config",
+	"description": "configuration format for hexapoda. see https://simonomi.dev/hexapoda/config/ for details",
+	"type": "object",
+	"properties": {
+		"normal": {
+			"$ref": "#/$defs/modeConfig",
+			"description": "normal mode"
+		},
+		"select": {
+			"$ref": "#/$defs/modeConfig",
+			"description": "select mode"
+		}
+	},
+	"$defs": {
+		"modeConfig": {
+			"type": "object",
+			"properties": {
+				"goto": {
+					"$ref": "#/$defs/keybinds",
+					"description": "the goto partial action"
+				},
+				"view": {
+					"$ref": "#/$defs/keybinds",
+					"description": "the view partial action"
+				},
+				"replace": {
+					"$ref": "#/$defs/keybinds",
+					"description": "the replace partial action"
+				},
+				"space": {
+					"$ref": "#/$defs/keybinds",
+					"description": "the space partial action"
+				},
+				"repeat": {
+					"$ref": "#/$defs/keybinds",
+					"description": "the repeat partial action"
+				},
+				"till": {
+					"$ref": "#/$defs/keybinds",
+					"description": "the till partial action"
+				}
+			},
+			"additionalProperties": {
+				"$ref": "#/$defs/action"
+			}
+		},
+		"keybinds": {
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "#/$defs/action"
+			}
+		},
+		"action": {
+			"enum": ["quit_if_saved", "quit", "previous_buffer", "next_buffer", "yank", "normal_mode", "select_mode", "goto", "view", "replace", "space", "repeat", "to", "scroll_down", "scroll_up", "page_cursor_half_down", "page_cursor_half_up", "page_down", "page_up", "collapse_selection", "flip_selections", "delete", "undo", "redo", "save", "copy_selection_on_next_line", "rotate_selections_backward", "rotate_selections_forward", "keep_primary_selection", "remove_primary_selection", "split_selections_into_1s", "split_selections_into_2s", "split_selections_into_3s", "split_selections_into_4s", "split_selections_into_5s", "split_selections_into_6s", "split_selections_into_7s", "split_selections_into_8s", "split_selections_into_9s", "jump_to_selected_offset", "jump_to_selected_offset_relative_to_mark", "toggle_mark", "align_view_center", "align_view_bottom", "align_view_top", "find_till_mark", "find_till_null", "find_till_ff", "extend_till_mark", "extend_till_null", "extend_till_ff", "inspect_selection", "inspect_selection_color", "move_byte_up", "move_byte_down", "move_byte_left", "move_byte_right", "extend_byte_up", "extend_byte_down", "extend_byte_left", "extend_byte_right", "goto_line_start", "goto_line_end", "goto_file_start", "goto_file_end", "extend_line_start", "extend_line_end", "extend_file_start", "extend_file_end", "move_next_word_start", "move_next_word_end", "move_previous_word_start", "extend_next_word_start", "extend_next_word_end", "extend_previous_word_start", "extend_line_below", "extend_line_above"]
+		}
+	}
+}

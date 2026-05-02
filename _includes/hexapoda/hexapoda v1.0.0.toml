@@ -1,5 +1,5 @@
 {%- highlight toml -%}
-#:schema https://simonomi.dev/hexapoda/config/schema-v0.1.json
+#:schema https://simonomi.dev/hexapoda/config/schema-v1.0.0.json
 
 [normal]
 q = "quit_if_saved"
