@@ -69,15 +69,17 @@
 }
 
 pre {
-	background-color: var(--background-color-code);
 	padding: 0.5em;
 	border-radius: 0.5em;
 	tab-size: 4;
 	overflow-x: scroll;
 	
+	&:has(code) {
+		background-color: var(--background-color-code);
+	}
+	
 	&:has(samp) {
 		background-color: var(--background-color-terminal);
-		color: white;
 	}
 	
 	& > code > mark {
@@ -89,19 +91,22 @@ samp, code {
 	font-family: ui-monospace, monospace;
 	font-size: 1rem;
 	-webkit-text-size-adjust: 100%; /* some weird bugs were happening with iOS safari resizing some code larger than others */
+	
+	&:not(pre &) {
+		display: inline-block;
+		/* p font size is  1.125rem, so fill the remaining vertical space */
+		padding: 0.0625rem 0.125rem;
+		border-radius: 0.25rem;
+	}
 }
 
-code:not(pre code) {
-	display: inline-block;
+code {
 	background-color: var(--background-color-code);
-	/* p font size is  1.125rem, so fill the remaining vertical space */
-	padding: 0.0625rem 0.125rem;
-	border-radius: 0.25rem;
 }
 
-/* rogue generates code with a figure around it */
-figure {
-	margin: 0;
+samp {
+	background-color: var(--background-color-terminal);
+	color: white;
 }
 
 foreign-value { color: var(--foreign-value-color) }
