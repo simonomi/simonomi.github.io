@@ -280,7 +280,7 @@ ol > *:not(:last-child) {
 	margin-bottom: 0.25em;
 }
 
-blockquote {
+blockquote, aside {
 	background-color: var(--quote-background-color);
 	padding: 1em;
 	border-left: solid var(--quote-border-color) 0.25em;
