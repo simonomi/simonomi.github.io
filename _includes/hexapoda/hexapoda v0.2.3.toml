@@ -1,5 +1,5 @@
 {%- highlight toml -%}
-#:schema https://simonomi.dev/hexapoda/config/schema-v1.0.0.json
+#:schema https://simonomi.dev/hexapoda/config/schema-v0.2.3.json
 
 [normal]
 q = "quit_if_saved"
@@ -86,6 +86,8 @@ j = "goto_line_start"
 l = "goto_line_end"
 
 g = "goto_file_start"
+i = "goto_file_start"
+k = "goto_file_end"
 
 p = "previous_buffer"
 n = "next_buffer"
@@ -143,6 +145,7 @@ q = "quit_if_saved"
 Q = "quit"
 
 v = "normal_mode"
+escape = "normal_mode"
 
 g = "goto"
 z = "view"
@@ -220,6 +223,8 @@ j = "extend_line_start"
 l = "extend_line_end"
 
 g = "extend_file_start"
+i = "extend_file_start"
+k = "extend_file_end"
 
 p = "previous_buffer"
 n = "next_buffer"
