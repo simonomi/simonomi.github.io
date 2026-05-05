@@ -53,7 +53,7 @@ data:
 	<li><a href="/hexapoda/config">configurable keybinds</a></li>
 	<li>undo/redo (<code>u</code>/<code>U</code>)</li>
 	<li>
-		inspect the current selection(s) (<code>C-space</code>)
+		inspect the current selection(s) (<code>&lt;C-space&gt;</code>)
 		<ul>
 			<li>signed, unsigned, binary, fixed-point, UTF-8, color</li>
 		</ul>
@@ -83,5 +83,10 @@ data:
 
 <ul>
 	<li>hexapoda uses <code>ijkl</code> for cursor movement by default. if you prefer the Obviously Worse <code>hjkl</code>, you can use <a href="/hexapoda/config#example">this config</a></li>
-	<li><mark>TODO: yank/repeat</mark></li>
+	<li>
+		to repeat an action a certain number of times, hexapoda uses the <code>repeat</code> action, bound to <code>*</code> by default. instead of entering a number of times to repeat, <code>repeat</code> uses the primary register, which allows repeating based on a value from the opened file
+		<ul>
+			<li>the showcase above uses this by selecting the word at <code><byte-address>0x4</byte-address></code> and <code>yank</code>ing, then going to <code><byte-address>0xc</byte-address></code> and selecting that number of words with <code>v*e</code></li>
+		</ul>
+	</li>
 </ul>
