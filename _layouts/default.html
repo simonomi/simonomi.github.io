@@ -12,6 +12,10 @@
 			<link rel="icon" href="/images/logo-circle.png">
 		{%- endif -%}
 		
+		{%- if page.data.touchIcon -%}
+			<link rel="apple-touch-icon" href="/images/{{ page.data.touchIcon }}">
+		{%- endif -%}
+		
 		<link rel="alternate" type="application/feed+json" title="JSON Feed" href="/feed.json">
 		
 		<meta name="fediverse:creator" content="@simonomi@mstdn.social" >
