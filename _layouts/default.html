@@ -5,7 +5,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<title>{{ page.title }}</title>
-		<link rel="icon" href="/images/logo-circle.png">
+		
+		{%- if page.data.icon -%}
+			<link rel="icon" href="/images/{{ page.data.icon }}">
+		{%- else -%}
+			<link rel="icon" href="/images/logo-circle.png">
+		{%- endif -%}
+		
 		<link rel="alternate" type="application/feed+json" title="JSON Feed" href="/feed.json">
 		
 		<meta name="fediverse:creator" content="@simonomi@mstdn.social" >
