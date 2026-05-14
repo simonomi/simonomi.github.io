@@ -5,31 +5,29 @@ permalink: /blog/
 pagination:
   include: All
 ---
-<div>
-	<icon-links>
-		<a href="/feed.json" title="JSON Feed">
-			<img src="/images/rss.svg" alt="the RSS icon">
-		</a>
-		
-		<a href="/" title="home">
-			<img src="/images/home.svg" alt="an icon of a home">
-		</a>
-	</icon-links>
+<icon-links>
+	<a href="/feed.json" title="JSON Feed">
+		<img src="/images/rss.svg" alt="the RSS icon">
+	</a>
 	
-	<hgroup>
-		<h1>{{ page.title }}</h1>
-	</hgroup>
+	<a href="/" title="home">
+		<img src="/images/home.svg" alt="an icon of a home">
+	</a>
+</icon-links>
+
+<hgroup>
+	<h1>{{ page.title }}</h1>
+</hgroup>
+
+{%- for post in paginator.pages -%}
+	{%- if post.data.unlisted -%}
+		{%- continue -%}
+	{%- endif -%}
 	
-	{%- for post in paginator.pages -%}
-		{%- if post.data.unlisted -%}
-			{%- continue -%}
-		{%- endif -%}
-		
-		<a class="secret" href="/{{ post.permalink }}">
-			<hgroup>
-				<h2>{{ post.title }}</h2>
-				<p class="secondary">{{ post.published_date | date: "%Y-%m-%d" }}</p>
-			</hgroup>
-		</a>
-	{%- endfor -%}
-</div>
+	<a class="secret" href="/{{ post.permalink }}">
+		<hgroup>
+			<h2>{{ post.title }}</h2>
+			<p class="secondary">{{ post.published_date | date: "%Y-%m-%d" }}</p>
+		</hgroup>
+	</a>
+{%- endfor -%}

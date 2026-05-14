@@ -5,137 +5,133 @@ description: hey! i'm alice, a person who occasionally does things online
 data:
   style: root
 ---
-<div>
-	<icon-links>
-		<a href="/blog" title="blog">
-			<img src="/images/blog.svg" alt="an icon meant to depict a blog">
-		</a>
-		
-		<a href="/resume" title="resume">
-			<img src="/images/resume.svg" alt="an icon of a resume">
-		</a>
-		
-		<a rel="me" href="https://github.com/simonomi" title="GitHub">
-			<img src="/images/github.svg" alt="the GitHub logo">
-		</a>
-		
-		<a rel="me" href="https://mstdn.social/@simonomi" title="Mastodon">
-			<img src="/images/mastodon.svg" alt="the Mastodon logo">
-		</a>
-		
-		<a href="https://www.linkedin.com/in/simonomi" title="LinkedIn">
-			<img src="/images/linkedin.svg" alt="the LinkedIn logo">
-		</a>
-	</icon-links>
+<icon-links>
+	<a href="/blog" title="blog">
+		<img src="/images/blog.svg" alt="an icon meant to depict a blog">
+	</a>
 	
-	<hgroup>
-		<h1>{{ page.title }}</h1>
-		<p class="secondary">she/her</p>
-	</hgroup>
+	<a href="/resume" title="resume">
+		<img src="/images/resume.svg" alt="an icon of a resume">
+	</a>
 	
-	<p>hey! i'm alice, a person who occasionally does things online. i'm a programmer, knowledge enjoyer, and all-around reality improvement enthusiast</p>
+	<a rel="me" href="https://github.com/simonomi" title="GitHub">
+		<img src="/images/github.svg" alt="the GitHub logo">
+	</a>
 	
-	<p>i'm super interested in programming languages, especially in improving safety, clarity, and performance. i could go on and on about argument labels, algebraic effects, first-class types, and tons of other stuff (seriously, hit me up sometime!)</p>
+	<a rel="me" href="https://mstdn.social/@simonomi" title="Mastodon">
+		<img src="/images/mastodon.svg" alt="the Mastodon logo">
+	</a>
 	
-	<p>i also like learning non-programming languages <span class="secondary">(日本語, Русский, <a href="https://linktr.ee/ClongCraft">Clong</a>)</span>, reading <span class="secondary">(Cradle, Mother of Learning)</span>, playing <a class="secret" href="https://steamcommunity.com/id/simonomi">video games</a> <span class="secondary">(Outer Wilds, Factorio, The Last Clockwinder)</span>, anime <span class="secondary">(Dr. STONE, Made in Abyss, Wonder Egg Priority)</span>, skiing, rock climbing, learning, and teaching</p>
+	<a href="https://www.linkedin.com/in/simonomi" title="LinkedIn">
+		<img src="/images/linkedin.svg" alt="the LinkedIn logo">
+	</a>
+</icon-links>
+
+<hgroup>
+	<h1>{{ page.title }}</h1>
+	<p class="secondary">she/her</p>
+</hgroup>
+
+<p>hey! i'm alice, a person who occasionally does things online. i'm a programmer, knowledge enjoyer, and all-around reality improvement enthusiast</p>
+
+<p>i'm super interested in programming languages, especially in improving safety, clarity, and performance. i could go on and on about argument labels, algebraic effects, first-class types, and tons of other stuff (seriously, hit me up sometime!)</p>
+
+<p>i also like learning non-programming languages <span class="secondary">(日本語, Русский, <a href="https://linktr.ee/ClongCraft">Clong</a>)</span>, reading <span class="secondary">(Cradle, Mother of Learning)</span>, playing <a class="secret" href="https://steamcommunity.com/id/simonomi">video games</a> <span class="secondary">(Outer Wilds, Factorio, The Last Clockwinder)</span>, anime <span class="secondary">(Dr. STONE, Made in Abyss, Wonder Egg Priority)</span>, skiing, rock climbing, learning, and teaching</p>
+
+<div id="logo-explanation">
+	<img id="logo" class="nearest" src="/images/logo.png" alt="an 8 by 8 pixel art image, with a 2 by 2 black square in the center surrounded by one pixel of lime green. there are two white pixels each on the left and right side, all on top of a background of bright, searing yellow">
 	
-	<div id="logo-explanation">
-		<img id="logo" class="nearest" src="/images/logo.png" alt="an 8 by 8 pixel art image, with a 2 by 2 black square in the center surrounded by one pixel of lime green. there are two white pixels each on the left and right side, all on top of a background of bright, searing yellow">
-		
-		<p>i use this icon most places online. it's a little abstract, and it comes from the first Minecraft skin i ever made. it's supposed to be the face of a cyborg, with a lime green iris and bright yellow skin</p>
-	</div>
+	<p>i use this icon most places online. it's a little abstract, and it comes from the first Minecraft skin i ever made. it's supposed to be the face of a cyborg, with a lime green iris and bright yellow skin</p>
 </div>
 
-<div>
-	<h2>projects</h2>
+<h2>projects</h2>
+
+<div class="repos">
+	<div class="repo">
+		<p class="repo-link">
+			<a href="/hexapoda">
+				<img src="/images/hexapoda.svg" alt="an icon of a colorful hexagon-shaped bug">
+				hexapoda
+			</a>
+		</p>
+		
+		<p>a hex editor with <a href="/blog/color-code-your-bytes">color-coded bytes</a>, modal editing, multiple cursors, and selection-first operations. it's inspired by <a href="https://helix-editor.com">Helix</a> and written in Rust using <a href="https://ratatui.rs">Ratatui</a></p>
+	</div>
 	
-	<div class="repos">
-		<div class="repo">
-			<p class="repo-link">
-				<a href="/hexapoda">
-					<img src="/images/hexapoda.svg" alt="an icon of a colorful hexagon-shaped bug">
-					hexapoda
-				</a>
-			</p>
-			
-			<p>a hex editor with <a href="/blog/color-code-your-bytes">color-coded bytes</a>, modal editing, multiple cursors, and selection-first operations. it's inspired by <a href="https://helix-editor.com">Helix</a> and written in Rust using <a href="https://ratatui.rs">Ratatui</a></p>
-		</div>
+	<div class="repo">
+		<p class="repo-link">
+			<a href="https://github.com/simonomi/carbonizer">
+				<img class="nearest" src="/images/carbonizer.png" alt="a pixel art icon of a pickax and shovel">
+				carbonizer
+			</a>
+		</p>
 		
-		<div class="repo">
-			<p class="repo-link">
-				<a href="https://github.com/simonomi/carbonizer">
-					<img class="nearest" src="/images/carbonizer.png" alt="a pixel art icon of a pickax and shovel">
-					carbonizer
-				</a>
-			</p>
-			
-			<p>a ROM-hacking tool for the Nintendo DS game <a href="https://wikipedia.org/wiki/Fossil_Fighters">Fossil Fighters</a>. the game has a small cult following, and <a href="/fftechwiki/file-formats">a bunch of unique file formats</a>, which i've contributed pretty heavily to reverse-engineering</p>
-		</div>
+		<p>a ROM-hacking tool for the Nintendo DS game <a href="https://wikipedia.org/wiki/Fossil_Fighters">Fossil Fighters</a>. the game has a small cult following, and <a href="/fftechwiki/file-formats">a bunch of unique file formats</a>, which i've contributed pretty heavily to reverse-engineering</p>
+	</div>
+	
+	<div class="repo">
+		<p class="repo-link">
+			<a href="https://github.com/simonomi/MetalRayTracing">
+				<img class="github-logo" src="/images/github.svg" alt="the GitHub logo">
+				Metal&ZeroWidthSpace;Ray&ZeroWidthSpace;Tracing
+			</a>
+		</p>
 		
-		<div class="repo">
-			<p class="repo-link">
-				<a href="https://github.com/simonomi/MetalRayTracing">
-					<img class="github-logo" src="/images/github.svg" alt="the GitHub logo">
-					Metal&ZeroWidthSpace;Ray&ZeroWidthSpace;Tracing
-				</a>
-			</p>
-			
-			<p>a custom ray-tracing engine written from scratch using <a href="https://developer.apple.com/metal/">Metal</a>! i was inspired by <a href="https://www.youtube.com/watch?v=Qz0KTGYJtUk">this video</a>, and found that writing a custom ray-tracer is a super fun way to dive into graphics programming</p>
-			
-			<p>it supports emissive, reflective, and colored surfaces, plus a way to import custom meshes. the GitHub page has some pretty renders, check 'em out!</p>
-		</div>
+		<p>a custom ray-tracing engine written from scratch using <a href="https://developer.apple.com/metal/">Metal</a>! i was inspired by <a href="https://www.youtube.com/watch?v=Qz0KTGYJtUk">this video</a>, and found that writing a custom ray-tracer is a super fun way to dive into graphics programming</p>
 		
-		<!-- <div class="repo"> -->
-			<!-- <p class="repo-link"> -->
-				<!-- <a href="/fftechwiki"> -->
-					<!-- <img src="/images/stamp.png" alt="a pixel-art stamp"> -->
-					<!-- FF Tech Wiki -->
-				<!-- </a> -->
-			<!-- </p> -->
-			
-			<!-- <p>TODO: description</p> -->
-		<!-- </div> -->
+		<p>it supports emissive, reflective, and colored surfaces, plus a way to import custom meshes. the GitHub page has some pretty renders, check 'em out!</p>
+	</div>
+	
+	<!-- <div class="repo"> -->
+		<!-- <p class="repo-link"> -->
+			<!-- <a href="/fftechwiki"> -->
+				<!-- <img src="/images/stamp.png" alt="a pixel-art stamp"> -->
+				<!-- FF Tech Wiki -->
+			<!-- </a> -->
+		<!-- </p> -->
 		
-		<div class="repo">
-			<p class="repo-link">
-				<a href="https://github.com/simonomi/ParallelPowder">
-					<img class="github-logo" src="/images/github.svg" alt="the GitHub logo">
-					ParallelPowder
-				</a>
-			</p>
-			
-			<p>i was inspired by <a href="https://www.youtube.com/watch?v=prXuyMCgbTc">this GDC talk about Noita</a> to make a <a href="https://wikipedia.org/wiki/Falling-sand_game">falling sand</a> game engine that can run in parallel on a GPU. i liked the idea of having a 'speed of light', and designed an algorithm around a <a href="https://wikipedia.org/wiki/Principle_of_locality">principle of locality</a></p>
-			
-			<p>the result is a simulation that comfortably runs at 300fps on my 4480×2520 M1 iMac, for a total of over 3.3 billion pixel-ticks per second >:)</p>
-		</div>
+		<!-- <p>TODO: description</p> -->
+	<!-- </div> -->
+	
+	<div class="repo">
+		<p class="repo-link">
+			<a href="https://github.com/simonomi/ParallelPowder">
+				<img class="github-logo" src="/images/github.svg" alt="the GitHub logo">
+				ParallelPowder
+			</a>
+		</p>
 		
-		<div class="repo">
-			<p class="repo-link">
-				<a class="trailing-margin" href="https://github.com/simonomi/minecraftNews">
-					<img class="github-logo" src="/images/github.svg" alt="the GitHub logo">
-					minecraftNews
-				</a>
-				
-				<a href="/minecraftNews/feed.json">
-					<img class="rss-logo" src="/images/rss.svg" alt="the RSS logo">
-					JSON Feed
-				</a>
-			</p>
-			
-			<p>i got fed up with there not being an official RSS feed (or JSON Feed) for Minecraft snapshots, so i made one myself! it uses a Discord bot that follows the changelog announcements on the official Minecraft Discord server</p>
-			
-			<p>there's a bit of a delay before new snapshots are added to the feed (a few hours), but otherwise it's pretty solid. feel free to use it for yourself, and definitely let me know if you have any issues with it</p>
-		</div>
+		<p>i was inspired by <a href="https://www.youtube.com/watch?v=prXuyMCgbTc">this GDC talk about Noita</a> to make a <a href="https://wikipedia.org/wiki/Falling-sand_game">falling sand</a> game engine that can run in parallel on a GPU. i liked the idea of having a 'speed of light', and designed an algorithm around a <a href="https://wikipedia.org/wiki/Principle_of_locality">principle of locality</a></p>
 		
-		<div class="repo">
-			<p class="repo-link">
-				<a href="https://github.com/simonomi/ff1-binary-formats/wiki">
-					<img class="github-logo" src="/images/github.svg" alt="the GitHub logo">
-					ff1-binary-formats
-				</a>
-			</p>
+		<p>the result is a simulation that comfortably runs at 300fps on my 4480×2520 M1 iMac, for a total of over 3.3 billion pixel-ticks per second >:)</p>
+	</div>
+	
+	<div class="repo">
+		<p class="repo-link">
+			<a class="trailing-margin" href="https://github.com/simonomi/minecraftNews">
+				<img class="github-logo" src="/images/github.svg" alt="the GitHub logo">
+				minecraftNews
+			</a>
 			
-			<p>a wiki for various Fossil Fighters file formats. it explains the high-level purpose and detailed byte layout for each one</p>
-		</div>
+			<a href="/minecraftNews/feed.json">
+				<img class="rss-logo" src="/images/rss.svg" alt="the RSS logo">
+				JSON Feed
+			</a>
+		</p>
+		
+		<p>i got fed up with there not being an official RSS feed (or JSON Feed) for Minecraft snapshots, so i made one myself! it uses a Discord bot that follows the changelog announcements on the official Minecraft Discord server</p>
+		
+		<p>there's a bit of a delay before new snapshots are added to the feed (a few hours), but otherwise it's pretty solid. feel free to use it for yourself, and definitely let me know if you have any issues with it</p>
+	</div>
+	
+	<div class="repo">
+		<p class="repo-link">
+			<a href="https://github.com/simonomi/ff1-binary-formats/wiki">
+				<img class="github-logo" src="/images/github.svg" alt="the GitHub logo">
+				ff1-binary-formats
+			</a>
+		</p>
+		
+		<p>a wiki for various Fossil Fighters file formats. it explains the high-level purpose and detailed byte layout for each one</p>
 	</div>
 </div>
