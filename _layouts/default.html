@@ -63,7 +63,7 @@
 		
 		{%- unless page.data.nofooter -%}
 		<footer>
-			<small>© <time>{{ "now" | date: "%Y" }}</time> alice pellerin</small>
+			<small>© <time datetime="{{ "now" | date: "%Y" }}">{{ "now" | date: "%Y" }}</time> alice pellerin</small>
 		</footer>
 		{%- endunless -%}
 	</body>

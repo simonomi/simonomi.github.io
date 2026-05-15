@@ -12,24 +12,17 @@ a {
 	user-select: none;
 	-webkit-user-select: none;
 	
-	transition-property: opacity;
-	transition-duration: 0.2s;
-	
-	@media (prefers-color-scheme: light) {
-		filter: invert();
-	}
-	
 	&:hover {
-		filter: opacity(85%);
-		
-		@media (prefers-color-scheme: light) {
-			filter: opacity(75%) invert();
-		}
+		opacity: 75%;
 	}
 	
 	img {
 		width: var(--icon-link-width);
 		height: var(--icon-link-height);
+		
+		@media (prefers-color-scheme: light) {
+			filter: invert();
+		}
 	}
 	
 	h3 {

@@ -325,19 +325,13 @@ icon-links {
 		height: var(--icon-link-height);
 		margin-top: 0.25em;
 		object-fit: contain;
-		transition-property: opacity;
-		transition-duration: 0.2s;
 		
 		@media (prefers-color-scheme: light) {
 			filter: invert();
 		}
 		
 		&:hover {
-			filter: opacity(85%);
-			
-			@media (prefers-color-scheme: light) {
-				filter: opacity(75%) invert();
-			}
+			opacity: 75%;
 		}
 	}
 }
