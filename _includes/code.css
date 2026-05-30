@@ -82,12 +82,13 @@ pre {
 		background-color: var(--background-color-terminal);
 	}
 	
-	& > code > mark {
+	& > code > mark,
+	& > kbd > mark {
 		display: inline-block;
 	}
 }
 
-samp, code {
+samp, code, kbd {
 	font-family: ui-monospace, monospace;
 	font-size: 1rem;
 	-webkit-text-size-adjust: 100%; /* some weird bugs were happening with iOS safari resizing some code larger than others */
@@ -100,7 +101,7 @@ samp, code {
 	}
 }
 
-code {
+code, kbd {
 	background-color: var(--background-color-code);
 }
 
@@ -174,8 +175,8 @@ code-cyan         { color: var(--code-cyan);         }
 code-light-cyan   { color: var(--code-light-cyan);   }
 code-bold         { color: var(--code-bold);         }
 
-/* DON'T USE TERMINAL COLORS IN CODE BLOCKS */
-code {
+/* DON'T USE TERMINAL COLORS IN CODE OR KBD BLOCKS */
+code, kbd {
 	terminal-grey, terminal-red, terminal-light-red, terminal-green, terminal-light-green, terminal-yellow, terminal-light-yellow, terminal-blue, terminal-light-blue, terminal-pink, terminal-light-pink, terminal-cyan, terminal-light-cyan, terminal-bold {
 		background-color: red;
 	}
