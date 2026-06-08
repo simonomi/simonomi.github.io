@@ -1,5 +1,5 @@
 ---
-permalink: /hexapoda/config/schema.json
+permalink: /hexapoda/config/schema-v0.2.4.json
 ---
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",

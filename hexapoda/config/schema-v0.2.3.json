@@ -3,7 +3,7 @@ permalink: /hexapoda/config/schema-v0.2.3.json
 ---
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
-	"$id": "https://simonomi.dev/hexapoda/config/schema-v0.2.3.json",
+	"$id": "{{ site.base_url }}/{{ page.permalink }}",
 	"title": "hexapoda config",
 	"description": "configuration format for hexapoda. see https://simonomi.dev/hexapoda/config/ for details",
 	"type": "object",
